@@ -1,7 +1,3 @@
-# Code Institute
+# Good Grub
 
-Welcome USER_NAME,
-
-We have preinstalled all of the tools you need to get started.
-
-Happy coding!
+Content to be added, an online food site for adding and viewing / editing recipes
