@@ -7,6 +7,11 @@ if path.exists("env.py"):
     
 app = Flask(__name__)
 
+app.config["MONGO_DBNAME"] = 'good_grubDB'
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+
+mongo = PyMongo(app)
+
 @app.route('/')
 def hello_test():
     return 'Testing app...'
