@@ -1,7 +1,10 @@
 import os
 from flask import Flask,
 from bson.objectid import ObjectId
-
+from os import path
+if path.exists("env.py"):
+    import env
+    
 app = Flask(__name__)
 
 @app.route('/')
