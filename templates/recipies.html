@@ -10,7 +10,7 @@
 		<div id="search_recipe"><button type="submit">Look</button></div>
 	</form>
 
-<!-- <ul>
+< <ul>
     {% for recipe in recipies %}
     <li>
         {{recipe.recipe_name}}
@@ -19,7 +19,8 @@
         {{recipe.tools}}
         {{recipe.image}}
     </li>
+    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Edit</a>
     {% endfor %}
-</ul> -->
+</ul> 
 
 {% endblock %}
