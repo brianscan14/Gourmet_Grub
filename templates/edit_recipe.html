@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<ul>
+    {% for cuiz in cuisine %}
+    <li>
+        {{cuiz.cuisine}}
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
