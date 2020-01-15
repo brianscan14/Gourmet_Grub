@@ -27,6 +27,16 @@ def search_recipe():
     results = mongo.db.recipies.find({'recipe_name': query})
     return render_template('search_recipe.html', query=rec_search_query, results=results)
 
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template('add_recipe.html', cuisine=mongo.db.cuisine.find())
+
+@app.route('/insert_recipe', methods=['POST']) 
+def insert_recipe():
+    recipies = mongo.db.recipies
+    recipies.insert_one(request.form.to_dict())
+    return redirect(url_for('get_recipies'))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
