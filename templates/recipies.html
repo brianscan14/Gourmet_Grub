@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
+
+	<h3>Search your favourite recipe:</h3>
+						
+	<form action="{{ url_for('search_recipe') }}">
+		<input type="text" placeholder="Search....." name="query" required>
+		<div id="search_recipe"><button type="submit">Look</button></div>
+	</form>
+
 <ul>
     {% for recipe in recipies %}
     <li>
