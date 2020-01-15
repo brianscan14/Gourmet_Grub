@@ -43,19 +43,19 @@ def edit_recipe(recipe_id):
     all_cuisine = mongo.db.cuisine.find()
     return render_template('edit_recipe.html', recipe=recipeDB, cuisine=all_cuisine) 
 
-# @app.route('/update_recipe/<recipe_id>', methods=['POST']) 
-# def update_recipe(recipe_id): 
-#     recipies = mongo.db.recipies
-#     recipies.update( {'_id': ObjectId(recipe_id)}, 
-#     {
-#         'recipe_name':request.form.get('recipe_name'),
-#         'recipe_prep':request.form.get('recipe_prep'),
-#         'cuisine': request.form.get('cuisine'),
-#         'tools': request.form.get('tools'),
-#         'image':request.form.get('image'),
-#         'ingredients':request.form.get('ingredients')
-#     })
-#     return redirect(url_for('get_recipies'))
+@app.route('/update_recipe/<recipe_id>', methods=['POST']) 
+def update_recipe(recipe_id): 
+    recipies = mongo.db.recipies
+    recipies.update( {'_id': ObjectId(recipe_id)}, 
+    {
+        'recipe_name':request.form.get('recipe_name'),
+        'recipe_prep':request.form.get('recipe_prep'),
+        'cuisine': request.form.get('cuisine'),
+        'tools': request.form.get('tools'),
+        'image':request.form.get('image'),
+        'ingredients':request.form.get('ingredients')
+    })
+    return redirect(url_for('get_recipies'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
