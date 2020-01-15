@@ -7,10 +7,10 @@
         <div class="row">
             <div class="row">
                 <div class="col-7">
-                    <select id="cuisine" name="cuisine">
-                  <option value="" disabled selected>Choose cuisine</option>
-                  {% for cat in cuisine %}
-                      <option value="{{cat.cuisine}}">{{cat.cuisine}}</option>
+                <select id="cuisine" name="cuisine">
+                <option value="" disabled selected>Choose cuisine</option>
+                  {% for cuiz in cuisine %}
+                      <option value="{{cuiz.cuisine}}">{{cuiz.cuisine}}</option>
                   {% endfor %}
                 </select>
                     <label>recipe cuisine</label>
@@ -19,14 +19,14 @@
             <div class="col-7">
                 
                 <input id="recipe_name" name="recipe_name" type="text">
-                <label for="icon_prefix">recipe Name</label>
+                <label>recipe Name</label>
             </div>
         </div>
         <div class="row">
             <div class="col-7">
                 
-                <textarea name="recipe_prep" id="recipe_prep" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">recipe prep</label>
+                <textarea name="recipe_prep" id="recipe_prep"></textarea>
+                <label>recipe prep</label>
             </div>
         </div>
 
@@ -36,5 +36,7 @@
         </div>
     </form>
 </div>
+
+<a href="{{ url_for('update_recipe', recipe_id=recipe._id) }}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Edit</a>
 
 {% endblock %}
