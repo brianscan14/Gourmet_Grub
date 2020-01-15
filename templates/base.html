@@ -32,6 +32,15 @@
 <body>
     
     <div class="container">
+
+	<h3>Search recipes that contain:</h3>
+						
+	<form action="{{ url_for('search_recipe') }}">
+		<input type="text" placeholder="Search....." name="query" required>
+		<div id="search_recipe"><button type="submit">Look</button></div>
+	</form>
+
+
     {% block content %}
     {% endblock %}
     </div>
