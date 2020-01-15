@@ -12,13 +12,12 @@
 
 < <ul>
     {% for recipe in recipies %}
-    <li>
-        {{recipe.recipe_name}}
-        {{recipe.recipe_prep}}
-        {{recipe.cuisine}}
-        {{recipe.tools}}
-        {{recipe.image}}
-    </li>
+    <li>    {{recipe.recipe_name}}</li>
+    <li>    {{recipe.recipe_prep}}</li>
+    <li>    {{recipe.cuisine}}</li>
+    <li>    {{recipe.tools}}</li>
+    <li>    {{recipe.image}}</li>
+    
     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Edit</a>
     {% endfor %}
 </ul> 
