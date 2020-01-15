@@ -6,14 +6,14 @@
 
 
     {% for recipe in results %}
-    <li><h3>New recipe</h3>
+    <h3>New recipe</h3>
+    
         <div>
-            {{ recipe.recipe_name }} : {{ recipe.recipe_prep }}
+            <li>{{ recipe.recipe_name }}</li>
+            <li>you'll have to : {{ recipe.recipe_prep }}</li>
+            <li>{{ recipe.ingredients }}</li>
         </div>
-        <div>
-            {{ recipe.ingredients }}
-        </div>
-    </li>
+
     {% endfor %}
     
 {% endblock %}
