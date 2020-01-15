@@ -5,7 +5,6 @@
 <div class="row">
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col-9">
         <div class="row">
-            <div class="row">
                 <div class="col-7">
                 <select id="cuisine" name="cuisine">
                 <option value="" disabled selected>Choose cuisine</option>
@@ -13,23 +12,44 @@
                       <option value="{{cuiz.cuisine}}">{{cuiz.cuisine}}</option>
                   {% endfor %}
                 </select>
-                    <label>recipe cuisine</label>
                 </div>
-            </div>
+        </div>
+        <div class="row">
             <div class="col-7">
-                
-                <input id="recipe_name" name="recipe_name" type="text">
+                <input id="recipe_name" name="recipe_name" type="text" required>
                 <label>recipe Name</label>
             </div>
         </div>
         <div class="row">
             <div class="col-7">
-                
-                <textarea name="recipe_prep" id="recipe_prep"></textarea>
+                <textarea name="recipe_prep" id="recipe_prep" required></textarea>
                 <label>recipe prep</label>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-7">
+                <textarea name="cuisine" id="cuisine" required></textarea>
+                <label>cuisine</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <textarea name="tools" id="tools" required></textarea>
+                <label>tools</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <textarea name="image" id="image" required></textarea>
+                <label>image</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <textarea name="ingredients" id="ingredients" required></textarea>
+                <label>ingredients</label>
+            </div>
+        </div>
         <div class="row">
             <button class="btn btn-success" type="submit" name="action">Add recipe
             </button>
