@@ -2,13 +2,37 @@
 {% block content %}
 
 
-<ul>
-    {% for cuiz in cuisine %}
-    <li>
-        {{cuiz.cuisine}}
-    </li>
-    {% endfor %}
-</ul>
+<h3>edit recipe</h3>
+
+<form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
+ <div class="row">
+            <div class="row">
+                <div>
+                <select id="cuisine" name="cuisine">
+                  <option value="" disabled selected>Choose cuisine</option>
+                  {% for cuiz in cuisine %}
+                    {% if cuiz.cuisine == recipe.cuisine %} 
+                        <option value="{{cuiz.cuisine}}" selected >{{cuiz.cuisine}}</option> 
+                    {% else %}  
+                        <option value="{{cuiz.cuisine}}">{{cuiz.cuisine}}</option>
+                    {% endif %}  
+                  {% endfor %}
+                </select>
+                    <label>cuisine</label>
+                </div>
+            </div>
+            <div class="input-field col s12">
+                <input id="recipe_name" name="recipe_name" type="text" value="{{recipe.recipe_name}}">
+                <label>recipe Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-primary" type="submit" name="action">Edit recipe
+             </button>
+        </div>
+</form>
+
 
 
 {% endblock %}
