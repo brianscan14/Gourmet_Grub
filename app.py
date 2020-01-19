@@ -75,7 +75,7 @@ def delete_cuisine(cuisine_id):
 @app.route('/edit_cuisine/<cuisine_id>') 
 def edit_cuisine(cuisine_id): 
     return render_template('edit_cuisine.html', 
-    cuisine=mongo.db.cuisine.find_one({'_id': ObjectId(cuisine_id)}))
+    cuizine=mongo.db.cuisine.find_one({'_id': ObjectId(cuisine_id)}))
 
 @app.route('/update_cuisine/<cuisine_id>', methods=['POST'])
 def update_cuisine(cuisine_id):
@@ -83,6 +83,16 @@ def update_cuisine(cuisine_id):
         {'_id': ObjectId(cuisine_id)},
         {'cuisine_name': request.form.get('cuisine_name')})
     return redirect(url_for('get_cuisines'))
+
+@app.route('/insert_cuisine', methods=['POST']) 
+def insert_cuisine():
+    cuisine_doc = {'cuisine_name': request.form.get('cuisine_name')}
+    mongo.db.cuisine.insert_one(cuisine_doc)
+    return redirect(url_for('get_cuisines'))
+
+@app.route('/add_cuisine') 
+def add_cuisine():
+    return render_template('add_cuisine.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
