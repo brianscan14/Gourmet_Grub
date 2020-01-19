@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <h6> Choose to find Lunch, dinner or dessert recipes</h6>
+
+
+    <form action="{{ url_for('find_cuisines')}}" method="POST"  class="col-6">
+        <div class="row">
+            <div class="input-field col-6">
+                    <select id="cuisine_name" name="cuisine_name">
+                        <option value="" disabled selected></option>
+                        <option value="indian">indian</option>
+                        <option value="thai">french</option>
+                    </select>
+            </div>
+        </div>    
+
+    <div class="row">
+        <button class="btn btn-success" type="submit" name="action">Find Cuisine</button>
+    </div>
+    </form>
+</div>
+
+{% endblock %}
