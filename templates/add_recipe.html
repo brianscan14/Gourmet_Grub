@@ -6,10 +6,10 @@
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col-9">
         <div class="row">
                 <div class="col-7">
-                <select id="cuisine" name="cuisine">
+                <select id="cuiz" name="cuisine_name">
                 <option value="" disabled selected>Choose cuisine</option>
                   {% for cuiz in cuisine %}
-                      <option value="{{cuiz.cuisine}}">{{cuiz.cuisine}}</option>
+                      <option value="{{cuiz.cuisine_name}}">{{cuiz.cuisine_name}}</option>
                   {% endfor %}
                 </select>
                 </div>
