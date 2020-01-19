@@ -90,9 +90,20 @@ def insert_cuisine():
     mongo.db.cuisine.insert_one(cuisine_doc)
     return redirect(url_for('get_cuisines'))
 
-@app.route('/add_cuisine') 
+@app.route('/add_cuisine')
 def add_cuisine():
     return render_template('add_cuisine.html')
+
+@app.route("/find_cuisines", methods=['GET', 'POST'])
+def find_cuisines():
+    recipies=mongo.db.recipies
+    if request.method == 'POST':
+        requested_cuisine = request.form.get("recipe_cuisine")
+        
+        recipies = mongo.db.recipies.find({"recipe_cuisine": requested_cuisine})
+        return render_template("cuisine_results.html", recipies=recipies)
+        
+    return render_template("find_cuisines.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
