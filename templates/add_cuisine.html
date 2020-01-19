@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Add cuisine</h3>
+<form action="{{ url_for('insert_cuisine') }}" method="POST" class="col s12">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="cuisine_name" name="cuisine_name" type="text" class="validate">
+            <label for="cuisine_name">cuisine Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-success" type="submit" name="action">Add cuisine
+        </button>
+    </div>
+</form>
+
+{% endblock %}
