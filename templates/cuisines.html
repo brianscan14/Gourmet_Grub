@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h2>Cuisines:</h2>
+
+	{% for cuiz in cuisine %}
+    
+    <div class="row">
+    <div class="col-8 mx-auto">
+        <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Cuisines</h1>
+            <p class="lead">{{cuiz.cuisine}}</p>
+        </div>
+        </div>
+    </div>
+    </div>
+		
+  
+	{% endfor %}
+
+{% endblock %}
