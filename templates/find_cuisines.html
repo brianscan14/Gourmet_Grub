@@ -9,9 +9,10 @@
         <div class="row">
             <div class="input-field col-6">
                     <select id="cuisine_name" name="cuisine_name">
-                        <option value="" disabled selected></option>
-                        <option value="indian">indian</option>
-                        <option value="thai">french</option>
+                    <option value="" disabled selected>Try Me</option>
+                  {% for cuiz in recipies %}
+                    <option value="{{cuiz.cuisine_name}}">{{cuiz.cuisine_name}}</option>
+                  {% endfor %}
                     </select>
             </div>
         </div>    

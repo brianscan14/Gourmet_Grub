@@ -11,7 +11,7 @@
                 <label>Cuisine</label>
 					<select id="cuizine" name="cuisine_name">
 			                <option value="">Choose cuisine</option>
-			            {% for cuiz in cuisine %}
+			            {% for cuiz in recipies %}
 			            {% if cuiz.cuisine_name == recipe.cuisine %} 
 			                <option value="{{cuiz.cuisine_name}}" selected>{{cuiz.cuisine_name}}</option> 
 			            {% else %}  

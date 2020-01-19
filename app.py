@@ -29,7 +29,7 @@ def search_recipe():
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('add_recipe.html', cuisine=mongo.db.cuisine.find())
+    return render_template('add_recipe.html', recipies=mongo.db.recipies.find())
 
 @app.route('/insert_recipe', methods=['POST']) 
 def insert_recipe():
@@ -40,8 +40,8 @@ def insert_recipe():
 @app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
     recipeDB = mongo.db.recipies.find_one({"_id": ObjectId(recipe_id)})
-    all_cuisine = mongo.db.cuisine.find()
-    return render_template('edit_recipe.html', recipe=recipeDB, cuisine=all_cuisine) 
+    all_cuisine = mongo.db.recipies.find()
+    return render_template('edit_recipe.html', recipe=recipeDB, recipies=all_cuisine) 
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST']) 
 def update_recipe(recipe_id): 
@@ -50,7 +50,7 @@ def update_recipe(recipe_id):
     {
         'recipe_name':request.form.get('recipe_name'),
         'recipe_prep':request.form.get('recipe_prep'),
-        'cuisine': request.form.get('cuisine'),
+        'cuisine_name': request.form.get('cuisine_name'),
         'tools': request.form.get('tools'),
         'image':request.form.get('image'),
         'ingredients':request.form.get('ingredients')
@@ -65,21 +65,21 @@ def delete_recipe(recipe_id):
 @app.route('/get_cuisines') 
 def get_cuisines(): 
     return render_template('cuisines.html', 
-    cuisine=mongo.db.cuisine.find())
+    recipies=mongo.db.recipies.find())
 
 @app.route('/delete_cuisine/<cuisine_id>')
 def delete_cuisine(cuisine_id):
-    mongo.db.cuisine.remove({'_id': ObjectId(cuisine_id)})
+    mongo.db.recipies.remove({'_id': ObjectId(cuisine_id)})
     return redirect(url_for('get_cuisines'))
 
 @app.route('/edit_cuisine/<cuisine_id>') 
 def edit_cuisine(cuisine_id): 
     return render_template('edit_cuisine.html', 
-    cuizine=mongo.db.cuisine.find_one({'_id': ObjectId(cuisine_id)}))
+    cuizine=mongo.db.recipies.find_one({'_id': ObjectId(cuisine_id)}))
 
 @app.route('/update_cuisine/<cuisine_id>', methods=['POST'])
 def update_cuisine(cuisine_id):
-    mongo.db.cuisine.update(
+    mongo.db.recipies.update(
         {'_id': ObjectId(cuisine_id)},
         {'cuisine_name': request.form.get('cuisine_name')})
     return redirect(url_for('get_cuisines'))
@@ -87,7 +87,7 @@ def update_cuisine(cuisine_id):
 @app.route('/insert_cuisine', methods=['POST']) 
 def insert_cuisine():
     cuisine_doc = {'cuisine_name': request.form.get('cuisine_name')}
-    mongo.db.cuisine.insert_one(cuisine_doc)
+    mongo.db.recipies.insert_one(cuisine_doc)
     return redirect(url_for('get_cuisines'))
 
 @app.route('/add_cuisine')
@@ -98,9 +98,9 @@ def add_cuisine():
 def find_cuisines():
     recipies=mongo.db.recipies
     if request.method == 'POST':
-        requested_cuisine = request.form.get("recipe_cuisine")
+        requested_cuisine = request.form.get("cuisine_name")
         
-        recipies = mongo.db.recipies.find({"recipe_cuisine": requested_cuisine})
+        recipies = mongo.db.recipies.find({"cuisine_name": requested_cuisine})
         return render_template("cuisine_results.html", recipies=recipies)
         
     return render_template("find_cuisines.html")

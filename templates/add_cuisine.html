@@ -5,7 +5,7 @@
 <form action="{{ url_for('insert_cuisine') }}" method="POST">
     <div class="row">
         <div class="col-8">
-                {% for cuiz in cuisine %}
+                {% for cuiz in recipies %}
                     {% if cuiz.cuisine_name == recipies.cuisine %}
                         <option value="{{cuiz.cuisine_name}}" selected >{{cuiz.cuisine_name}}</option>
                     {% else %}
