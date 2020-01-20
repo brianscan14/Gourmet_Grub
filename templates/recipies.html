@@ -10,11 +10,13 @@
 		<div id="search_recipe"><button type="submit">Look</button></div>
 	</form>
 
-< <ul>
+     <a href="{{url_for('find_meals')}}" class="btn btn-primary">find</a>
+
+<ul>
     {% for recipe in recipies %}
     <li>    {{recipe.recipe_name}}</li>
     <li>    {{recipe.recipe_prep}}</li>
-    <li>    {{recipe.recipe_cuisine}}</li>
+    <li>    {{recipe.cuisine_name}}</li>
     <li>    {{recipe.tools}}</li>
     <li>    {{recipe.image}}</li>
     
