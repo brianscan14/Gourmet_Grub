@@ -62,6 +62,11 @@ def delete_recipe(recipe_id):
     mongo.db.recipies.remove({'_id': ObjectId(recipe_id)}) 
     return redirect(url_for('get_recipies'))
 
+@app.route('/recipe_selected/<recipe_id>')
+def recipe_selected(recipe_id):
+    recipies = mongo.db.recipies.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('recipe_selected.html', recipe=recipies)
+
 @app.route('/get_cuisines') 
 def get_cuisines(): 
     return render_template('cuisines.html', 
