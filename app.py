@@ -109,6 +109,13 @@ def find_meals():
 def meal_results():
     return render_template('meal_results.html')
 
+@app.route('/search_cuisines')
+def search_cuisines():
+    rec_search_query = request.args['query']
+    query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
+    results = mongo.db.recipies.find({'cuisine_name': query})
+    return render_template('search_cuisines.html', query=rec_search_query, results=results)
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
