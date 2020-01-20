@@ -18,6 +18,11 @@
     <li>    {{recipe.tools}}</li>
     <li>    {{recipe.image}}</li>
 </p>
+
+<a href="/recipe_selected/{{ recipe._id }}">
+<button type="submit" class="btn btn-success" name="action">View full recipe</button>
+</a>
+
 </div>
 </div>
     {% endfor %}
