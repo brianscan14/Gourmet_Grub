@@ -3,6 +3,11 @@
 
     <h2>Cuisines:</h2>
 
+    <form action="{{ url_for('search_cuisines') }}">
+		<input type="text" placeholder="Search....." name="query" required>
+		<div id="search_cuisines"><button type="submit">Look</button></div>
+	</form>
+
 	{% for cuiz in recipies %}
     
     <div class="row">
@@ -14,13 +19,15 @@
         </div>
         <!-- <a href="{{url_for('delete_cuisine', cuisine_id=cuiz._id)}}" class="btn btn-danger">Get Rid</a> -->
         <a href="{{url_for('edit_cuisine', cuisine_id=cuiz._id)}}" class="btn btn-info">Edit</a>
+        <form action="{{ url_for('search_cuisines') }}">
+		<div id="search_cuisines"><button type="submit" name="query" value="{{cuiz.cuisine_name}}">
+        More {{cuiz.cuisine_name}} recipes</button></div>
+	    </form>
         </div>
     </div>
     </div>
 		
   
 	{% endfor %}
-
-
 
 {% endblock %}
