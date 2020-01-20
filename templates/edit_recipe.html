@@ -54,8 +54,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<button class="btn btn-primary" type="submit" name="action">Edit recipe</button>
-                <a href="{{ url_for('get_recipies') }}" class="btn btn-warning">Cancel</a>
+				<button class="btn btn-primary" type="submit" name="action">Save Changes</button>
+                <a href="{{ url_for('recipe_selected', recipe_id=recipe._id) }}" class="btn btn-warning">Cancel</a>
 			</div>
 </form>
 
