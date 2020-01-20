@@ -3,20 +3,20 @@
 
 <div class="row">
 
-
+<div class="jumbotron jumbotron-fluid mx-auto">
+  <div class="container">
+    <h1 class="display-4">jumbotron</h1>
+    <p class="lead">
 
     <form action="{{ url_for('find_meals')}}" method="POST">
         <div class="row">
-            <div class="input-field col-9">
+            <div class="input-field col-12">
                     <select id="meal_type" name="meal_type">
                         <option value="" disabled selected>Select one</option>
                         <option value="breakfast">Breakfast</option>
                         <option value="lunch">Lunch</option>
                         <option value="dinner">Dinner</option>
                     </select>
-
-                    <!-- <label>recipe_type</label>
-                <input id="cuisine_name" name="cuisine_name" type="text"> -->
             </div>
         </div>    
   
@@ -24,6 +24,9 @@
         <button class="btn btn-success" type="submit" name="action">Find Cuisine</button>
     </div>
     </form>
+    </p>
+      </div>
+</div>
 </div>
 
 {% endblock %}
