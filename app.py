@@ -23,7 +23,10 @@ def get_recipies():
 def search_recipe():
     rec_search_query = request.args['query']
     query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
-    results = mongo.db.recipies.find({'recipe_name': query})
+    results = mongo.db.recipies.find({
+        '$or': [
+            {'recipe_name': query},
+            {'ingredients': query}]})
     return render_template('search_recipe.html', query=rec_search_query, results=results)
 
 @app.route('/add_recipe')
@@ -70,7 +73,14 @@ def recipe_selected(recipe_id):
 @app.route('/get_cuisines') 
 def get_cuisines(): 
     return render_template('cuisines.html', 
-    recipies = mongo.db.recipies.find().distinct('cuisine_name'))
+    recipies = mongo.db.recipies.find())
+
+@app.route('/search_cuisines')
+def search_cuisines():
+    rec_search_query = request.args['query']
+    query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
+    results = mongo.db.recipies.find({'cuisine_name': query})
+    return render_template('search_cuisines.html', query=rec_search_query, results=results)
 
 @app.route('/delete_cuisine/<cuisine_id>')
 def delete_cuisine(cuisine_id):
@@ -113,13 +123,6 @@ def find_meals():
 @app.route("/meal_results")
 def meal_results():
     return render_template('meal_results.html')
-
-@app.route('/search_cuisines')
-def search_cuisines():
-    rec_search_query = request.args['query']
-    query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
-    results = mongo.db.recipies.find({'cuisine_name': query})
-    return render_template('search_cuisines.html', query=rec_search_query, results=results)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
