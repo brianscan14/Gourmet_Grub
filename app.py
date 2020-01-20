@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_recipies')
 def get_recipies():
-    return render_template("recipies.html", recipies=mongo.db.recipies.find())
+    return render_template("recipies.html", recipies=mongo.db.recipies.find().limit(3))
 
 @app.route('/search_recipe')
 def search_recipe():
@@ -70,7 +70,7 @@ def recipe_selected(recipe_id):
 @app.route('/get_cuisines') 
 def get_cuisines(): 
     return render_template('cuisines.html', 
-    recipies=mongo.db.recipies.find())
+    recipies = mongo.db.recipies.find().distinct('cuisine_name'))
 
 @app.route('/delete_cuisine/<cuisine_id>')
 def delete_cuisine(cuisine_id):
