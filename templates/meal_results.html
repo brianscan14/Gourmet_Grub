@@ -11,13 +11,16 @@
  
         <h3>Recipe:</h3>
     
-        <div>
+        
             <li>{{ cuisine.recipe_name }}</li>
             <li>you'll have to : {{ cuisine.recipe_prep }}</li>
             <li>{{ cuisine.ingredients }}</li>
         </p>
         </div>
-        </div>
+
+        <a href="/recipe_selected/{{ cuisine._id }}">
+        <button type="submit" class="btn btn-success" name="action">View full recipe</button>
+        </a>
         </div>
 
 
