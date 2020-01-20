@@ -3,10 +3,10 @@
 
 <h3>Edit Cuisine</h3>
 <div class="row">
-    <form action="{{ url_for('update_cuisine', cuisine_id=cuizine._id) }}" method="POST" class="col s12">
+    <form action="{{ url_for('update_cuisine', cuisine_id=meal_types._id) }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <input id="cuisine_name" name="cuisine_name" type="text" class="validate" value="{{cuizine.cuisine_name}}">
+                <input id="cuisine_name" name="cuisine_name" type="text" class="validate" value="{{meal_types.cuisine_name}}">
                 <label for="cuisine_name">cuisine Name</label>
             </div>
         </div>
