@@ -19,7 +19,6 @@ mongo = PyMongo(app)
 def get_recipies():
     return render_template("recipies.html", recipies=mongo.db.recipies.find())
 
-
 @app.route('/search_recipe')
 def search_recipe():
     rec_search_query = request.args['query']
@@ -84,26 +83,30 @@ def update_cuisine(cuisine_id):
         {'cuisine_name': request.form.get('cuisine_name')})
     return redirect(url_for('get_cuisines'))
 
-@app.route('/insert_cuisine', methods=['POST']) 
-def insert_cuisine():
-    cuisine_doc = {'cuisine_name': request.form.get('cuisine_name')}
-    mongo.db.recipies.insert_one(cuisine_doc)
-    return redirect(url_for('get_cuisines'))
+# @app.route('/insert_cuisine', methods=['POST']) 
+# def insert_cuisine():
+#     cuisine_doc = {'cuisine_name': request.form.get('cuisine_name')}
+#     mongo.db.recipies.insert_one(cuisine_doc)
+#     return redirect(url_for('get_cuisines'))
 
-@app.route('/add_cuisine')
-def add_cuisine():
-    return render_template('add_cuisine.html')
+# @app.route('/add_cuisine')
+# def add_cuisine():
+#     return render_template('add_cuisine.html')
 
-@app.route("/find_cuisines", methods=['GET', 'POST'])
-def find_cuisines():
-    recipies=mongo.db.recipies
+@app.route("/find_meals", methods=['GET', 'POST'])
+def find_meals():
+    recipies = mongo.db.recipies
     if request.method == 'POST':
-        requested_cuisine = request.form.get("cuisine_name")
+        requested_meal_type = request.form.get("meal_type")
         
-        recipies = mongo.db.recipies.find({"cuisine_name": requested_cuisine})
-        return render_template("cuisine_results.html", recipies=recipies)
+        recipies = mongo.db.recipies.find({"meal_type": requested_meal_type})
+        return render_template("meal_results.html", recipies=recipies)
         
-    return render_template("find_cuisines.html")
+    return render_template("find_meals.html")
+
+@app.route("/meal_results")
+def meal_results():
+    return render_template('meal_results.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
