@@ -9,7 +9,7 @@ if path.exists("env.py"):
     
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'good_grubDB'
+app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
@@ -70,10 +70,10 @@ def recipe_selected(recipe_id):
     recipies = mongo.db.recipies.find_one({'_id': ObjectId(recipe_id)})
     return render_template('recipe_selected.html', recipe=recipies)
 
-@app.route('/get_cuisines') 
-def get_cuisines(): 
-    return render_template('cuisines.html', 
-    recipies = mongo.db.recipies.find())
+@app.route('/get_cuisines')
+def get_cuisines():
+    return render_template('cuisines.html',
+    recipies=mongo.db.recipies.distinct("cuisine_name"))
 
 @app.route('/search_cuisines')
 def search_cuisines():
