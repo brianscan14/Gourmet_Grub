@@ -17,12 +17,11 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_recipies')
 def get_recipies():
-    return render_template("recipies.html", recipies=mongo.db.recipies.find().limit(3))
+    return render_template("recipies.html", recipies=mongo.db.recipies.find())
 
 @app.route('/search_recipe', methods=["GET","POST"])
 def search_recipe():
     rec_search_query = request.args['query']
-    # if request.method == 'GET':
     query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
     results = mongo.db.recipies.find({
         '$or': [
@@ -35,15 +34,21 @@ def search_recipe():
     else:
         return render_template('search_recipe_null.html', query=rec_search_query, results=results)
 
+@app.route('/recipe_selected/<recipe_id>')
+def recipe_selected(recipe_id):
+    recipies = mongo.db.recipies.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('recipe_selected.html', recipe=recipies)
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('add_recipe.html', recipies=mongo.db.recipies.find())
 
-@app.route('/insert_recipe', methods=['POST']) 
+@app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipies = mongo.db.recipies
-    recipies.insert_one(request.form.to_dict())
-    return redirect(url_for('get_recipies'))
+    this_recipe = recipies.insert_one(request.form.to_dict())
+    ret = recipies.find_one({"_id": this_recipe.inserted_id})
+    return render_template('thankyoupage.html', recipe=ret)
 
 @app.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
@@ -51,7 +56,7 @@ def edit_recipe(recipe_id):
     all_cuisine = mongo.db.recipies.find()
     return render_template('edit_recipe.html', recipe=recipeDB, recipies=all_cuisine) 
 
-@app.route('/update_recipe/<recipe_id>', methods=['POST']) 
+@app.route('/update_recipe/<recipe_id>', methods=['GET', 'POST']) 
 def update_recipe(recipe_id): 
     recipies = mongo.db.recipies
     recipies.update( {'_id': ObjectId(recipe_id)}, 
@@ -70,11 +75,6 @@ def update_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipies.remove({'_id': ObjectId(recipe_id)}) 
     return redirect(url_for('get_recipies'))
-
-@app.route('/recipe_selected/<recipe_id>')
-def recipe_selected(recipe_id):
-    recipies = mongo.db.recipies.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('recipe_selected.html', recipe=recipies)
 
 @app.route('/get_cuisines')
 def get_cuisines():
