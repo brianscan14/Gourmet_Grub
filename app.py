@@ -88,8 +88,6 @@ def search_cuisines():
     results = mongo.db.recipies.find({'cuisine_name': query})
     return render_template('search_cuisines.html', query=rec_search_query, results=results)
 
-
-
 @app.route("/find_meals", methods=['GET', 'POST'])
 def find_meals():
     recipies = mongo.db.recipies
@@ -104,6 +102,20 @@ def find_meals():
 @app.route("/meal_results")
 def meal_results():
     return render_template('meal_results.html')
+
+@app.route("/thankyoupage")
+def thankyoupage():
+    return render_template('thankyoupage.html')
+
+@app.route('/likes/<recipe_id>')
+def likes(recipe_id):
+   
+    mongo.db.recipies.find_one_and_update(
+        {'_id': ObjectId(recipe_id)},
+        { '$inc': { 'likes': 1}}
+    )
+    recipe_db = mongo.db.recipies.find_one_or_404({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('get_recipies'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
