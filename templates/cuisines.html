@@ -3,11 +3,6 @@
 
     <h2>Cuisines:</h2>
 
-    <form action="{{ url_for('search_cuisines') }}">
-		<input type="text" placeholder="Search....." name="query" required>
-		<div id="search_cuisines"><button type="submit">Look</button></div>
-	</form>
-
 	{% for cuisine in recipies %}
     
 	<div class="row">
@@ -20,7 +15,7 @@
 
 				<form action="{{ url_for('search_cuisines') }}">
 				<div id="search_cuisines"><button type="submit" name="query" value="{{cuisine}}">
-	                More {{cuisine}} recipes</button></div>
+	                View all {{cuisine}} style recipes</button></div>
 				</form>
 			</div>
 		</div>
