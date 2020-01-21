@@ -1,6 +1,6 @@
 import os
 import re
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -9,6 +9,7 @@ if path.exists("env.py"):
     
 app = Flask(__name__)
 
+app.secret_key = "secretestkey22"
 app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
@@ -19,15 +20,21 @@ mongo = PyMongo(app)
 def get_recipies():
     return render_template("recipies.html", recipies=mongo.db.recipies.find().limit(3))
 
-@app.route('/search_recipe')
+@app.route('/search_recipe', methods=["GET","POST"])
 def search_recipe():
     rec_search_query = request.args['query']
+    # if request.method == 'GET':
     query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
     results = mongo.db.recipies.find({
         '$or': [
             {'recipe_name': query},
             {'ingredients': query}]})
-    return render_template('search_recipe.html', query=rec_search_query, results=results)
+
+    if results.count() > 0:
+        return render_template('search_recipe.html', query=rec_search_query, results=results)
+        
+    else:
+        return render_template('search_recipe_null.html', query=rec_search_query, results=results)
 
 @app.route('/add_recipe')
 def add_recipe():
@@ -73,7 +80,7 @@ def recipe_selected(recipe_id):
 @app.route('/get_cuisines')
 def get_cuisines():
     return render_template('cuisines.html',
-    recipies=mongo.db.recipies.distinct("cuisine_name"))
+    recipies=mongo.db.recipies.find().distinct("cuisine_name"))
 
 @app.route('/search_cuisines')
 def search_cuisines():
