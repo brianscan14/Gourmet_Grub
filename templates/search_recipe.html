@@ -7,7 +7,7 @@
 
     {% for recipe in results %}
 
-    <div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Recipes</h1>
     <p class="lead">
@@ -18,8 +18,11 @@
             <li>you'll have to : {{ recipe.recipe_prep }}</li>
             <li>{{ recipe.ingredients }}</li>
         </div>
-</p>
+    </p>
   </div>
+    <a href="/recipe_selected/{{ recipe._id }}">
+        <button type="submit" class="btn btn-success" name="action">View full recipe</button>
+    </a>
 </div>
     {% endfor %}
     
