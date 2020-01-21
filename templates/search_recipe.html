@@ -4,7 +4,6 @@
 
 <h1>"{{ query }}" was the search, and you got:</h1>
 
-
     {% for recipe in results %}
 
 <div class="jumbotron jumbotron-fluid">
@@ -22,6 +21,10 @@
   </div>
     <a href="/recipe_selected/{{ recipe._id }}">
         <button type="submit" class="btn btn-success" name="action">View full recipe</button>
+    </a>
+
+    <a href="{{ url_for('get_recipies') }}">
+        <button type="submit" class="btn btn-warning" name="action">return to home page</button>
     </a>
 </div>
     {% endfor %}
