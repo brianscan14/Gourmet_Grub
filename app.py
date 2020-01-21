@@ -88,32 +88,7 @@ def search_cuisines():
     results = mongo.db.recipies.find({'cuisine_name': query})
     return render_template('search_cuisines.html', query=rec_search_query, results=results)
 
-# @app.route('/delete_cuisine/<cuisine_id>')
-# def delete_cuisine(cuisine_id):
-#     mongo.db.recipies.remove({'_id': ObjectId(cuisine_id)})
-#     return redirect(url_for('get_cuisines'))
 
-# @app.route('/edit_cuisine/<cuisine_id>') 
-# def edit_cuisine(cuisine_id): 
-#     return render_template('edit_cuisine.html', 
-#     meal_types=mongo.db.recipies.find_one({'_id': ObjectId(cuisine_id)}))
-
-# @app.route('/update_cuisine/<cuisine_id>', methods=['POST'])
-# def update_cuisine(cuisine_id):
-#     mongo.db.recipies.update(
-#         {'_id': ObjectId(cuisine_id)},
-#         {'cuisine_name': request.form.get('cuisine_name')})
-#     return redirect(url_for('get_cuisines'))
-
-# @app.route('/insert_cuisine', methods=['POST']) 
-# def insert_cuisine():
-#     cuisine_doc = {'cuisine_name': request.form.get('cuisine_name')}
-#     mongo.db.recipies.insert_one(cuisine_doc)
-#     return redirect(url_for('get_cuisines'))
-
-# @app.route('/add_cuisine')
-# def add_cuisine():
-#     return render_template('add_cuisine.html')
 
 @app.route("/find_meals", methods=['GET', 'POST'])
 def find_meals():
