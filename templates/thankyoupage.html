@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Thanks for adding the below recipe</h1>
+    <p class="lead">
+
+    <li>    {{recipe.recipe_name}}</li>
+    <li>    {{recipe.recipe_prep}}</li>
+    <li>    {{recipe.cuisine_name}}</li>
+    <li>    {{recipe.meal_type}}</li>
+    <li>    {{recipe.tools}}</li>
+    <li>    {{recipe.image}}</li>
+</p>
+
+    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Edit</a>
+    <a href="{{ url_for('get_recipies', recipe_id=recipe._id) }}" class="btn btn-warning">Back</a>			
+
+    </div>
+</div>
+
+{% endblock %}
