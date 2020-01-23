@@ -14,12 +14,20 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
-@app.route('/')
+@app.route("/index")
+def index():
+    return render_template('index.html')
+
 @app.route('/get_recipies')
 def get_recipies():
-    return render_template("recipies.html", recipies=mongo.db.recipies.find())
+    curent_page = int(request.args.get('curent_page', 1))
+    total_docs = mongo.db.recipies.count_documents({})
+    total_recipes = mongo.db.recipies.find().skip((curent_page - 1)*6).limit(6)
+    num_pages = range(1, int(total_docs / 6) + 2)
 
-@app.route('/search_recipe', methods=["GET","POST"])
+    return render_template("recipies.html", recipies=total_recipes, curent_page=curent_page, num_pages=num_pages, total=total_docs)
+
+@app.route('/search_recipe', methods=["GET", "POST"])
 def search_recipe():
     rec_search_query = request.args['query']
     query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
@@ -106,16 +114,6 @@ def meal_results():
 @app.route("/thankyoupage")
 def thankyoupage():
     return render_template('thankyoupage.html')
-
-@app.route('/likes/<recipe_id>')
-def likes(recipe_id):
-   
-    mongo.db.recipies.find_one_and_update(
-        {'_id': ObjectId(recipe_id)},
-        { '$inc': { 'likes': 1}}
-    )
-    recipe_db = mongo.db.recipies.find_one_or_404({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('get_recipies'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
