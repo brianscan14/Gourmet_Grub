@@ -6,7 +6,7 @@
 	<h3>Search your favourite recipe:</h3>
 						
 	<form action="{{ url_for('search_recipe') }}">
-		<input type="text" placeholder="Search....." name="query" required>
+		<input type="text" placeholder="e.g search 'chicken' or 'curry'" name="query" required>
 		<div id="search_recipe"><button type="submit">Look</button></div>
 	</form>
 
@@ -38,5 +38,17 @@
 </div>
     {% endfor %}
 </ul> 
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item active" aria-current="page">
+            <a class="page-link"><span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link"href="#"></a>
+        </li>
+    </ul>
+</nav>
 
 {% endblock %}
