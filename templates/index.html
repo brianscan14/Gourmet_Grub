@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h3>Search your favourite recipe:</h3>
+						
+	<form action="{{ url_for('search_recipe') }}">
+		<input type="text" placeholder="e.g search 'chicken' or 'curry'" name="query" required>
+		<div id="search_recipe"><button type="submit">Look</button></div>
+	</form>
 
 {% endblock %}
