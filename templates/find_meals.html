@@ -1,32 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row">
 
-<div class="jumbotron jumbotron-fluid mx-auto">
-  <div class="container">
-    <h1 class="display-4">jumbotron</h1>
-    <p class="lead">
+<div class="container">
+	<div class="row">
+		<div class="col-8 mx-auto">
 
-    <form action="{{ url_for('find_meals')}}" method="POST">
-        <div class="row">
-            <div class="input-field col-12">
-                    <select id="meal_type" name="meal_type">
-                        <option value="" disabled selected>Select one</option>
-                        <option value="breakfast">Breakfast</option>
-                        <option value="lunch">Lunch</option>
-                        <option value="dinner">Dinner</option>
-                    </select>
-            </div>
-        </div>    
-  
-    <div class="row">
-        <button class="btn btn-success" type="submit" name="action">Find Cuisine</button>
-    </div>
-    </form>
-    </p>
-      </div>
-</div>
+			<div class="jumbotron jumbotron-fluid mx-auto">
+				<div class="row">
+					<div class="col-12">
+						<h1 class="display-4 center-text">Select Meal Time:</h1>
+					</div>
+                </div>
+
+                <div class="row">
+					<div class="col-12">
+						<form action="{{ url_for('find_meals')}}" method="POST">
+							<div class="row mt-3">
+								<div class="input-field col-12 center-text">
+									<select id="meal_type" name="meal_type">
+                                        <option value="" disabled selected>Select one</option>
+                                        <option value="breakfast">Breakfast</option>
+                                        <option value="lunch">Lunch</option>
+                                        <option value="dinner">Dinner</option>
+                                    </select>
+								</div>
+							</div>
+
+							<div class="row mt-5">
+								<div class="col-12 center-text">
+									<button class="btn btn-success" type="submit" name="action">Find Cuisine</button>
+								</div>
+							</div>
+						</form>
+					</div>
+                </div>
+				
+			</div>
+
+		</div>
+	</div>
 </div>
 
 {% endblock %}
