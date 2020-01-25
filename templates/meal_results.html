@@ -6,13 +6,11 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Recipe</h1>
+    <h1 class="display-4 caps">{{ cuisine.recipe_name }}</h1>
     <p class="lead">
  
         <h3>Recipe:</h3>
-    
-        
-            <li>{{ cuisine.recipe_name }}</li>
+            <li>{{ cuisine.meal_type }}</li>
             <li>you'll have to : {{ cuisine.recipe_prep }}</li>
             <li>{{ cuisine.ingredients }}</li>
         </p>
