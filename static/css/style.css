@@ -1,0 +1,14 @@
+body {
+    background-image: url("{{url_for('static', filename='/img/white-painted-wall.jpg')}}") 
+}
+
+
+/* Index page */
+
+.center-text {
+    text-align: center;
+}
+
+.search-bar {
+    width: 60%;
+}
