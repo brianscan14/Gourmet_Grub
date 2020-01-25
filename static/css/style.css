@@ -1,9 +1,16 @@
 body {
-    background-image: url("{{url_for('static', filename='/img/white-painted-wall.jpg')}}") 
+    background-color: rgb(253, 253, 249);
 }
 
 
+
 /* Index page */
+
+
+.searchatron {
+    background-color: rgb(245, 226, 202);
+    height: 70vh;
+}
 
 .center-text {
     text-align: center;
@@ -11,4 +18,5 @@ body {
 
 .search-bar {
     width: 60%;
+    height: 50px;
 }
