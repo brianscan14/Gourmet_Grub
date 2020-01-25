@@ -39,19 +39,10 @@
     {% endblock %}
     </div>
 
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript">jQuery.noConflict();
-jQuery(document).ready(function($) {
-  $('.form-caps').keyup(function(event) {
-    var textBox = event.target;
-    var start = textBox.selectionStart;
-    var end = textBox.selectionEnd;
-    textBox.value = textBox.value.charAt(0).toUpperCase() + textBox.value.slice(1).toLowerCase();
-    textBox.setSelectionRange(start, end);
-  });
-});</script>
+    <script src="{{url_for('static', filename='js/script.js')}}" type="text/javascript"></script>
+    
 </body>
 </html>
