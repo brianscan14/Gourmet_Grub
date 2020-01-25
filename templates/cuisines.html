@@ -1,22 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h2>Cuisines:</h2>
-
 	{% for cuisine in recipies %}
-    
+
+<div class="container">
 	<div class="row">
 		<div class="col-8 mx-auto">
 			<div class="jumbotron jumbotron-fluid">
-				<div class="container">
-					<h1 class="display-4">{{ cuisine }}</h1>
-					<p class="lead">recipe</p>
-				</div>
-
-				<form action="{{ url_for('search_cuisines') }}">
-				<div id="search_cuisines"><button type="submit" name="query" value="{{cuisine}}">
-	                View all {{cuisine}} style recipes</button></div>
-				</form>
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="display-4 center-text">{{ cuisine }}</h1>
+                        </div>
+                    </div>
+					<div class="row mt-3">
+                        <div class="col">
+				            <form action="{{ url_for('search_cuisines') }}">
+				            <div id="search_cuisines" class="center-text">
+                                <button type="submit" name="query" value="{{cuisine}}" class="btn btn-outline-success">
+	                            View all {{cuisine}} style recipes</button>
+                            </div>
+				            </form>
+                        </div>
+			        </div>
+                </div>
 			</div>
 		</div>
 	</div>
