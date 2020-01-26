@@ -21,3 +21,15 @@ body {
     width: 60%;
     height: 50px;
 }
+
+/* all recipes page */
+
+.card-img-top {
+    height: 15em;
+}
+
+.card-text {
+    height: 100px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
