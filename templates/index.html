@@ -3,17 +3,17 @@
 
 <div class="jumbotron jumbotron-fluid searchatron">
   <div class="container-fluid">
+
     <div class="row mt-5">
         <div class="col-12 ">
             <h1 class="display-4 mx-auto center-text">Search your recipe:</h1>
         </div>
     </div>
     
+    <form action="{{ url_for('search_recipe') }}" >
     <div class="row mt-5">
         <div class="col-12 form-group">
-            <form action="{{ url_for('search_recipe') }}" >
-                <input class="search-bar form-control mx-auto" type="text" placeholder="e.g search 'chicken' or 'curry'" name="query" required>
-            </form>
+            <input class="search-bar form-control mx-auto" type="text" placeholder="e.g search 'chicken' or 'curry'" name="query" required>
         </div>
     </div>
     <div class="row mt-5">
@@ -23,6 +23,8 @@
             </div>
         </div>
     </div>
+    </form>
+
   </div>
 </div>
 
