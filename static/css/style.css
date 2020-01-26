@@ -1,11 +1,12 @@
 body {
-    background-color: rgb(253, 253, 249);
+    background-image:url("../img/white-painted-wall.jpg");
 }
-
-
 
 /* Index page */
 
+.container {
+    background-color: white;
+}
 
 .searchatron {
     background-color: rgb(245, 226, 202);
