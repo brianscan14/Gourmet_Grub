@@ -1,16 +1,46 @@
 {% extends 'base.html' %}
 {% block content %} 
 
+<div class="container">
 {% for cuisine in recipies %}
 
+<div class="container my-5">
+	<div class="row">
+		<div class="col-8 mx-auto my-5">
 
-<div class="jumbotron jumbotron-fluid">
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-5">
+      <img src="{{cuisine.image}}" class="card-img meals-image" alt="recipe image">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body card-body-meals">
+        <h4 class="card-title">{{ cuisine.recipe_name }}</h4>
+        <p class="card-text">{{ cuisine.recipe_desc }}</p>
+
+        <p class="card-text"><b>Cuisine:</b> {{ cuisine.cuisine_name }}</p>
+      </div>
+    </div>
+  </div>
+    <div class="card-footer">
+        <a href="/recipe_selected/{{ cuisine._id }}">
+        <button type="submit" class="btn btn-success" name="action">View full recipe</button>
+        </a>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4 caps">{{ cuisine.recipe_name }}</h1>
     <p class="lead">
  
         <h3>Recipe:</h3>
             <li>{{ cuisine.meal_type }}</li>
+             <img src="{{cuisine.image}}" class="card-img-top" alt="recipe image">
             <li>you'll have to : {{ cuisine.recipe_prep }}</li>
             <li>{{ cuisine.ingredients }}</li>
         </p>
@@ -19,10 +49,13 @@
         <a href="/recipe_selected/{{ cuisine._id }}">
         <button type="submit" class="btn btn-success" name="action">View full recipe</button>
         </a>
-        </div>
+</div> -->
 
 {% endfor %}
+</div>
 
+<div class="center-text mb-5">
 <a href="{{ url_for('find_meals') }}" class="btn btn-warning">Go Back</a>
+</div>
 
 {% endblock %}

@@ -5,28 +5,38 @@
 
     {% for recipe in results %}
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4 caps">{{recipe.recipe_name}}</h1>
-    <p class="lead">
+<div class="container my-5">
+	<div class="row">
+		<div class="col-8 mx-auto my-5">
 
-    <li>    {{recipe.recipe_prep}}</li>
-    <li>    {{recipe.cuisine_name}}</li>
-    <li>    {{recipe.meal_type}}</li>
-    <li>    {{recipe.tools}}</li>
-    <li>    {{recipe.image}}</li>
-</p>
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-5">
+      <img src="{{recipe.image}}" class="card-img meals-image" alt="recipe image">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body card-body-meals">
+        <h4 class="card-title">{{ recipe.recipe_name }}</h4>
+        <p class="card-text">{{ recipe.recipe_desc }}</p>
 
-<a href="/recipe_selected/{{ recipe._id }}">
-<button type="submit" class="btn btn-success" name="action">View full recipe</button>
-</a>
-
+        <p class="card-text"><b>Cuisine:</b> {{ recipe.cuisine_name }}</p>
+      </div>
+    </div>
+  </div>
+    <div class="card-footer">
+        <a href="/recipe_selected/{{ recipe._id }}">
+        <button type="submit" class="btn btn-success" name="action">View full recipe</button>
+        </a>
+    </div>
 </div>
+
+        </div>
+    </div>
 </div>
     {% endfor %}
 </ul> 
 
-<div class="row">
+<div class="center-text mb-5">
     <a href="{{ url_for('get_cuisines') }}" class="btn btn-warning">Back</a>
 </div>
 
