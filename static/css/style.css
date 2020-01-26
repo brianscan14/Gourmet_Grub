@@ -33,3 +33,10 @@ body {
     overflow-y: hidden;
     text-overflow: ellipsis;
 }
+
+/* cuisne page */
+
+.cuisine-container {
+    width: 80%;
+    height: 350px;
+}
