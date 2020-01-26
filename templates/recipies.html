@@ -2,29 +2,26 @@
 {% block content %}
 
 
-<div class="container">
+<div class="container my-3">
     <div class="row">
 
     {% for recipe in recipies %}
-    <div class="col-12 col-md-4">
-
-	<div class="card">
-		<img src="{{recipe.image}}" class="card-img-top" alt="recipe image">
-		<div class="card-body">
-			<h5 class="card-title">{{recipe.recipe_name}}</h5>
-			<p class="card-text">{{recipe.recipe_desc}}</p>
-			<a href="/recipe_selected/{{ recipe._id }}">
-            <button type="submit" class="btn btn-success" name="action">View full recipe</button>
-            </a>
-		</div>
-	</div>
-
+    <div class="col-12 col-md-4 my-4">
+        <div class="card">
+            <img src="{{recipe.image}}" class="card-img-top" alt="recipe image">
+            <div class="card-body">
+                <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                <p class="card-text">{{recipe.recipe_desc}}</p>
+                <a href="/recipe_selected/{{ recipe._id }}">
+                <button type="submit" class="btn btn-success" name="action">View full recipe</button>
+                </a>
+            </div>
+        </div>
     </div>
     {% endfor %}
 
     </div>
 </div>
-
 
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
