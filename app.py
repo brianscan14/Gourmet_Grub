@@ -72,6 +72,7 @@ def update_recipe(recipe_id):
     {
         'recipe_name':request.form.get('recipe_name'),
         'recipe_prep':request.form.get('recipe_prep'),
+        'recipe_desc' : request.form.get('recipe_desc'),
         'cuisine_name': request.form.get('cuisine_name'),
         'tools': request.form.get('tools'),
         'image':request.form.get('image'),
