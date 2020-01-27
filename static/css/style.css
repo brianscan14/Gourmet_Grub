@@ -1,5 +1,6 @@
 body {
     background-image:url("../img/white-painted-wall.jpg");
+    height: 100vh;
 }
 
 /* Index page */
@@ -36,10 +37,6 @@ body {
 
 /* cuisne page */
 
-.cuisine-title {
-    overflow-y: hidden;
-}
-
 .cuisine-container {
     width: 80%;
     height: 350px;
@@ -54,4 +51,13 @@ body {
 
 .card-body-meals {
     height: 240px;
+}
+
+/* footer */
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
