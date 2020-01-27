@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-    <div class="card-footer">
+    <div class="card-footer centering-text">
         <a href="/recipe_selected/{{ recipe._id }}">
         <button type="submit" class="btn btn-success" name="action">View full recipe</button>
         </a>
@@ -33,7 +33,7 @@
 </div>
     {% endfor %}
 
-<div class="center-text mb-5">
+<div class="centering-text mb-5">
     <a href="{{ url_for('get_cuisines') }}" class="btn btn-warning">Back</a>
 </div>
 
