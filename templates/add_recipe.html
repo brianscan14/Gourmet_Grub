@@ -2,65 +2,92 @@
 {% block content %}
 
 <h3>Add Recipe</h3>
+<div class="container">
 <div class="row">
-    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col-9 form-caps">
+<div class="col">
+    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col-10 form-caps">
         <div class="row">
-                <div class="col-7">
+                <div class="col-">
                 <select id="meal_types" name="meal_type" required>meal Type
                         <option value="" disabled selected>Select one</option>
                         <option value="breakfast">Breakfast</option>
                         <option value="lunch">Lunch</option>
                         <option value="dinner">Dinner</option>
                 </select>
+                </div>
         </div>
-        <div class="row">
-            <div class="col-7">
-                <input id="recipe_name" name="recipe_name" type="text" spellcheck="true" required>
-                <label>recipe Name</label>
+
+        <div class="row my-4">
+            <div class="col-1 ml-auto my-auto">
+                <span><i class="fas fa-cogs fa-2x"></i></span>
+            </div>
+            <div class="col-11">
+                <input class="form-control form-control-lg form-caps" id="recipe_name" name="recipe_name" type="text" spellcheck="true" maxlength="40" placeholder="Enter recipe name here...">
             </div>
         </div>
-        <div class="row">
-            <div class="col-7">
-                <textarea name="recipe_desc" id="recipe_desc" spellcheck="true" required></textarea>
-                <label>Short description</label>
+
+        <div class="row my-4">
+            <div class="col-1 ml-auto my-auto">
+                <span><i class="fas fa-cogs fa-2x"></i></span>
+            </div>
+            <div class="col-11">
+                <input class="form-control form-control-lg form-caps" id="recipe_desc" name="recipe_desc" type="text" spellcheck="true" minlength="30" maxlength="100" placeholder="Enter recipe desc here...">
             </div>
         </div>
-        <div class="row">
-            <div class="col-7">
-                <textarea name="recipe_prep" id="recipe_prep" spellcheck="true" required></textarea>
-                <label>recipe prep</label>
+
+        <div class="row my-4">
+            <div class="col-1 ml-auto my-auto">
+                <span><i class="fas fa-cogs fa-2x"></i></span>
+            </div>
+            <div class="col-11">
+                <input class="form-control form-control-lg" id="recipe_prep" name="recipe_prep" type="text" spellcheck="true" placeholder="Enter recipe prep here...">
             </div>
         </div>
-        <div class="row">
-            <div class="col-7">
-                <textarea name="cuisine_name" id="cuisine_name" spellcheck="true" required></textarea>
-                <label>cuisine</label>
+
+        <div class="row my-4">
+            <div class="col-1 ml-auto my-auto">
+                <span><i class="fas fa-cogs fa-2x"></i></span>
+            </div>
+            <div class="col-11">
+                <input class="form-control form-control-lg" id="cuisine_name" name="cuisine_name" type="text" spellcheck="true" minlength="2" maxlength="40" placeholder="Enter cuisine name here...">
             </div>
         </div>
-        <div class="row">
-            <div class="col-7">
-                <textarea name="tools" id="tools" spellcheck="true" required></textarea>
-                <label>tools</label>
+
+        <div class="row my-4">
+            <div class="col-1 ml-auto my-auto">
+                <span><i class="fas fa-cogs fa-2x"></i></span>
+            </div>
+            <div class="col-11">
+                <input class="form-control form-control-lg" id="tools" name="tools" type="text" spellcheck="true" placeholder="Enter recipe tools here...">
             </div>
         </div>
-        <div class="row">
-            <div class="col-7">
-                <textarea placeholder="add image url" name="image" id="image" spellcheck="true" required></textarea>
-                <label>image</label>
+
+        <div class="row my-4">
+            <div class="col-1 ml-auto my-auto">
+                <span><i class="fas fa-cogs fa-2x"></i></span>
+            </div>
+            <div class="col-11">
+                <input class="form-control form-control-lg" id="image" name="image" type="text" spellcheck="true"  placeholder="Enter recipe image here...">
             </div>
         </div>
-        <div class="row">
-            <div class="col-7">
-                <textarea name="ingredients" id="ingredients" spellcheck="true" required></textarea>
-                <label>ingredients</label>
+
+        <div class="row my-4">
+            <div class="col-1 ml-auto my-auto">
+                <span><i class="fas fa-cogs fa-2x"></i></span>
+            </div>
+            <div class="col-11">
+                <input class="form-control form-control-lg" id="ingredients" name="ingredients" type="text" spellcheck="true" minlength="10" maxlength="40" placeholder="Enter recipe ingredients here...">
             </div>
         </div>
+
         <div class="row">
             <button class="btn btn-success" type="submit" name="action">Add recipe
             </button>
             <a href="{{ url_for('get_recipies') }}" class="btn btn-warning">Cancel</a>
         </div>
     </form>
+</div>
+</div>
 </div>
 
 {% endblock %}
