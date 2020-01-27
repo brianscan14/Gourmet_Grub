@@ -22,6 +22,19 @@ body {
     height: 50px;
 }
 
+.form-search-bar {
+    border: none;
+    border-bottom: 2px solid rgba(185, 30, 100, 0.192);
+}
+
+.form-search-bar {
+    color: #495057;
+    background-color: #fff;
+    border-color: #862828a6;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(206, 198, 198, 0);
+}
+
 /* all recipes page */
 
 .card-img-top {
@@ -65,12 +78,12 @@ body {
 
 /* forms styling */
 
-.form-control {
+.form-control-recipe {
     border: none;
     border-bottom: 2px solid rgba(77, 68, 72, 0.192);
 }
 
-.form-control:focus {
+.form-control-recipe:focus {
     color: #495057;
     background-color: #fff;
     border-color: #2e6e43a6;
