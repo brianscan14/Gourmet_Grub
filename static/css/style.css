@@ -56,8 +56,22 @@ body {
 /* footer */
 
 .footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
+
+/* forms styling */
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid rgba(77, 68, 72, 0.192);
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #2e6e43a6;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(206, 198, 198, 0);
