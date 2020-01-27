@@ -1,93 +1,105 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 
-<h3>Add Recipe</h3>
-<div class="container">
-<div class="row">
-<div class="col">
-    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col-10 form-caps">
-        <div class="row">
-                <div class="col-">
-                <select id="meal_types" name="meal_type" required>meal Type
-                        <option value="" disabled selected>Select one</option>
-                        <option value="breakfast">Breakfast</option>
-                        <option value="lunch">Lunch</option>
-                        <option value="dinner">Dinner</option>
-                </select>
+
+<div class="container mt-5">
+
+    <div class="row my-5">
+        <div class="col-6 mx-auto mt-5">
+            <h3 class="centering-text">Add recipe below</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <form action="{{ url_for('insert_recipe') }}" method="POST" class="col-10 form-caps mx-auto">
+                <div class="row">
+                        <div class="col">
+                        <select id="meal_types" name="meal_type" required>Meal Type
+                                <option value="" disabled selected>Select the type of Meal</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                        </select>
+                        </div>
                 </div>
-        </div>
 
-        <div class="row my-4">
-            <div class="col-1 ml-auto my-auto">
-                <span><i class="fas fa-cogs fa-2x"></i></span>
-            </div>
-            <div class="col-11">
-                <input class="form-control form-control-lg form-caps" id="recipe_name" name="recipe_name" type="text" spellcheck="true" maxlength="40" placeholder="Enter recipe name here...">
-            </div>
-        </div>
+                <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-cogs fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-lg form-caps" id="recipe_name" name="recipe_name" type="text" spellcheck="true" maxlength="40" placeholder="Enter recipe name here...">
+                    </div>
+                </div>
 
-        <div class="row my-4">
-            <div class="col-1 ml-auto my-auto">
-                <span><i class="fas fa-cogs fa-2x"></i></span>
-            </div>
-            <div class="col-11">
-                <input class="form-control form-control-lg form-caps" id="recipe_desc" name="recipe_desc" type="text" spellcheck="true" minlength="30" maxlength="100" placeholder="Enter recipe desc here...">
-            </div>
-        </div>
+                <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-edit fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-lg form-caps" id="recipe_desc" name="recipe_desc" type="text" spellcheck="true" minlength="30" maxlength="100" placeholder="Enter recipe desc here...">
+                    </div>
+                </div>
 
-        <div class="row my-4">
-            <div class="col-1 ml-auto my-auto">
-                <span><i class="fas fa-cogs fa-2x"></i></span>
-            </div>
-            <div class="col-11">
-                <input class="form-control form-control-lg" id="recipe_prep" name="recipe_prep" type="text" spellcheck="true" placeholder="Enter recipe prep here...">
-            </div>
-        </div>
+                <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-clipboard-list fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-lg" id="recipe_prep" name="recipe_prep" type="text" spellcheck="true" placeholder="Enter recipe prep here...">
+                    </div>
+                </div>
 
-        <div class="row my-4">
-            <div class="col-1 ml-auto my-auto">
-                <span><i class="fas fa-cogs fa-2x"></i></span>
-            </div>
-            <div class="col-11">
-                <input class="form-control form-control-lg" id="cuisine_name" name="cuisine_name" type="text" spellcheck="true" minlength="2" maxlength="40" placeholder="Enter cuisine name here...">
-            </div>
-        </div>
+                <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-flag fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-lg" id="cuisine_name" name="cuisine_name" type="text" spellcheck="true" minlength="2" maxlength="40" placeholder="Enter cuisine name here...">
+                    </div>
+                </div>
 
-        <div class="row my-4">
-            <div class="col-1 ml-auto my-auto">
-                <span><i class="fas fa-cogs fa-2x"></i></span>
-            </div>
-            <div class="col-11">
-                <input class="form-control form-control-lg" id="tools" name="tools" type="text" spellcheck="true" placeholder="Enter recipe tools here...">
-            </div>
-        </div>
+                <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-calendar-week fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-lg" id="tools" name="tools" type="text" spellcheck="true" placeholder="Enter recipe tools here...">
+                    </div>
+                </div>
 
-        <div class="row my-4">
-            <div class="col-1 ml-auto my-auto">
-                <span><i class="fas fa-cogs fa-2x"></i></span>
-            </div>
-            <div class="col-11">
-                <input class="form-control form-control-lg" id="image" name="image" type="text" spellcheck="true"  placeholder="Enter recipe image here...">
-            </div>
-        </div>
+                <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-images fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-lg" id="image" name="image" type="text" spellcheck="true"  placeholder="Enter recipe image here...">
+                    </div>
+                </div>
 
-        <div class="row my-4">
-            <div class="col-1 ml-auto my-auto">
-                <span><i class="fas fa-cogs fa-2x"></i></span>
-            </div>
-            <div class="col-11">
-                <input class="form-control form-control-lg" id="ingredients" name="ingredients" type="text" spellcheck="true" minlength="10" maxlength="40" placeholder="Enter recipe ingredients here...">
-            </div>
-        </div>
+                <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-utensils fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-lg" id="ingredients" name="ingredients" type="text" spellcheck="true" minlength="10" maxlength="40" placeholder="Enter recipe ingredients here...">
+                    </div>
+                </div>
 
-        <div class="row">
-            <button class="btn btn-success" type="submit" name="action">Add recipe
-            </button>
-            <a href="{{ url_for('get_recipies') }}" class="btn btn-warning">Cancel</a>
+                <div class="row centering-text">
+                    <div class="col">
+                        <button class="btn btn-success my-4" type="submit" name="action">Add recipe</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+
 </div>
-</div>
+
+<div class="centering-text my-5">
+    <a href="{{ url_for('get_recipies') }}" class="btn btn-warning">Cancel</a>
 </div>
 
 {% endblock %}
