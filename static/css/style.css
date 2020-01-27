@@ -1,6 +1,5 @@
 body {
     background-image:url("../img/white-painted-wall.jpg");
-    height: 100vh;
 }
 
 /* Index page */
@@ -10,8 +9,8 @@ body {
 }
 
 .searchatron {
-    background-color: rgb(245, 226, 202);
-    height: 70vh;
+    background-color: rgb(235, 226, 225);
+    height: 60vh;
 }
 
 .centering-text {
@@ -35,6 +34,7 @@ body {
     text-overflow: ellipsis;
 }
 
+
 /* cuisne page */
 
 .cuisine-container {
@@ -51,6 +51,7 @@ body {
 
 .card-body-meals {
     height: 240px;
+    overflow-y: 
 }
 
 /* footer */
@@ -75,3 +76,4 @@ body {
     border-color: #2e6e43a6;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(206, 198, 198, 0);
+}
