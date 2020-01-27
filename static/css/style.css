@@ -13,7 +13,7 @@ body {
     height: 70vh;
 }
 
-.center-text {
+.centering-text {
     text-align: center;
 }
 
@@ -28,13 +28,17 @@ body {
     height: 15em;
 }
 
-.card-text {
+.card-text-recipes {
     height: 100px;
     overflow-y: hidden;
     text-overflow: ellipsis;
 }
 
 /* cuisne page */
+
+.cuisine-title {
+    overflow-y: hidden;
+}
 
 .cuisine-container {
     width: 80%;
@@ -49,5 +53,5 @@ body {
 }
 
 .card-body-meals {
-    height: 220px;
+    height: 240px;
 }
