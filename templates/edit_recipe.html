@@ -1,10 +1,18 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 
+<div class="container mt-5">
 
-<h3>edit recipe</h3>
+    <div class="row my-5">
+        <div class="col-6 mx-auto mt-5">
+            <h3 class="centering-text">Add recipe below</h3>
+        </div>
+    </div>
 
-<form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
+
+    <div class="row">
+        <div class="col">
+        <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
  
 			<div class="row">
 				<div class="col-8">
@@ -17,52 +25,78 @@
                     </select>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-8">
-                <label>recipe Name</label>
-				    <input id="recipe_name" name="recipe_name" type="text" spellcheck="true"  value="{{recipe.recipe_name}}">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-8">
-                <label>Short description</label>
-                    <input id="recipe_desc" name="recipe_desc" type="text" spellcheck="true"  value="{{recipe.recipe_desc}}">
-				</div>
-			</div>
+
+            <div class="row my-4">
+                <div class="col-1 ml-auto my-auto">
+                    <span><i class="fas fa-cogs fa-2x"></i></span>
+                </div>
+                <div class="col-11">
+                    <input class="form-control form-control-recipe form-control-lg" id="recipe_name" name="recipe_name" type="text" spellcheck="true" maxlength="18" value="{{recipe.recipe_name}}">
+                </div>
+            </div>
+            <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-edit fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-recipe form-control-lg" id="recipe_desc" name="recipe_desc" type="text" spellcheck="true" minlength="100" maxlength="250" value="{{recipe.recipe_desc}}">
+                    </div>
+                </div>
+            
+
             <div class="row">
 				<div class="col-8">
                 <label>recipe_prep</label>
 				    <input id="recipe_prep" name="recipe_prep" type="text" spellcheck="true"  value="{{recipe.recipe_prep}}">
 				</div>
 			</div>
-            <div class="row">
-				<div class="col-8">
-                <label>cuisine</label>
-				    <input id="cuisine_name" name="cuisine_name" type="text" spellcheck="true"  value="{{recipe.cuisine_name}}">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-8">
-                <label>tools</label>
-				    <input id="tools" name="tools" type="text" spellcheck="true"  value="{{recipe.tools}}">
-				</div>
-			</div>
-            <div class="row">
-				<div class="col-8">
-                <label>image</label>
-				    <input id="image" name="image" type="text" spellcheck="true"  value="{{recipe.image}}">
-				</div>
-			</div>
-            <div class="row">
-				<div class="col-8">
-                <label>ingredients</label>
-				    <input id="ingredients" name="ingredients" spellcheck="true"  type="text" value="{{recipe.ingredients}}">
-				</div>
-			</div>
-			<div class="row">
-				<button class="btn btn-primary" type="submit" name="action">Save Changes</button>
-                <a href="{{ url_for('recipe_selected', recipe_id=recipe._id) }}" class="btn btn-warning">Cancel</a>
+
+
+            <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-flag fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-recipe form-control-lg" id="cuisine_name" name="cuisine_name" type="text" spellcheck="true" minlength="2" maxlength="40" value="{{recipe.cuisine_name}}">
+                    </div>
             </div>
-</form>
+            <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-calendar-week fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-recipe form-control-lg" id="tools" name="tools" type="text" spellcheck="true" value="{{recipe.tools}}">
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-images fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-recipe form-control-lg" id="image" name="image" type="text" spellcheck="true"  value="{{recipe.image}}">
+                    </div>
+                </div>
+            <div class="row my-4">
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-utensils fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-recipe form-control-lg" id="ingredients" name="ingredients" type="text" spellcheck="true" minlength="10" maxlength="40" value="{{recipe.ingredients}}">
+                    </div>
+                </div>
+
+        </form>
+        </div>
+    </div>
+
+
+	<div class="row centering-text">
+		<button class="btn btn-primary" type="submit" name="action">Save Changes</button>
+        <a href="{{ url_for('recipe_selected', recipe_id=recipe._id) }}" class="btn btn-warning">Cancel</a>
+    </div>
+
+</div>
+
+
 
 {% endblock %}
