@@ -11,8 +11,8 @@
     </div>
 
     <div class="row">
-        <div class="col">
-            <form action="{{ url_for('insert_recipe') }}" method="POST" class="col-10 form-caps mx-auto">
+        <div class="col-10 mx-auto">
+            <form action="{{ url_for('insert_recipe') }}" method="POST" class="form-caps">
                 <div class="row">
                         <div class="col">
                         <select id="meal_types" name="meal_type" required>Meal Type
@@ -29,7 +29,7 @@
                         <span><i class="fas fa-cogs fa-2x"></i></span>
                     </div>
                     <div class="col-11">
-                        <input class="form-control form-control-recipe form-control-lg" id="recipe_name" name="recipe_name" type="text" spellcheck="true" maxlength="18" placeholder="Enter recipe name here...">
+                        <input class="form-control form-control-recipe form-control-lg" required id="recipe_name" name="recipe_name" type="text" spellcheck="true" maxlength="18" placeholder="Enter recipe name here...">
                     </div>
                 </div>
 
@@ -38,14 +38,14 @@
                         <span><i class="fas fa-edit fa-2x"></i></span>
                     </div>
                     <div class="col-11">
-                        <input class="form-control form-control-recipe form-control-lg" id="recipe_desc" name="recipe_desc" type="text" spellcheck="true" minlength="100" maxlength="250" placeholder="Recipe description here...">
+                        <input class="form-control form-control-recipe form-control-lg" required id="recipe_desc" name="recipe_desc" type="text" spellcheck="true" minlength="100" maxlength="250" placeholder="Recipe description here...">
                     </div>
                 </div>
 
 				<div class="row">
 					<col-12>
 						<div class="container1 mb-5">
-							<button class="add_form_field">Add New Field &nbsp; <span style="font-size:16px; font-weight:bold;">+ </span></button>
+							<button class="add_form_field">Add New Field +</button>
 							<div><input type="text" name="recipe_prep" id="recipe_prep"></div>
 							</div>
 					</col-12>
@@ -60,14 +60,12 @@
                     </div>
                 </div> -->
 
-
-
                 <div class="row my-4">
                     <div class="col-1 ml-auto my-auto">
                         <span><i class="fas fa-flag fa-2x"></i></span>
                     </div>
                     <div class="col-11">
-                        <input class="form-control form-control-recipe form-control-lg" id="cuisine_name" name="cuisine_name" type="text" spellcheck="true" minlength="2" maxlength="40" placeholder="Cuisine name...">
+                        <input class="form-control form-control-recipe form-control-lg" required id="cuisine_name" name="cuisine_name" type="text" spellcheck="true" minlength="2" maxlength="40" placeholder="Cuisine name...">
                     </div>
                 </div>
 
@@ -76,7 +74,7 @@
                         <span><i class="fas fa-calendar-week fa-2x"></i></span>
                     </div>
                     <div class="col-11">
-                        <input class="form-control form-control-recipe form-control-lg" id="tools" name="tools" type="text" spellcheck="true" placeholder="Recipe tools...">
+                        <input class="form-control form-control-recipe form-control-lg" required id="tools" name="tools" type="text" spellcheck="true" placeholder="Recipe tools...">
                     </div>
                 </div>
 
@@ -85,7 +83,7 @@
                         <span><i class="fas fa-images fa-2x"></i></span>
                     </div>
                     <div class="col-11">
-                        <input class="form-control form-control-recipe form-control-lg" id="image" name="image" type="text" spellcheck="true"  placeholder="Enter a URL of recipe image...">
+                        <input class="form-control form-control-recipe form-control-lg" required id="image" name="image" type="text" spellcheck="true"  placeholder="Enter a URL of recipe image...">
                     </div>
                 </div>
 
@@ -94,7 +92,7 @@
                         <span><i class="fas fa-utensils fa-2x"></i></span>
                     </div>
                     <div class="col-11">
-                        <input class="form-control form-control-recipe form-control-lg" id="ingredients" name="ingredients" type="text" spellcheck="true" minlength="10" maxlength="40" placeholder="Recipe ingredients...">
+                        <input class="form-control form-control-recipe form-control-lg" required id="ingredients" name="ingredients" type="text" spellcheck="true" minlength="10" maxlength="40" placeholder="Recipe ingredients...">
                     </div>
                 </div>
 
