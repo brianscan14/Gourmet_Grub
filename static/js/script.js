@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 // testing the add form function
 
 $(document).ready(function() {
-    var max_fields      = 10;
+    var max_fields      = 15;
     var wrapper         = $(".container1");
     var add_button      = $(".add_form_field");
  
@@ -28,7 +28,7 @@ $(document).ready(function() {
         }
   else
   {
-  alert('You Reached the limits')
+  alert('You Reached the limit of fields!')
   }
     });
  
