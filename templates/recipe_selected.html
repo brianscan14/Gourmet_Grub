@@ -28,7 +28,9 @@
     <div class="row">
         <div class="col-12 col-sm-6">
             <h2>Steps:</h2>
-            {{recipe.recipe_prep}}
+                {% for step in recipe.recipe_prep %}
+                <div>  {{ step }} </div>
+                {% endfor %}
         </div>
     </div>
 

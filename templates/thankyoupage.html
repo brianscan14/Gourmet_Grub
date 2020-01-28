@@ -7,7 +7,9 @@
     <p class="lead">
 
     <li>    {{recipe.recipe_name}}</li>
-    <li>    {{recipe.recipe_prep}}</li>
+    {% for step in recipe.recipe_prep %}
+      <div>  {{ step }} </div>
+    {% endfor %}
     <li>    {{recipe.cuisine_name}}</li>
     <li>    {{recipe.meal_type}}</li>
     <li>    {{recipe.tools}}</li>
