@@ -56,14 +56,14 @@ def insert_recipe():
     recipies = mongo.db.recipies
     this_recipe = recipies.insert_one(
         {
-        'recipe_name':request.form.get('recipe_name'),
-        'recipe_prep':request.form.getlist('recipe_prep'),
-        'recipe_desc' : request.form.get('recipe_desc'),
+        'recipe_name': request.form.get('recipe_name'),
+        'recipe_prep': request.form.getlist('recipe_prep'),
+        'recipe_desc': request.form.get('recipe_desc'),
         'cuisine_name': request.form.get('cuisine_name'),
         'tools': request.form.get('tools'),
-        'image':request.form.get('image'),
-        'ingredients':request.form.get('ingredients'),
-        'meal_type':request.form.get('meal_type')
+        'image': request.form.get('image'),
+        'ingredients': request.form.get('ingredients'),
+        'meal_type': request.form.get('meal_type')
     })
     ret = recipies.find_one({"_id": this_recipe.inserted_id})
     return render_template('thankyoupage.html', recipe=ret)
@@ -79,14 +79,14 @@ def update_recipe(recipe_id):
     recipies = mongo.db.recipies
     recipies.update( {'_id': ObjectId(recipe_id)}, 
     {
-        'recipe_name':request.form.get('recipe_name'),
-        'recipe_prep':request.form.getlist('recipe_prep'),
-        'recipe_desc' : request.form.get('recipe_desc'),
+        'recipe_name': request.form.get('recipe_name'),
+        'recipe_prep': request.form.getlist('recipe_prep'),
+        'recipe_desc': request.form.get('recipe_desc'),
         'cuisine_name': request.form.get('cuisine_name'),
         'tools': request.form.get('tools'),
-        'image':request.form.get('image'),
-        'ingredients':request.form.get('ingredients'),
-        'meal_type':request.form.get('meal_type')
+        'image': request.form.get('image'),
+        'ingredients': request.form.get('ingredients'),
+        'meal_type': request.form.get('meal_type')
     })
     return redirect(url_for('get_recipies'))
 
