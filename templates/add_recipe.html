@@ -42,14 +42,52 @@
                     </div>
                 </div>
 
-				<div class="row">
+				<!-- <div class="row">
 					<col-12>
 						<div class="container1 mb-5">
 							<button class="add_form_field">Add New Field +</button>
 							<div><input type="text" name="recipe_prep" id="recipe_prep"></div>
-							</div>
+						</div>
 					</col-12>
+				</div> -->
+
+                <div class="row">
+
+                <div class="col-1 ml-auto my-auto">
+					<span><i class="fas fa-clipboard-list fa-2x"></i></span>
 				</div>
+				<div class="col-11">
+                    <input class="form-control form-control-recipe form-control-lg" type="text" 
+                    data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="add steps">
+			    </div>
+
+
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Add steps below as needed</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="container1 mb-5">
+							<button class="add_form_field">Add New Field +</button>
+							<div><input type="text" name="recipe_prep" id="recipe_prep"></div>
+						</div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back to recipe</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+
+                </div>
 
                 <!-- <div class="row my-4">
                     <div class="col-1 ml-auto my-auto">

@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 // testing the add form function
 
 $(document).ready(function() {
-    var max_fields      = 15;
+    var max_fields      = 20;
     var wrapper         = $(".container1");
     var add_button      = $(".add_form_field");
  

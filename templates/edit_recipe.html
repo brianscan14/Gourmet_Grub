@@ -69,7 +69,7 @@
                         <div class="container1 mb-5">
 						<button class="add_form_field">Add New Field + </button>
 						{% for step in recipe.recipe_prep %}
-                        <div><input type="text" name="{{ step }}" id="{{ step }}" value="{{ step }}"></div>
+                        <div><input type="text" name="recipe_prep" id="recipe_prep" value= "{{ step }}"><a href="#" class="delete">Delete</a></div>
                         {% endfor %}
 					    </div>
 
