@@ -14,32 +14,6 @@ jQuery(document).ready(function($) {
 
 // testing the add form function
 
-
-
-$(document).ready(function() {
-    let max_fieldz      = 20;
-    let wrapperer       = $(".contain");
-    let add_buttons     = $(".add_form");
-    let xy = 1;
-
-    $(add_buttons).click(function(e){
-        e.preventDefault();
-        if(xy < max_fieldz){
-            xy++;
-            $(wrapperer).append('<div><input type="text" name="ingredients"/><a href="#" class="del">Delete</a></div>');
-        }
-        else
-        {
-            alert('You Reached the limit of fields!')
-        }
-        });
-        
-            $(wrapperer).on("click",".del", function(e){
-            e.preventDefault(); $(this).parent('div').remove(); xy--;
-        })
-});
-
-
 $(document).ready(function() {
     let max_fields      = 20;
     let wrapper         = $(".container1");
@@ -61,4 +35,27 @@ $(document).ready(function() {
             $(wrapper).on("click",".delete", function(e){
             e.preventDefault(); $(this).parent('div').remove(); x--;
         })
+});
+
+$(document).ready(function() {
+    var max_fields      = 10;
+    var wrapper         = $(".container2");
+    var add_button      = $(".add_form_feed");
+ 
+    var x = 1;
+    $(add_button).click(function(e){
+        e.preventDefault();
+        if(x < max_fields){
+            x++;
+            $(wrapper).append('<div><input type="text" id="ingredients" name="ingredients"/><a href="#" class="delete">Delete</a></div>');
+        }
+  else
+  {
+  alert('You Reached the limits')
+  }
+    });
+ 
+    $(wrapper).on("click",".delete", function(e){
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
 });

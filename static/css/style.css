@@ -94,12 +94,13 @@ body {
 
 /* testing form dding steps  */
 
-.container1 input[type=text] {
+.container2 input[type=text] {
 padding:5px 0px;
 margin:5px 5px 5px 0px;
 }
 
-.add_form_field {
+.add_form_feed
+{
     background-color: #1c97f3;
     border: none;
     color: white;
@@ -112,8 +113,6 @@ margin:5px 5px 5px 0px;
     cursor: pointer;
  border:1px solid #186dad;
 }
-
-
 
 input{
     border: 1px solid #1c97f3;
@@ -135,12 +134,13 @@ input{
     cursor: pointer;
 }
 
-.contain input[type=text] {
+.container1 input[type=text] {
 padding:5px 0px;
 margin:5px 5px 5px 0px;
 }
 
-.add_form {
+.add_form_field
+{
     background-color: #1c97f3;
     border: none;
     color: white;
@@ -152,17 +152,4 @@ margin:5px 5px 5px 0px;
     margin: 4px 2px;
     cursor: pointer;
  border:1px solid #186dad;
-}
-
-.del{
-    background-color: #fd1200;
-    border: none;
-    color: white;
-    padding: 5px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
 }
