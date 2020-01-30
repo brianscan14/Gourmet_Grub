@@ -109,11 +109,12 @@
                 </div>
             </div>
             <div class="row my-4">
-                <div class="col-1 ml-auto my-auto">
-                    <span><i class="fas fa-utensils fa-2x"></i></span>
-                </div>
-                <div class="col-11">
-                    <input class="form-control form-control-recipe form-control-lg" id="ingredients" name="ingredients" required type="text" spellcheck="true" minlength="10" maxlength="40" value="{{recipe.ingredients}}">
+                <div class="container2">
+                    <button class="add_form_feed">Add New Field &nbsp; <span>+ </span></button>
+                    {% for stepz in recipe.ingredients %}
+                    <div><input type="text" id="ingredients" name="ingredients" value= "{{ stepz }}" placeholder="add ingredient steps plz">
+                    <a href="#" class="delete">Delete</a></div>
+                    {% endfor %}
                 </div>
             </div>
 
