@@ -13,7 +13,9 @@
     <li>    {{recipe.cuisine_name}}</li>
     <li>    {{recipe.meal_type}}</li>
     <li>    {{recipe.tools}}</li>
-    <li>    {{recipe.ingredients}}</li>
+    {% for stepz in recipe.ingredients %}
+    <div>  {{ stepz }} </div>
+    {% endfor %}
     <li>   <img src="{{recipe.image}}" alt="recipe image" width="300" height="300"></li>
 </p>
 

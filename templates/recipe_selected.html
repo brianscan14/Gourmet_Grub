@@ -21,7 +21,9 @@
         </div>
         <div class="col-12 col-sm-6">
             <h3>All the ingredients:</h3>
-            {{recipe.ingredients}}
+            {% for stepz in recipe.ingredients %}
+            <div>  {{ stepz }} </div>
+            {% endfor %}
         </div>
     </div>
 
