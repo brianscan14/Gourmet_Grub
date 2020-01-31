@@ -51,7 +51,7 @@
 				</div>
 				<div class="col-11">
 				<input class="form-control form-control-recipe form-control-lg" type="text" 
-                data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="add steps">
+                data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add steps">
 			    </div>
 
 
@@ -59,7 +59,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Add steps below as needed</h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Add/subtract steps below as needed</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -100,6 +100,44 @@
                     <input class="form-control form-control-recipe form-control-lg" id="tools" name="tools" type="text" required spellcheck="true" value="{{recipe.tools}}">
                 </div>
             </div>
+
+            <div class="row my-4">
+
+                <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-utensils fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-recipe form-control-lg" type="text" 
+                        data-toggle="modal" data-target="#exampleModal" spellcheck="true" placeholder="add steps">
+                    </div>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add/subtract steps below as needed</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                <div class="container2">
+                    <button class="add_form_feed">Add New Field &nbsp; <span>+ </span></button>
+                    {% for stepz in recipe.ingredients %}
+                    <div><input type="text" id="ingredients" name="ingredients" value= "{{ stepz }}" placeholder="add ingredient steps plz">
+                    <a href="#" class="delete">Delete</a></div>
+                    {% endfor %}
+                </div>
+                </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+
             <div class="row my-4">
                 <div class="col-1 ml-auto my-auto">
                     <span><i class="fas fa-images fa-2x"></i></span>
@@ -108,15 +146,7 @@
                     <input class="form-control form-control-recipe form-control-lg" id="image" name="image" type="text" required spellcheck="true"  value="{{recipe.image}}">
                 </div>
             </div>
-            <div class="row my-4">
-                <div class="container2">
-                    <button class="add_form_feed">Add New Field &nbsp; <span>+ </span></button>
-                    {% for stepz in recipe.ingredients %}
-                    <div><input type="text" id="ingredients" name="ingredients" value= "{{ stepz }}" placeholder="add ingredient steps plz">
-                    <a href="#" class="delete">Delete</a></div>
-                    {% endfor %}
-                </div>
-            </div>
+
 
 	<div class="row centering-text">
 		<button class="btn btn-primary" type="submit" name="action">Save Changes</button>

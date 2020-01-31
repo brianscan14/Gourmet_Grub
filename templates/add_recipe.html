@@ -58,7 +58,7 @@
 				</div>
 				<div class="col-11">
                     <input class="form-control form-control-recipe form-control-lg" type="text" 
-                    data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="add steps">
+                    data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add steps">
 			    </div>
 
 
@@ -75,7 +75,7 @@
 
                         <div class="container1 mb-5">
 							<button class="add_form_field">Add New Field +</button>
-							<div><input type="text" name="recipe_prep" id="recipe_prep"></div>
+							<div><input type="text" name="recipe_prep" id="recipe_prep"><a href="#" class="delete">Delete</a></div>
 						</div>
 
                     </div>
@@ -86,17 +86,7 @@
                 </div>
                 </div>
 
-
                 </div>
-
-                <!-- <div class="row my-4">
-                    <div class="col-1 ml-auto my-auto">
-                        <span><i class="fas fa-clipboard-list fa-2x"></i></span>
-                    </div>
-                    <div class="col-11">
-                        <input class="form-control form-control-recipe form-control-lg" id="recipe_prep" name="recipe_prep" type="text" spellcheck="true" placeholder="Recipe prep steps...">
-                    </div>
-                </div> -->
 
                 <div class="row my-4">
                     <div class="col-1 ml-auto my-auto">
@@ -116,20 +106,42 @@
                     </div>
                 </div>
 
+
                 <div class="row my-4">
 
-                    <div class="container2">
-                    <button class="add_form_feed">Add New Field &nbsp; <span>+ </span></button>
-                    <div><input type="text" id="ingredients" name="ingredients" placeholder="add ingredient steps plz"></div>
+                    <div class="col-1 ml-auto my-auto">
+                        <span><i class="fas fa-utensils fa-2x"></i></span>
+                    </div>
+                    <div class="col-11">
+                        <input class="form-control form-control-recipe form-control-lg" type="text" 
+                        data-toggle="modal" data-target="#exampleModal" spellcheck="true" placeholder="Add ingredients">
                     </div>
 
-                <!-- <div class="col">
-                    <div class="contain mb-5">
-							<button class="add_form">Add New Field +</button>
-							<div><input type="text" name="ingredients" id="ingredients"></div>
-					</div>
-                </div> -->
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add ingredients one by one please</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                                <div class="container2">
+                                <button class="add_form_feed">Add New Field &nbsp; <span>+ </span></button>
+                                <div><input type="text" id="ingredients" name="ingredients"><a href="#" class="delete">Delete</a></div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
                 </div>
+
 
                 <div class="row my-4">
                     <div class="col-1 ml-auto my-auto">
