@@ -39,11 +39,11 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    var max_fields      = 10;
-    var wrapper         = $(".container2");
-    var add_button      = $(".add_form_feed");
+    let max_fields      = 10;
+    let wrapper         = $(".container2");
+    let add_button      = $(".add_form_feed");
  
-    var x = 1;
+    let x = 1;
     $(add_button).click(function(e){
         e.preventDefault();
         if(x < max_fields){
