@@ -1,28 +1,51 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Thanks for adding the below recipe</h1>
-    <p class="lead">
+<div class="container my-5">
 
-    <li>    {{recipe.recipe_name}}</li>
-    {% for step in recipe.recipe_prep %}
-      <div>  {{ step }} </div>
-    {% endfor %}
-    <li>    {{recipe.cuisine_name}}</li>
-    <li>    {{recipe.meal_type}}</li>
-    <li>    {{recipe.tools}}</li>
-    {% for stepz in recipe.ingredients %}
-    <div>  {{ stepz }} </div>
-    {% endfor %}
-    <li>   <img src="{{recipe.image}}" alt="recipe image" width="300" height="300"></li>
-</p>
+    <h3 class="centering-text">This might just be a message pop up say thanks</h3>
 
-    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Edit</a>
-    <a href="{{ url_for('get_recipies', recipe_id=recipe._id) }}" class="btn btn-warning">Back to all Recipes</a>			
-
+    <div class="row">
+        <div class="col-12">
+            <h2>{{recipe.recipe_name}}</h2>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <div class="row">
+                <div class="col-12 col-sm-11"><img src="{{recipe.image}}" class="card-img-top" alt="recipe image"></div>
+            </div>   
+            <div class="row">
+                <div class="col-12 mx-auto">Some sort of stats or something</div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6">
+            <h3>All the ingredients:</h3>
+            {% for stepz in recipe.ingredients %}
+            <div>  {{ stepz }} </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <h2>Steps:</h2>
+                {% for step in recipe.recipe_prep %}
+                <div>  {{ step }} </div>
+                {% endfor %}
+        </div>
+    </div>
+
+    <div class="centering-text mb-5">
+    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Edit</a>
+    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger">Delete</a>
+    </div>
+
 </div>
+
+    <div class="centering-text mb-5">
+    <a href="{{ url_for('get_recipies', recipe_id=recipe._id) }}" class="btn btn-warning">Back</a>			
+    </div>
 
 {% endblock %}
