@@ -25,7 +25,8 @@ def get_recipies():
     total_recipes = mongo.db.recipies.find().skip((curent_page - 1)*6).limit(6)
     num_pages = range(1, int(total_docs / 6) + 2)
 
-    return render_template("pages/recipies.html", recipies=total_recipes, curent_page=curent_page, num_pages=num_pages, total=total_docs)
+    return render_template("pages/recipies.html", recipies=total_recipes, 
+    curent_page=curent_page, num_pages=num_pages, total=total_docs)
 
 @app.route('/search_recipe', methods=["GET", "POST"])
 def search_recipe():
@@ -37,10 +38,12 @@ def search_recipe():
             {'ingredients': query}]})
 
     if results.count() > 0:
-        return render_template('pages/searchrecipe.html', query=rec_search_query, results=results)
+        return render_template('pages/searchrecipe.html', 
+        query=rec_search_query, results=results)
         
     else:
-        return render_template('pages/searchnull.html', query=rec_search_query, results=results)
+        return render_template('pages/searchnull.html', 
+        query=rec_search_query, results=results)
 
 @app.route('/recipe_selected/<recipe_id>')
 def recipe_selected(recipe_id):
@@ -49,7 +52,8 @@ def recipe_selected(recipe_id):
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('pages/addrecipe.html', recipies=mongo.db.recipies.find())
+    return render_template('pages/addrecipe.html', 
+    recipies=mongo.db.recipies.find())
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -72,7 +76,8 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     recipeDB = mongo.db.recipies.find_one({"_id": ObjectId(recipe_id)})
     all_cuisine = mongo.db.recipies.find()
-    return render_template('pages/editrecipe.html', recipe=recipeDB, recipies=all_cuisine) 
+    return render_template('pages/editrecipe.html', 
+    recipe=recipeDB, recipies=all_cuisine) 
 
 @app.route('/update_recipe/<recipe_id>', methods=['GET', 'POST']) 
 def update_recipe(recipe_id): 
@@ -105,7 +110,8 @@ def search_cuisines():
     rec_search_query = request.args['query']
     query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
     results = mongo.db.recipies.find({'cuisine_name': query})
-    return render_template('pages/searchcuisines.html', query=rec_search_query, results=results)
+    return render_template('pages/searchcuisines.html', 
+    query=rec_search_query, results=results)
 
 @app.route("/find_meals", methods=['GET', 'POST'])
 def find_meals():
