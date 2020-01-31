@@ -13,6 +13,7 @@ jQuery(document).ready(function($) {
 });
 
 // testing the add form function
+// gotten from stack example : https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
 
 $(document).ready(function() {
     let max_fields      = 20;
@@ -24,7 +25,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){
             x++;
-            $(wrapper).append('<div><input type="text" name="recipe_prep"/><a href="#" class="delete">Delete</a></div>'); //add input box
+            $(wrapper).append('<div><input type="text" name="recipe_prep"/><a href="#" class="delete">Delete</a></div>');
         }
         else
         {
