@@ -113,14 +113,19 @@ def search_cuisines():
     return render_template('pages/searchcuisines.html', 
     query=rec_search_query, results=results)
 
+
 @app.route("/find_meals", methods=['GET', 'POST'])
 def find_meals():
     recipies = mongo.db.recipies
     if request.method == 'POST':
         requested_meal_type = request.form.get("meal_type")
-        
         recipies = mongo.db.recipies.find({"meal_type": requested_meal_type})
-        return render_template("pages/mealresults.html", recipies=recipies)
+
+        if recipies.count() > 0:
+            return render_template("pages/mealresults.html", recipies=recipies)
+
+        else:
+            return render_template('pages/searchnull.html', query=request.form.get("meal_type"))
         
     return render_template("pages/findmeals.html")
 
