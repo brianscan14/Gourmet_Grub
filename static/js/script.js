@@ -64,3 +64,34 @@ $(document).ready(function() {
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
+
+/**
+ * @scrollToTop
+ * This function shows the button when the user scrolls down 80px from top of document
+ * @topPage
+ * This function scrolls toi the top of the page when the button is clicked
+ */
+
+$(document).ready(function() {
+
+let mybutton = document.getElementById("topBtn");
+
+window.onscroll = function() {scrollToTop()};
+
+function scrollToTop() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topPage() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+$('#topBtn').click(function(){
+       topPage();
+    });
+});
