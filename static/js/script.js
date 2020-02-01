@@ -1,4 +1,4 @@
-// To make all entries in the add recipes form as caps form input corrections gotten from:
+// To make all entries in the add recipes form as caps form input corrections 
 // https://stackoverflow.com/questions/19606178/make-first-character-of-each-word-capital-in-input
 
 

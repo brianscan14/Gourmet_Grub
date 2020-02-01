@@ -11,6 +11,8 @@ body {
 .searchatron {
     background-color: rgb(235, 226, 225);
     height: 100vh;
+    background: url(https://rockytopsportsworld.com/wp-content/uploads/2019/06/various-foods.jpg)no-repeat;
+    background-size: cover;
 }
 
 .centering-text {
