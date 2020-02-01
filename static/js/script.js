@@ -1,5 +1,6 @@
-// to make all entries in the add recipes form as caps
-// form input corrections https://stackoverflow.com/questions/19606178/make-first-character-of-each-word-capital-in-input
+// To make all entries in the add recipes form as caps form input corrections gotten from:
+// https://stackoverflow.com/questions/19606178/make-first-character-of-each-word-capital-in-input
+
 
 jQuery.noConflict();
 jQuery(document).ready(function($) {
@@ -12,8 +13,11 @@ jQuery(document).ready(function($) {
   });
 });
 
-// testing the add form function
-// gotten from stack example : https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
+/**
+ * @function
+ * This anonymous function adds an extra form field for the recipe prep and ingredients steps
+ * gotten from: https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
+ */
 
 $(document).ready(function() {
     let max_fields      = 20;
