@@ -43,7 +43,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    let max_fields      = 10;
+    let max_fields      = 20;
     let wrapper         = $(".container2");
     let add_button      = $(".add_form_feed");
  
