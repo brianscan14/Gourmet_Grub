@@ -1,9 +1,10 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 
+    <div class="container my-5">
 	{% for cuisine in recipies %}
 
-    <div class="container my-5 cuisine-container">
+    <div class="container cuisine-container">
         <div class="row">
             <div class="col-12 col-sm-8 mx-auto mt-4">
                 <div class="jumbotron jumbotron-fluid my-3">
@@ -29,5 +30,6 @@
 		
   
 	{% endfor %}
+    </div>
 
 {% endblock %}
