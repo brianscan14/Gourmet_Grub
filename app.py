@@ -67,7 +67,9 @@ def insert_recipe():
         'tools': request.form.get('tools'),
         'image': request.form.get('image'),
         'ingredients': request.form.getlist('ingredients'),
-        'meal_type': request.form.get('meal_type')
+        'meal_type': request.form.get('meal_type'),
+        'calories': request.form.get('calories'),
+        'duration': request.form.get('duration')
     })
     ret = recipies.find_one({"_id": this_recipe.inserted_id})
     return render_template('pages/thankyou.html', recipe=ret)
@@ -91,7 +93,9 @@ def update_recipe(recipe_id):
         'tools': request.form.get('tools'),
         'image': request.form.get('image'),
         'ingredients': request.form.getlist('ingredients'),
-        'meal_type': request.form.get('meal_type')
+        'meal_type': request.form.get('meal_type'),
+        'calories': request.form.get('calories'),
+        'duration': request.form.get('duration')
     })
     return redirect(url_for('get_recipies'))
 
