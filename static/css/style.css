@@ -4,7 +4,13 @@ body {
     background-repeat: no-repeat;
 }
 
+.white-text {
+    color: #fff;
+}
 
+.centering-text {
+    text-align: center;
+}
 
 /* scroll back to top */
 
@@ -36,10 +42,6 @@ body {
     height: 80vh;
 }
 
-.centering-text {
-    text-align: center;
-}
-
 .search-bar {
     width: 60%;
     height: 50px;
@@ -50,7 +52,7 @@ body {
     border-bottom: 2px solid rgba(185, 30, 100, 0.192);
 }
 
-.form-search-bar {
+.form-search-bar:focus {
     color: #495057;
     background-color: #fff;
     border-color: #862828a6;
@@ -70,6 +72,25 @@ body {
     text-overflow: ellipsis;
 }
 
+/* single recipe page */
+
+.recipe-img {
+    height: 18em;
+    width: 100%;
+    border-radius: 2em;
+}
+
+.recipe-row {
+    width: 90%;
+}
+
+.recipe-stats{
+
+}
+
+.recipe-stats-left {
+    border-right: 1px solid #837c7c9c
+}
 
 /* cuisne page */
 

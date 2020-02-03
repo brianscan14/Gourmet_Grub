@@ -5,30 +5,47 @@
 <div class="container my-5">
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-sm-6  mt-4 mx-auto pl-4">
             <h2>{{recipe.recipe_name}}</h2>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-sm-6">
-            <div class="row">
-                <div class="col-12 col-sm-11"><img src="{{recipe.image}}" class="card-img-top" alt="recipe image"></div>
-            </div>   
-            <div class="row">
-                <div class="col-12 mx-auto">Some sort of stats or something</div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6">
-            <h3>All the ingredients:</h3>
+            <h4>All the ingredients:</h4>
             {% for stepz in recipe.ingredients %}
             <div>  {{ stepz }} </div>
             {% endfor %}
         </div>
+        <div class="col-12 col-sm-6 mt-4 mx-auto">
+            <div class="row recipe-row">
+                <div class="col-12 col-sm-11 mx-auto"><img src="{{recipe.image}}" class="recipe-img" alt="recipe image"></div>
+            </div>   
+            <div class="row recipe-row">
+            <div class="col-12 mt-3">
+            <div class="row">
+                <div class="col-4 mx-auto recipe-stats-left">
+                <div class="recipe-stats  centering-text">
+                <h4>{{ recipe.duration }}</h4>
+                <p>mins</p>
+                </div>
+                </div>
+                <div class="col-4 mx-auto recipe-stats-left">
+                <div class="recipe-stats centering-text">
+                <h4>{{'0' if recipe.ingredients == None else recipe.ingredients|length}}</h4>
+                <p>ingredients</p>
+                </div>
+                </div>
+                <div class="col-4 mx-auto">
+                <div class="recipe-stats centering-text">
+                <h4>{{ recipe.calories }}</h4>
+                <p>calories</p>
+                </div>
+                </div>
+            </div> 
+            </div>    
+            </div>
+        </div>
+
     </div>
 
     <div class="row">
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-6 pl-4">
             <h2>Steps:</h2>
                 {% for step in recipe.recipe_prep %}
                 <div>  {{ step }} </div>
@@ -36,9 +53,9 @@
         </div>
     </div>
 
-    <div class="centering-text mb-5">
-    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Edit</a>
-    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger">Delete</a>
+    <div class="centering-text">
+    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary my-4">Edit</a>
+    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger my-4">Delete</a>
     </div>
 
 </div>
