@@ -1,6 +1,10 @@
 body {
-    background-image:url("../img/white-painted-wall.jpg");
+    background-image:url("../img/burger.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+
 
 /* scroll back to top */
 
@@ -12,12 +16,12 @@ body {
   z-index: 1;
   border: none;
   outline: none;
-  color: rgba(100, 90, 89, 0.432);
+  color: rgba(177, 159, 157, 0.732);
 }
 
 #topBtn:hover {
   opacity: 1;
-  color: rgba(49, 44, 46, 0.664);
+  color: rgba(49, 44, 46, 0.994);
   transition-timing-function: ease-in-out;
   transition-duration: 0.5s;
 }
@@ -29,10 +33,7 @@ body {
 }
 
 .searchatron {
-    background-color: rgb(235, 226, 225);
-    height: 100vh;
-    background: url(https://rockytopsportsworld.com/wp-content/uploads/2019/06/various-foods.jpg)no-repeat;
-    background-size: cover;
+    height: 80vh;
 }
 
 .centering-text {
