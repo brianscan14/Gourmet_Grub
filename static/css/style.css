@@ -80,9 +80,17 @@ body {
     border-radius: 2em;
 }
 
-.recipe-row {
-    width: 90%;
+.ingred-steps {
+    text-align: right;
 }
+
+.prep-steps {
+    border-bottom: 1px solid rgba(185, 30, 100, 0.192);
+}
+
+/* .recipe-row {
+    width: 90%;
+} */
 
 .recipe-stats{
 
