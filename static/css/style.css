@@ -12,6 +12,14 @@ body {
     text-align: center;
 }
 
+/* nav bar */
+
+@media only screen and (max-width: 767px) {
+.nav-search-bar{
+    display: none;
+}
+}
+
 /* scroll back to top */
 
 #topBtn {
@@ -49,15 +57,16 @@ body {
 
 .form-search-bar {
     border: none;
-    border-bottom: 2px solid rgba(185, 30, 100, 0.192);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    opacity: 0.3;
 }
 
 .form-search-bar:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #862828a6;
+    border-color: #f3cacaa6;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(206, 198, 198, 0);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0);
 }
 
 /* all recipes page */
@@ -74,6 +83,10 @@ body {
 
 /* single recipe page */
 
+.recipe-title {
+    border-bottom: 1px solid rgba(185, 30, 100, 0.192);
+}
+
 .recipe-img {
     height: 18em;
     width: 100%;
@@ -88,16 +101,23 @@ body {
     border-bottom: 1px solid rgba(185, 30, 100, 0.192);
 }
 
-/* .recipe-row {
-    width: 90%;
-} */
-
-.recipe-stats{
-
+.recipe-stats {
+    font-weight: 800;
 }
 
 .recipe-stats-left {
     border-right: 1px solid #837c7c9c
+}
+
+@media only screen and (min-width: 767px) {
+.recipe-row {
+    padding-left: 0px;
+    padding-right: 80px;
+}
+
+.ing-steps {
+    padding-right: 0px;
+}
 }
 
 /* cuisne page */
@@ -205,3 +225,6 @@ margin:5px 5px 5px 0px;
     cursor: pointer;
  border:1px solid #186dad;
 }
+
+
+
