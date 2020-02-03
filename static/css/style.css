@@ -16,7 +16,7 @@ body {
 
 @media only screen and (max-width: 767px) {
 .nav-search-bar{
-    display: none;
+    display: none
 }
 }
 
@@ -56,8 +56,7 @@ body {
 }
 
 .form-search-bar {
-    border: none;
-    border-bottom: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
     opacity: 0.3;
 }
 
