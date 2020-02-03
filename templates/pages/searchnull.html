@@ -1,12 +1,14 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 
-<div class="row">
-	<div class="col-6  mx-auto">
-		<div class="card text-center mt-5">
+<div class="container my-5">
+
+<div class="row my-5">
+	<div class="col-11 col-md-5 my-5 mx-auto">
+		<div class="card text-center my-5">
 
 			<div class="card-body">
-				<h5 class="card-title mb-5">No results</h5>
+				<h2 class="card-title mb-5">No results</h2>
 				<p class="card-text mt-4">Unfortunately there are no mentions of <em>"{{ query }}"</em> in our recipe book at this
 					moment in time.</p>
                 <p class="card-text mt-4">....but feel free to add one!</p>
@@ -17,6 +19,8 @@
 
 		</div>
 	</div>
+</div>
+
 </div>
 
 {% endblock %}
