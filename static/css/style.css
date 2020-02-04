@@ -203,6 +203,10 @@ input[type="text"].nav-search-form::-moz-placeholder {
     transition-duration: 0.5s;
 }
 
+.fas {
+    color: #77695F;
+}
+
 /* Index page */
 
 input[type="text"].search-bar::-webkit-input-placeholder {
