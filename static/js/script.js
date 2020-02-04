@@ -69,7 +69,7 @@ $(document).ready(function() {
  * @scrollToTop
  * This function shows the button when the user scrolls down 80px from top of document
  * @topPage
- * This function scrolls toi the top of the page when the button is clicked
+ * This function scrolls to the top of the page when the button is clicked
  */
 
 $(document).ready(function() {
@@ -96,7 +96,12 @@ $('#topBtn').click(function(){
     });
 });
 
-
+/**
+ * @openSearchBar
+ * These functions open the nav search bar by increasing the width of the overlay
+ * @closeSearchBar
+ * This function closes the nav search bar by decreasing the width of the overlay
+ */
 
 function openSearchBar() {
   document.getElementById("overlaySearchBar").style.width = "100%";
