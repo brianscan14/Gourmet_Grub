@@ -126,3 +126,11 @@ $('#navSearchOpenSmall').click(function(){
 $('#navSearchClose').click(function(){
        closeSearchBar();
     });
+
+function goBackPage() {
+  window.history.back();
+}
+
+$('#backButton').click(function(){
+       goBackPage();
+    });

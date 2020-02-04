@@ -173,9 +173,13 @@
             </div>
 
 
-	<div class="row centering-text">
-		<button class="btn btn-primary" type="submit" name="action">Save Changes</button>
-        <a href="{{ url_for('recipe_selected', recipe_id=recipe._id) }}" class="btn btn-warning">Cancel</a>
+	<div class="row">
+    <div class="col-12">
+        <div class="centering-text my-5">
+		<button class="btn btn-primary" type="submit" name="action">Save</button>
+        <a href="{{ url_for('recipe_selected', recipe_id=recipe._id) }}" class="btn btn-danger">Cancel</a>
+        </div>
+        </div>
     </div>
 
         </form>
