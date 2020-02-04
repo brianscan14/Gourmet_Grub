@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    background-color: #E9E7DC;
+    background-color: rgba(233, 231, 220, 0.849);
 }
 
 .white-text {
@@ -73,7 +73,6 @@ input[type=number] {
   }
 }
 
-
 /* scroll back to top */
 
 #topBtn {
@@ -118,13 +117,12 @@ color: rgb(0, 0, 0);
     width: 70%;
     height: 60px;
     color: rgb(0, 0, 0);
-    opacity: 1;
     font-weight: 999;
 }
 
 .form-search-bar {
-    border: 2px solid rgb(255, 255, 255);
-    opacity: 0.35;
+    border: 2px solid rgba(255, 255, 255, 0.253);
+    background-color: rgba(255, 255, 255, 0.384);
 }
 
 .form-search-bar:focus {
