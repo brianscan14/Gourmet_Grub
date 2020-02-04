@@ -1,51 +1,9 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 
-<div class="container my-5">
+    <h2 class="centering-text">Thank you for adding the below recipe</h2>
 
-    <h3 class="centering-text">This might just be a message pop up say thanks</h3>
+    {% include 'components/thisrecipe.html' %}
 
-    <div class="row">
-        <div class="col-12">
-            <h2>{{recipe.recipe_name}}</h2>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-sm-6">
-            <div class="row">
-                <div class="col-12 col-sm-11"><img src="{{recipe.image}}" class="card-img-top" alt="recipe image"></div>
-            </div>   
-            <div class="row">
-                <div class="col-12 mx-auto">Some sort of stats or something</div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6">
-            <h3>All the ingredients:</h3>
-            {% for stepz in recipe.ingredients %}
-            <div>  {{ stepz }} </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-sm-6">
-            <h2>Steps:</h2>
-                {% for step in recipe.recipe_prep %}
-                <div>  {{ step }} </div>
-                {% endfor %}
-        </div>
-    </div>
-
-    <div class="centering-text mb-5">
-    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Edit</a>
-    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger">Delete</a>
-    </div>
-
-</div>
-
-    <div class="centering-text mb-5">
-    <a href="{{ url_for('get_recipies', recipe_id=recipe._id) }}" class="btn btn-warning">Back</a>			
-    </div>
 
 {% endblock %}
