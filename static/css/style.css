@@ -176,6 +176,7 @@ input[type="text"].search-bar::-moz-placeholder {
     height: 15em;
 }
 
+
 .card-text-recipes {
     height: 100px;
     overflow-y: hidden;
