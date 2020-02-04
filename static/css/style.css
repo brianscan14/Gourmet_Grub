@@ -4,6 +4,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.container {
+    background-color: #fff;
+}
+
 .white-text {
     color: #fff;
 }
@@ -51,8 +55,18 @@ input[type=number] {
 
 /* Index page */
 
-.container {
-    background-color: white;
+input[type="text"].search-bar::-webkit-input-placeholder {
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  font-weight: 990;
+  font-style: italic;
+}
+
+input[type="text"].search-bar::-moz-placeholder {
+color: rgb(0, 0, 0);
+  opacity: 1;
+  font-weight: 990;
+  font-style: italic;
 }
 
 .searchatron {
