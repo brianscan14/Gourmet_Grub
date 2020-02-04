@@ -48,11 +48,11 @@
   <div class="overlay-content">
      <form action="{{ url_for('search_recipe') }}" >
         <div class="row mt-5">
-            <div class="col-10 mx-auto form-group form-caps white-text">
-                <input class="form-control mx-auto bg-light" type="text" placeholder="e.g 'chicken' or 'curry'.." name="query" required>
+            <div class="col-10 col-sm-7 mx-auto form-caps">
+                <input class="form-control nav-search-form mx-auto" autocomplete="off" type="text" placeholder="Search for a recipe!" name="query" required>
             </div>
         </div>
-            <button id="search_recipe" type="submit" class="btn btn-success">Search</button>
+            <button id="search_recipe" type="submit" class="btn btn-success"><i class="fas fa-search fa-2x"></i></button>
     </form>
     </div>
   </div>
