@@ -22,7 +22,8 @@
 <header>
 
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" href="{{url_for('index')}}"><strong>GourmetGrub</strong></a>
+  <a class="navbar-brand mr-2" href="{{url_for('index')}}"><strong>GourmetGrub</strong></a>
+  <span class="d-sm-none mr-auto" id="navSearchOpenSmall"><i class="fas fa-search"></i></span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,38 +36,27 @@
       <a class="nav-item nav-link" href="{{url_for('get_recipies')}}">All Recipes</a>
       <a class="nav-item nav-link" href="#" >Equipment</a>
     </div>
-  </div>
-  <div class="nav-search-bar">
-    <i class="fas fa-search" data-toggle="modal" data-target="#exampleModalCenterNav"></i>
-        <div class="modal fade" id="exampleModalCenterNav" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Search below:</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                
-            <form action="{{ url_for('search_recipe') }}" >
-                <div class="row mt-5">
-                    <div class="col-10 mx-auto form-group form-caps white-text">
-                        <input class="form-control mx-auto bg-light" type="text" placeholder="e.g 'chicken' or 'curry'.." name="query" required>
-                    </div>
-                </div>
-                
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button id="search_recipe" type="submit" class="btn btn-success">Search</button>
-            </div>
-            </form>
-            </div>
-        </div>
-        </div>
   </div>
+  
+<span class="nav-search-bar d-none d-sm-inline-block" id="navSearchOpen"><i class="fas fa-search fa-2x"></i></span>
+
+  <div id="overlaySearchBar" class="overlay">
+
+  <a href="javascript:void(0)" id="navSearchClose" class="close-nav-search">&times;</a>
+
+  <div class="overlay-content">
+     <form action="{{ url_for('search_recipe') }}" >
+        <div class="row mt-5">
+            <div class="col-10 mx-auto form-group form-caps white-text">
+                <input class="form-control mx-auto bg-light" type="text" placeholder="e.g 'chicken' or 'curry'.." name="query" required>
+            </div>
+        </div>
+            <button id="search_recipe" type="submit" class="btn btn-success">Search</button>
+    </form>
+    </div>
+  </div>
+
 </nav>
 
 </header>

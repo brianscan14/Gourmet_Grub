@@ -95,3 +95,29 @@ $('#topBtn').click(function(){
        topPage();
     });
 });
+
+
+
+function openSearchBar() {
+  document.getElementById("overlaySearchBar").style.width = "100%";
+}
+
+function openSearchBarSmall() {
+  document.getElementById("overlaySearchBar").style.width = "100%";
+}
+
+function closeSearchBar() {
+  document.getElementById("overlaySearchBar").style.width = "0%";
+}
+
+$('#navSearchOpen').click(function(){
+       openSearchBar();
+    });
+
+$('#navSearchOpenSmall').click(function(){
+       openSearchBarSmall();
+    });
+
+$('#navSearchClose').click(function(){
+       closeSearchBar();
+    });
