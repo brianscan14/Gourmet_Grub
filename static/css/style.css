@@ -1,3 +1,5 @@
+/* General content on all pages */
+
 body {
     background-image:url("../img/burger.jpg");
     background-size: cover;
@@ -117,8 +119,87 @@ input[type="text"].nav-search-form::-moz-placeholder {
 
 #topBtn:hover {
     opacity: 1;
-    color: rgba(49, 44, 46, 0.994);
-    transition-timing-function: ease-in-out;
+    color: rgba(233, 231, 220, 0.9);
+    transition: ease-in-out;
+    transition-duration: 0.7s;
+}
+
+/* buttons */
+
+.btn-warning {
+    color: #77695F;
+    background-color: rgba(233, 231, 220, 0.95);
+    border-color: rgba(233, 231, 220, 0.7);
+    width: 4em;
+    font-size: 25px;
+}
+
+.btn-warning:hover {
+    color: #838383;
+    background-color: rgba(233, 231, 220, 0.7);
+    border-color: rgba(233, 231, 220, 0.5);
+}
+
+.btn-warning:focus {
+    color: #fff;
+    background-color: #838383;
+    border-color: #838383d8;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #f7ae4c;
+    border-color: #f7ad4cde;
+    width: 4.5em;
+}
+
+.btn-primary:hover {
+    color: rgba(255, 255, 255, 0.61);
+    background-color: #f7c14cf3;
+    border-color: #ffc1077e;
+    transition: ease-in-out;
+    transition-duration: 0.5s;
+}
+
+.btn-primary:focus {
+    color: #fff;
+    background-color: rgb(175, 122, 62);
+    border-color: #ffc10769;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #9E393A;
+    border-color: rgba(158, 57, 59, 0.849);
+    width: 4.5em;
+}
+
+.btn-danger:hover {
+    color: rgba(255, 255, 255, 0.61);
+    background-color: rgb(206, 38, 41);
+    border-color: #9E393A;
+    transition: ease-in-out;
+    transition-duration: 0.5s;
+}
+
+.btn-danger:focus {
+    color: #fff;
+    background-color: rgba(206, 38, 41, 0.863);
+    border-color: #9E393A;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #218939;
+    border-color: #218939;
+}
+
+.btn-success:hover {
+    color: rgba(255, 255, 255, 0.945);
+    background-color: rgb(40, 158, 68);
+    border-color: rgb(42, 168, 71);
+    transition: 0.5s;
+    transition: ease-in-out;
     transition-duration: 0.5s;
 }
 
@@ -160,8 +241,8 @@ input[type="text"].search-bar::-moz-placeholder {
     color: #000000;
     font-weight: 999;
     opacity: 0.45;
-    transition-timing-function: ease-in-out;
-    transition-duration: 5s;
+    transition: ease-in-out;
+    transition-duration: 2s;
     font-style: italic;
     background-color: #fff;
     border-color: #f3cacaa6;
@@ -175,7 +256,6 @@ input[type="text"].search-bar::-moz-placeholder {
 .card-img-top {
     height: 15em;
 }
-
 
 .card-text-recipes {
     height: 100px;
@@ -192,7 +272,7 @@ input[type="text"].search-bar::-moz-placeholder {
 /* single recipe page */
 
 .recipe-title {
-    border-bottom: 1px solid rgba(185, 30, 100, 0.192);
+    border-bottom: 3px solid #77695F;
 }
 
 .recipe-img {
@@ -206,7 +286,7 @@ input[type="text"].search-bar::-moz-placeholder {
 }
 
 .prep-steps {
-    border-bottom: 1px solid rgba(185, 30, 100, 0.192);
+    border-bottom: 1px solid #77695F;;
 }
 
 .recipe-stats {
@@ -260,13 +340,12 @@ input[type="text"].search-bar::-moz-placeholder {
 
 .form-control-recipe {
     border: none;
-    border-bottom: 2px solid rgba(77, 68, 72, 0.192);
+    border-bottom: 2px solid #77695F;
 }
 
 .form-control-recipe:focus {
     color: #495057;
-    background-color: #fff;
-    border-color: #2e6e43a6;
+    border-color: #40311B;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(206, 198, 198, 0);
 }
