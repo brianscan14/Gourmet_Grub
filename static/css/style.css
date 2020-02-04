@@ -75,20 +75,29 @@ color: rgb(0, 0, 0);
 
 .search-bar {
     width: 70%;
-    height: 50px;
+    height: 60px;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    font-weight: 999;
 }
 
 .form-search-bar {
     border: 2px solid rgb(255, 255, 255);
-    opacity: 0.3;
+    opacity: 0.35;
 }
 
 .form-search-bar:focus {
-    color: #495057;
+    color: #000000;
+    font-weight: 999;
+    opacity: 0.45;
+    transition-timing-function: ease-in-out;
+    transition-duration: 5s;
+    font-style: italic;
     background-color: #fff;
     border-color: #f3cacaa6;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0);
+    
 }
 
 /* all recipes page */
