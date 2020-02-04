@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #E9E7DC;
 }
 
 .white-text {
@@ -27,11 +27,52 @@ input[type=number] {
 }
 /* nav bar */
 
-@media only screen and (max-width: 767px) {
-.nav-search-bar{
-    display: none
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed; 
+  z-index: 99; 
+  left: 0;
+  top: 0;
+  background-color: rgba(233, 231, 220, 0.801);
+  overflow-x: hidden; 
+  transition: 0.5s;
 }
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
+
+.overlay a {
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #0f0e0eee;
+}
+
+.overlay .close-nav-search {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  font-size: 80px;
+}
+
+@media screen and (max-width: 415px) {
+  .overlay .close-nav-search {
+    font-size: 60px;
+    top: 25px;
+    right: 50px;
+  }
+}
+
 
 /* scroll back to top */
 
