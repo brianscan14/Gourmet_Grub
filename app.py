@@ -1,5 +1,4 @@
-import os
-import re
+import os, re
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -140,6 +139,10 @@ def meal_results():
 @app.route("/thankyoupage")
 def thankyoupage():
     return render_template('pages/thankyou.html')
+
+@app.errorhandler(404) 
+def not_found(e): 
+    return render_template("pages/error404.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
