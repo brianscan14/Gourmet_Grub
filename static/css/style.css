@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    background-color: rgba(233, 231, 220, 0.849);
+    background-color: rgba(233, 231, 220, 0.9);
 }
 
 .white-text {
@@ -18,51 +18,51 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type=number] {
-  -moz-appearance:textfield;
+    -moz-appearance:textfield;
 }
 /* nav bar */
 
 .overlay {
-  height: 100%;
-  width: 0;
-  position: fixed; 
-  z-index: 99; 
-  left: 0;
-  top: 0;
-  background-color: rgba(91, 77, 67, 0.9);
-  overflow-x: hidden; 
-  transition: 0.5s;
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    z-index: 99; 
+    left: 0;
+    top: 0;
+    background-color: rgba(91, 77, 67, 0.9);
+    overflow-x: hidden; 
+    transition: 0.5s;
 }
 
 .overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .overlay a {
-  text-decoration: none;
-  color: rgba(233, 231, 220, 0.75);
-  display: block;
-  transition: 0.3s;
+    text-decoration: none;
+    color: rgba(233, 231, 220, 0.75);
+    display: block;
+    transition: 0.3s;
 }
 
 .overlay a:hover, .overlay a:focus {
-  color: rgba(233, 231, 220, 0.999);
+    color: rgba(233, 231, 220, 0.999);
 }
 
 .overlay .close-nav-search {
-  position: absolute;
-  top: 30px;
-  right: 60px;
-  font-size: 80px;
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    font-size: 80px;
 }
 
 @media screen and (max-width: 415px) {
@@ -102,42 +102,41 @@ input[type="text"].nav-search-form::-moz-placeholder {
     text-align: center;
 }
 
-
-
 /* scroll back to top */
 
 #topBtn {
-  display: none;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  z-index: 1;
-  border: none;
-  outline: none;
-  color: rgba(177, 159, 157, 0.732);
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1;
+    border: none;
+    outline: none;
+    color: rgba(177, 159, 157, 0.732);
 }
 
 #topBtn:hover {
-  opacity: 1;
-  color: rgba(49, 44, 46, 0.994);
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.5s;
+    opacity: 1;
+    color: rgba(49, 44, 46, 0.994);
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
 }
 
 /* Index page */
 
 input[type="text"].search-bar::-webkit-input-placeholder {
-  color: rgb(0, 0, 0);
-  opacity: 1;
-  font-weight: 990;
-  font-style: italic;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 25px;
 }
 
 input[type="text"].search-bar::-moz-placeholder {
-color: rgb(0, 0, 0);
-  opacity: 1;
-  font-weight: 990;
-  font-style: italic;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    font-weight: 800;
+    font-style: italic;
 }
 
 .searchatron {
@@ -146,9 +145,10 @@ color: rgb(0, 0, 0);
 
 .search-bar {
     width: 70%;
-    height: 60px;
+    height: 70px;
     color: rgb(0, 0, 0);
-    font-weight: 999;
+    font-weight: 800;
+    font-size: 25px;
 }
 
 .form-search-bar {
@@ -180,6 +180,12 @@ color: rgb(0, 0, 0);
     height: 100px;
     overflow-y: hidden;
     text-overflow: ellipsis;
+}
+
+.recipes-cont {
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgba(255, 255, 255, 0.795);
 }
 
 /* single recipe page */
@@ -268,8 +274,8 @@ color: rgb(0, 0, 0);
 /* testing form adding steps  */
 
 .container2 input[type=text] {
-padding:5px 0px;
-margin:5px 5px 5px 0px;
+    padding:5px 0px;
+    margin:5px 5px 5px 0px;
 }
 
 .add_form_feed
@@ -284,7 +290,7 @@ margin:5px 5px 5px 0px;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
- border:1px solid #186dad;
+    border: 1px solid #186dad;
 }
 
 input{
@@ -308,8 +314,8 @@ input{
 }
 
 .container1 input[type=text] {
-padding:5px 0px;
-margin:5px 5px 5px 0px;
+    padding:5px 0px;
+    margin:5px 5px 5px 0px;
 }
 
 .add_form_field
@@ -324,7 +330,7 @@ margin:5px 5px 5px 0px;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
- border:1px solid #186dad;
+    border:1px solid #186dad;
 }
 
 
