@@ -5,7 +5,7 @@
 
     <div class="row my-5">
         <div class="col-6 mx-auto mt-5">
-            <h3 class="centering-text">Edit recipe below</h3>
+            <h1 class="centering-text recipe-title">Edit Recipe</h1>
         </div>
     </div>
 
@@ -15,14 +15,22 @@
         <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" autocomplete="off" method="POST" class="form-caps">
  
 			<div class="row">
-				<div class="col-8">
-                <label>Meal Type:</label>
-					<select id="meal_type" name="meal_type" required>
+				<div class="col-12">
+                <div class="row">
+                <div class="col-1">
+                    <label class="dropdown-select"><strong>Meal Type:</strong></label>
+                </div>
+                <div class="col-9 col-sm-11 mx-auto">
+                    <select class="bg-transparent custom-select custom-select-lg" id="meal_type" name="meal_type" required>
                         <option value="{{ recipe.meal_type }}" disabled selected>{{ recipe.meal_type }}</option>
                         <option value="breakfast">Breakfast</option>
                         <option value="lunch">Lunch</option>
                         <option value="dinner">Dinner</option>
                     </select>
+                </div>
+                </div>
+                
+					
 				</div>
 			</div>
 
@@ -56,7 +64,7 @@
 				</div>
 				<div class="col-10 col-sm-11">
 				<input class="form-control form-control-recipe form-control-lg bg-transparent" type="text" 
-                data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add steps">
+                data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add prep steps">
 			    </div>
 
 
@@ -117,7 +125,7 @@
                     </div>
                     <div class="col-10 col-sm-11">
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" type="text" 
-                        data-toggle="modal" data-target="#exampleModal" spellcheck="true" placeholder="add steps">
+                        data-toggle="modal" data-target="#exampleModal" spellcheck="true" placeholder="Add ingredients">
                     </div>
 
 

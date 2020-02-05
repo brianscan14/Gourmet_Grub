@@ -212,7 +212,6 @@ input[type="text"].nav-search-form::-moz-placeholder {
 input[type="text"].search-bar::-webkit-input-placeholder {
     color: rgb(0, 0, 0);
     opacity: 1;
-    font-weight: 800;
     font-style: italic;
     font-size: 25px;
 }
@@ -220,8 +219,8 @@ input[type="text"].search-bar::-webkit-input-placeholder {
 input[type="text"].search-bar::-moz-placeholder {
     color: rgb(0, 0, 0);
     opacity: 1;
-    font-weight: 800;
     font-style: italic;
+    font-size: 25px;
 }
 
 .searchatron {
@@ -340,7 +339,7 @@ input[type="text"].search-bar::-moz-placeholder {
     text-align: center;
 }
 
-/* forms styling */
+/* add/edit page  */
 
 .form-control-recipe {
     border: none;
@@ -354,8 +353,27 @@ input[type="text"].search-bar::-moz-placeholder {
     box-shadow: 0 0 0 0.2rem rgba(206, 198, 198, 0);
 }
 
+.dropdown-select {
+    color: #77695F;
+    font-size: 17px;
+}
 
-/* testing form adding steps  */
+.custom-select {
+    border: 1px solid #77695F;
+}
+
+.custom-select:focus {
+    border-color: #40311B;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(64, 49, 27, 0.849);
+}
+
+.custom-select:hover {
+    border-color: #40311B;
+    outline: 0;
+    opacity: 0.9;
+    box-shadow: 0 0 0 0.2rem rgba(64, 49, 27, 0.849);
+}
 
 .container2 input[type=text] {
     padding:5px 0px;

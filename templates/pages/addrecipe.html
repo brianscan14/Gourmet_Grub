@@ -6,7 +6,7 @@
 
     <div class="row my-5">
         <div class="col-6 mx-auto mt-5">
-            <h3 class="centering-text">Add recipe below</h3>
+            <h1 class="centering-text recipe-title">Add Recipe</h1>
         </div>
     </div>
 
@@ -14,14 +14,21 @@
         <div class="col-10 mx-auto">
             <form action="{{ url_for('insert_recipe') }}" autocomplete="off" method="POST" class="form-caps">
                 <div class="row">
-                        <div class="col">
-                        <select id="meal_types" name="meal_type" required>Meal Type
-                                <option value="" disabled selected>Select the type of Meal</option>
-                                <option value="breakfast">Breakfast</option>
-                                <option value="lunch">Lunch</option>
-                                <option value="dinner">Dinner</option>
-                        </select>
+                    <div class="col-12">
+                        <div class="row">
+                        <div class="col-1">
+                            <label class="dropdown-select"><strong>Meal Type:</strong></label>
                         </div>
+                        <div class="col-9 col-sm-11 mx-auto">
+                            <select class="bg-transparent custom-select custom-select-lg" id="meal_types" name="meal_type" required>
+                                    <option value="" disabled selected>Select type of Meal</option>
+                                    <option class="bg-transparent" value="breakfast">Breakfast</option>
+                                    <option value="lunch">Lunch</option>
+                                    <option value="dinner">Dinner</option>
+                            </select>
+                        </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row my-4">
