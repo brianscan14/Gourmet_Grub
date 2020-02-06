@@ -33,7 +33,7 @@ input[type=number] {
 }
 /* nav bar */
 
-.navbar, .navbar-brand {
+.navbar {
     font-size: 18px;
     color: rgba(91, 77, 67, 0.9);
 }
@@ -131,6 +131,15 @@ input[type="text"].nav-search-form::-moz-placeholder {
     color: rgba(233, 231, 220, 0.9);
     transition: ease-in-out;
     transition-duration: 0.7s;
+}
+
+/* footer */
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 /* buttons */
@@ -354,15 +363,6 @@ input[type="text"].search-bar::-moz-placeholder {
 }
 .jumbo-cont {
     border-radius: 3em;
-}
-
-/* footer */
-
-.footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
 }
 
 /* add/edit page  */
