@@ -289,7 +289,7 @@ input[type="text"].search-bar::-moz-placeholder {
 }
 
 .prep-steps {
-    border-bottom: 1px solid #77695F;;
+    border-bottom: 1px solid #77695F;
 }
 
 .recipe-stats {
@@ -297,7 +297,7 @@ input[type="text"].search-bar::-moz-placeholder {
 }
 
 .recipe-stats-left {
-    border-right: 1px solid #837c7c9c
+    border-right: 1px solid #837c7c9c;
 }
 
 @media only screen and (min-width: 767px) {
@@ -328,6 +328,23 @@ input[type="text"].search-bar::-moz-placeholder {
 .card-body-meals {
     height: 240px;
     overflow-y: hidden;
+}
+
+.meal-jumbo {
+    background-color: rgba(48, 37, 20, 0.822);
+    border-radius: 3em;
+}
+
+.meal-header {
+    color: rgba(255, 255, 255, 0.795);
+    border-bottom: 2px solid #837c7c9c;
+}
+
+.meal-form {
+    background-color: rgba(255, 255, 255, 0.695);
+}
+.jumbo-cont {
+    border-radius: 3em;
 }
 
 /* footer */

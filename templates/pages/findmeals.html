@@ -2,14 +2,14 @@
 {% block content %}
 
 
-<div class="container my-5">
+<div class="container jumbo-cont my-5">
 	<div class="row my-5">
 		<div class="col-12 col-md-8 mx-auto my-5">
 
-			<div class="jumbotron jumbotron-fluid mx-auto my-5">
+			<div class="jumbotron jumbotron-fluid mx-auto my-5 meal-jumbo">
 				<div class="row my-5">
-					<div class="col-12 mt-5">
-						<h1 class="display-4 centering-text">Meal Time:</h1>
+					<div class="col-6 mx-auto mt-5">
+						<h1 class="display-4 centering-text meal-header p-2">Meal Time:</h1>
 					</div>
                 </div>
 
@@ -17,9 +17,9 @@
 					<div class="col-12">
 						<form action="{{ url_for('find_meals')}}" method="POST">
 							<div class="row mt-3">
-								<div class="input-field col-12 centering-text">
-									<select id="meal_type" name="meal_type">
-                                        <option value="other" disabled selected>Select one</option>
+								<div class="input-field mx-auto col-8 centering-text">
+									<select class=" mb-3 custom-select meal-form custom-select-lg" id="meal_type" name="meal_type">
+                                        <option value="other" disabled selected>Select one..</option>
                                         <option value="breakfast">Breakfast</option>
                                         <option value="lunch">Lunch</option>
                                         <option value="dinner">Dinner</option>
@@ -29,13 +29,12 @@
 
 							<div class="row mt-5">
 								<div class="col-12 centering-text">
-									<button class="btn btn-success" type="submit" name="action">Find Cuisine</button>
+									<button class="btn btn-success" type="submit" name="action">Find Meals</button>
 								</div>
 							</div>
 						</form>
 					</div>
                 </div>
-				
 			</div>
 
 		</div>
