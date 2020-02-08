@@ -6,7 +6,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.container {
+.container, .modal-content {
     background-color: rgba(233, 231, 220, 0.9);
 }
 
@@ -217,9 +217,18 @@ input[type="text"].nav-search-form::-moz-placeholder {
     color: rgba(255, 255, 255, 0.945);
     background-color: rgb(40, 158, 68);
     border-color: rgb(42, 168, 71);
-    transition: 0.5s;
     transition: ease-in-out;
     transition-duration: 0.5s;
+}
+
+.btn-secondary {
+    background-color: rgba(64, 49, 27, 0.849);
+    color: rgba(233, 231, 220, 0.9);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(64, 49, 27, 0.966);
+    color: rgba(233, 231, 220, 0.733);
 }
 
 .fas {
@@ -416,6 +425,8 @@ input[type="text"].search-bar::-moz-placeholder {
     box-shadow: 0 0 0 0.2rem rgba(64, 49, 27, 0.849);
 }
 
+/* add/edit page  */
+
 .container1 {
     width: 100%;
 }
@@ -429,49 +440,3 @@ input[type="text"].search-bar::-moz-placeholder {
     text-align: center;
 }
 
-/* add/edit page  
-
-.container2 input[type=text] {
-    padding:5px 0px;
-    margin:5px 5px 5px 0px;
-}
-
-.add_form_feed
-{
-    background-color: #1c97f3;
-    border: none;
-    color: white;
-    padding: 8px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border: 1px solid #186dad;
-}
-
-.delete{
-    background-color: #fd1200;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.container1 input[type=text] {
-
-}
-
-.add_form_field
-{
-    background-color: #1c60f3;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-
-*/
