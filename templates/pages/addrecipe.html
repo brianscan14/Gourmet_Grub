@@ -61,7 +61,7 @@
 				</div>
 				<div class="col-10 col-sm-11">
                     <input class="form-control form-control-recipe form-control-lg bg-transparent" type="text" 
-                    data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add prep steps">
+                    data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add prep steps" required>
 			    </div>
 
 
@@ -76,12 +76,23 @@
                     </div>
                     <div class="modal-body">
 
-                        <div class="container1 mb-5">
-							<button class="add_form_field">Add New Field +</button>
-							<div><input type="text" name="recipe_prep" id="recipe_prep"><a href="#" class="delete">Delete</a></div>
-						</div>
-
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12 mx-auto centering-text">
+                                <button class="add_form_field">Add it! <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+						<div class="row">
+							<div class="col-12 mx-auto">
+								<div class="container1">
+                                    <div class="centering-text"><input class="form-control-recipe step-form" type="text" name="recipe_prep" id="recipe_prep">
+                                    <button class="delete btn btn-danger step-btn"><i class="farfa-trash-alt"></i></button></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Back to recipe</button>
                     </div>
@@ -121,7 +132,7 @@
                     </div>
                     <div class="col-10 col-sm-11">
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" type="text" 
-                        data-toggle="modal" data-target="#exampleModal" spellcheck="true" placeholder="Add ingredients">
+                        data-toggle="modal" data-target="#exampleModal" spellcheck="true" placeholder="Add ingredients" required>
                     </div>
 
 
@@ -157,7 +168,7 @@
                     <div class="col-10 col-sm-11">
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="image" name="image"
                         spellcheck="true"  placeholder="URL of recipe image..." title="Make sure it is the corect image url link" type="url" 
-                        pattern="https?://.+.(?:png|jpg|gif)">
+                        >
                     </div>
                 </div>
                 <div class="row my-4">

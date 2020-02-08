@@ -29,7 +29,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){
             x++;
-            $(wrapper).append('<div><input type="text" name="recipe_prep"/><a href="#" class="delete">Delete</a></div>');
+            $(wrapper).append('<div class="centering-text"><input class="form-control-recipe step-form" type="text" name="recipe_prep" id="recipe_prep"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
         }
         else
         {

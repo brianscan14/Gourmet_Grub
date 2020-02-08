@@ -80,7 +80,7 @@
                     <div class="modal-body">
 
                         <div class="container1 mb-5">
-						<button class="add_form_field">Add New Field + </button>
+						<button class="add_form_field">Add Step <i class="fas fa-plus"></i></button>
 						{% for step in recipe.recipe_prep %}
                         <div><input type="text" name="recipe_prep" id="recipe_prep" value= "{{ step }}"><a href="#" class="delete">Delete</a></div>
                         {% endfor %}
