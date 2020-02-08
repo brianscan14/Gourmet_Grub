@@ -35,7 +35,8 @@ input[type=number] {
 
 .navbar {
     font-size: 18px;
-    color: rgba(91, 77, 67, 0.9);
+    color: #fff;
+    background-color: #2e2c32e3;
 }
 
 .overlay {
