@@ -89,7 +89,8 @@
 							<div class="col-12 mx-auto">
 								<div class="container1">
                                 {% for step in recipe.recipe_prep %}
-                                    <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" name="recipe_prep" id="recipe_prep" value= "{{ step }}">
+                                    <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" 
+                                    name="recipe_prep" id="recipe_prep" value= "{{ step }}">
                                     <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
                                 {% endfor %}
                                 </div>
@@ -161,7 +162,8 @@
                                 <div class="col-12 mx-auto">
                                     <div class="container2">
                                         {% for stepz in recipe.ingredients %}
-                                        <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" id="ingredients" name="ingredients" value= "{{ stepz }}">
+                                        <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" 
+                                        type="text" id="ingredients" name="ingredients" value= "{{ stepz }}">
                                         <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
                                         {% endfor %}
                                     </div>
@@ -185,7 +187,7 @@
                     </div>
                     <div class="col-10 col-sm-11">
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="duration" name="duration" min="5"
-                        type="number" spellcheck="true" title="Please enter duration time in digits, i.e. more than '5'" value="{{recipe.duration}}">
+                        max="999" type="number" spellcheck="true" title="Please enter duration time in digits, i.e. more than '5'" value="{{recipe.duration}}">
                     </div>
                 </div>
                 <div class="row my-4">
@@ -194,7 +196,7 @@
                         <span><i class="fas fa-weight d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
-                        <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="calories" 
+                        <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="calories" max="9999"
                         name="calories" min="5" type="number" title="Please enter calories in digits" spellcheck="true" value="{{recipe.calories}}">
                     </div>
             </div>

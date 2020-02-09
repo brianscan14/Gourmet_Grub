@@ -84,7 +84,8 @@
 						<div class="row">
 							<div class="col-12 mx-auto">
 								<div class="container1">
-                                    <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" required type="text" name="recipe_prep" id="recipe_prep">
+                                    <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" 
+                                    required type="text" name="recipe_prep" id="recipe_prep">
                                     <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
                                 </div>
                             </div>
@@ -153,7 +154,8 @@
                             <div class="row">
                                 <div class="col-12 mx-auto">
                                     <div class="container2">
-                                        <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" required type="text" id="ingredients" name="ingredients">
+                                        <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" 
+                                        required type="text" id="ingredients" name="ingredients">
                                         <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
                                     </div>
                                 </div>
@@ -186,7 +188,7 @@
                         <span><i class="fas fa-hourglass-half d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
-                        <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="duration" name="duration" 
+                        <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="duration" name="duration" max="999"
                         type="number" min="5" spellcheck="true" title="Please enter duration time in digits, i.e. more than '5'" placeholder="Recipe duration...">
                     </div>
                 </div>
@@ -197,7 +199,7 @@
                     </div>
                     <div class="col-10 col-sm-11">
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="calories" name="calories" 
-                        type="number" min="5" spellcheck="true" title="Please enter calories in digits" placeholder="Recipe calories...">
+                        type="number" min="5" max="9999" spellcheck="true" title="Please enter calories in digits" placeholder="Recipe calories...">
                     </div>
                 </div>
 
