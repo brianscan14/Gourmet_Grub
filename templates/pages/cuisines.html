@@ -4,32 +4,30 @@
     <div class="container my-5">
 	{% for cuisine in recipies %}
 
-    <div class="container cuisine-container">
         <div class="row">
-            <div class="col-12 col-sm-8 mx-auto mt-4">
-                <div class="jumbotron jumbotron-fluid my-3">
+            <div class="col-9 mx-auto">
+                <div class="jumbotron jumbotron-fluid my-5 cuisine-container">
                     <div class="row">
-                        <div class="col">
-                            <h1 class="display-4 centering-text cuisine-title mb-3">{{ cuisine }}</h1>
+                        <div class="col-8 mx-auto">
+                            <h1 class="display-4 centering-text recipe-title p-3 cuisine-title mb-3"><strong>{{ cuisine }}</strong></h1>
                         </div>
                     </div>
 					<div class="row mt-3">
                         <div class="col">
 				            <form action="{{ url_for('search_cuisines') }}">
-				            <div id="search_cuisines" class="centering-text">
-                                <button type="submit" name="query" value="{{cuisine}}" class="btn btn-outline-success">
-	                            View all {{cuisine}} style recipes</button>
-                            </div>
+                                <div id="search_cuisines" class="centering-text">
+                                    <button type="submit" name="query" value="{{cuisine}}" class="btn btn-outline-light">
+                                    View all recipes</button>
+                                </div>
 				            </form>
                         </div>
 			        </div>
                 </div>
 			</div>
 		</div>
-	</div>
-		
   
 	{% endfor %}
     </div>
+
 
 {% endblock %}
