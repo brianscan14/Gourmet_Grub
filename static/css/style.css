@@ -316,6 +316,17 @@ input[type="text"].search-bar::-moz-placeholder {
     background-color: rgba(255, 255, 255, 0.795);
 }
 
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: rgba(104, 101, 101, 0.945);
+    border-color: rgba(255, 255, 255, 0.855);
+}
+
+.page-item a, .page-item a:hover {
+    color: rgba(104, 101, 101, 0.945);
+}
+
 /* single recipe page */
 
 .recipe-title {
