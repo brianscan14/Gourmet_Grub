@@ -115,6 +115,12 @@ input[type="text"].nav-search-form::-moz-placeholder {
     text-align: center;
 }
 
+.fa-search:hover {
+    color: rgba(233, 231, 220, 0.877);
+    transition: ease-in-out;
+    transition-duration: 0.4s;
+}
+
 /* scroll back to top */
 
 #topBtn {
