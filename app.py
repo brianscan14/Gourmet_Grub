@@ -40,9 +40,8 @@ def search_recipe():
         return render_template('pages/searchrecipe.html',
         query=rec_search_query, results=results)
 
-    else:
-        return render_template('pages/searchnull.html',
-        query=rec_search_query, results=results)
+    return render_template('pages/searchnull.html',
+    query=rec_search_query, results=results)
 
 @APP.route('/recipe_selected/<recipe_id>')
 def recipe_selected(recipe_id):
