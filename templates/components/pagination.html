@@ -1,0 +1,16 @@
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% for this_page in num_pages %}
+            {% if this_page == curent_page %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link">{{ this_page }}<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item">
+                <a class="page-link"href="{{ url_for('get_recipies', curent_page=this_page) }}">{{ this_page }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
