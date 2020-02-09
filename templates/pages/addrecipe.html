@@ -84,7 +84,7 @@
 						<div class="row">
 							<div class="col-12 mx-auto">
 								<div class="container1">
-                                    <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" name="recipe_prep" id="recipe_prep">
+                                    <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" required type="text" name="recipe_prep" id="recipe_prep">
                                     <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                             <div class="row">
                                 <div class="col-12 mx-auto">
                                     <div class="container2">
-                                        <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" id="ingredients" name="ingredients">
+                                        <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" required type="text" id="ingredients" name="ingredients">
                                         <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
                                     </div>
                                 </div>
@@ -177,7 +177,7 @@
                     <div class="col-10 col-sm-11">
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="image" name="image"
                         spellcheck="true"  placeholder="URL of recipe image..." title="Make sure it is the corect image url link" type="url" 
-                        >
+                        pattern="(.*?)\.(jpg|png|gif)$">
                     </div>
                 </div>
                 <div class="row my-4">

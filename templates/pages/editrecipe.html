@@ -207,7 +207,7 @@
                 <div class="col-10 col-sm-11">
                     <input class="form-control form-control-recipe form-control-lg bg-transparent" id="image" name="image"
                      required spellcheck="true"  value="{{recipe.image}}" title="Make sure it is the corect image url link" type="url"
-                    pattern="https?://.+.(?:png|jpg|gif)">
+                    pattern="(.*?)\.(jpg|png|gif)$">
                 </div>
             </div>
 
@@ -216,7 +216,7 @@
     <div class="col-12">
         <div class="centering-text my-5">
 		<button class="btn btn-primary" type="submit" name="action">Save</button>
-        <a href="{{ url_for('recipe_selected', recipe_id=recipe._id) }}" class="btn btn-danger">Cancel</a>
+        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger my-4">Delete</a>
         </div>
         </div>
     </div>
@@ -224,12 +224,12 @@
         </form>
         </div>
     </div>
-
-
-
-
 </div>
 
-
+    <div class="row centering-text">
+        <div class="col my-3">
+            <a id="backButton" class="btn btn-warning">Back</a>	
+        </div>
+    </div>
 
 {% endblock %}

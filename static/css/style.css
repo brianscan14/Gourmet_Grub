@@ -380,6 +380,7 @@ input[type="text"].search-bar::-moz-placeholder {
 .form-control-recipe {
     border: none;
     border-bottom: 2px solid #77695F;
+    overflow-x: scroll;
 }
 
 .form-control-recipe:focus {
