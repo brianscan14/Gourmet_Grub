@@ -79,12 +79,23 @@
                     </div>
                     <div class="modal-body">
 
-                        <div class="container1 mb-5">
-						<button class="add_form_field">Add Step <i class="fas fa-plus"></i></button>
-						{% for step in recipe.recipe_prep %}
-                        <div><input type="text" name="recipe_prep" id="recipe_prep" value= "{{ step }}"><a href="#" class="delete">Delete</a></div>
-                        {% endfor %}
-					    </div>
+                        <div class="container-fluid">
+						<div class="row">
+							<div class="col-12 mx-auto centering-text">
+                                <button class="add_form_field btn btn-success">Add another! <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+						<div class="row">
+							<div class="col-12 mx-auto">
+								<div class="container1">
+                                {% for step in recipe.recipe_prep %}
+                                    <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" name="recipe_prep" id="recipe_prep" value= "{{ step }}">
+                                    <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        </div>
 
                     </div>
                     <div class="modal-footer">
@@ -139,14 +150,26 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                <div class="container2">
-                    <button class="add_form_feed">Add New Field &nbsp; <span>+ </span></button>
-                    {% for stepz in recipe.ingredients %}
-                    <div><input type="text" id="ingredients" name="ingredients" value= "{{ stepz }}" placeholder="add ingredient steps plz">
-                    <a href="#" class="delete">Delete</a></div>
-                    {% endfor %}
-                </div>
-                </div>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 mx-auto centering-text">
+                                    <button class="add_form_feed btn btn-success">Add another! <i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 mx-auto">
+                                    <div class="container2">
+                                        {% for stepz in recipe.ingredients %}
+                                        <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" id="ingredients" name="ingredients" value= "{{ stepz }}">
+                                        <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
