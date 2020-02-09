@@ -31,12 +31,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance:textfield;
 }
+
 /* nav bar */
 
 .navbar {
     font-size: 18px;
     color: #fff;
-    background-color: #2e2c32e3;
+    background-color: #2e2c32bd;
 }
 
 .overlay {
@@ -238,14 +239,14 @@ input[type="text"].nav-search-form::-moz-placeholder {
 /* Index page */
 
 input[type="text"].search-bar::-webkit-input-placeholder {
-    color: rgb(0, 0, 0);
+    color: rgb(34, 33, 33);
     opacity: 1;
     font-style: italic;
     font-size: 25px;
 }
 
 input[type="text"].search-bar::-moz-placeholder {
-    color: rgb(0, 0, 0);
+    color: rgb(34, 33, 33);
     opacity: 1;
     font-style: italic;
     font-size: 25px;
@@ -259,7 +260,7 @@ input[type="text"].search-bar::-moz-placeholder {
     width: 70%;
     height: 70px;
     color: rgb(0, 0, 0);
-    font-weight: 800;
+    font-weight: 600;
     font-size: 25px;
 }
 
@@ -270,7 +271,7 @@ input[type="text"].search-bar::-moz-placeholder {
 
 .form-search-bar:focus {
     color: #000000;
-    font-weight: 999;
+    font-weight: 600;
     opacity: 0.45;
     transition: ease-in-out;
     transition-duration: 2s;
