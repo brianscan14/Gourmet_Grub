@@ -1,17 +1,21 @@
 {% extends 'layout/base.html' %}
 {% block content %} 
 
-<div class="container">
-{% for recipe in recipies %}
+    <div class="container my-5 mx-auto">
+        {% for recipe in recipies %}
+        <div class="row">
+            <div class="col-11 col-lg-8 mx-auto my-5">
 
-{% include 'components/recipecard.html' %}
+            {% include 'components/recipecard.html' %}
 
-{% endfor %}
-</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
-<div class="centering-text mb-5">
-<a href="{{ url_for('find_meals') }}" class="btn btn-warning">Back</a>
-</div>
+    <div class="centering-text mb-5">
+        <a href="{{ url_for('find_meals') }}" class="btn btn-warning">Back</a>
+    </div>
 
 {% endblock %}
 
