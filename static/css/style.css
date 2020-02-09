@@ -18,6 +18,10 @@ body {
     color: #fff;
 }
 
+.strong {
+    font-weight: 400;
+}
+
 .centering-text {
     text-align: center;
 }
@@ -354,7 +358,7 @@ input[type="text"].search-bar::-moz-placeholder {
 /* cuisne page */
 
 .cuisine-container {
-    background-color: #2e2c3281;
+    background-color: #2e2c3294;
 }
 
 .cuisine-title {
@@ -374,7 +378,7 @@ input[type="text"].search-bar::-moz-placeholder {
 }
 
 .meal-jumbo {
-    background-color: rgba(48, 37, 20, 0.822);
+    background-color: rgba(48, 37, 20, 0.722);
     border-radius: 3em;
 }
 
