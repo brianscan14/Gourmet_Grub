@@ -1,0 +1,17 @@
+    <div class="col-12 col-md-4 my-4 mx-auto">
+        <div class="card">
+            <img src="{{recipe.image}}" class="card-img-top" alt="recipe image">
+            <div class="card-body ">
+                <div class=""><h5 class="card-title centering-text">{{recipe.recipe_name}}</h5></div>
+                <div class=""><p class="card-text card-text-recipes mb-3">{{recipe.recipe_desc}}</p></div>
+                <div class="centering-text">
+                    <a href="/recipe_selected/{{ recipe._id }}">
+                        <button type="submit" class="btn btn-success mt-2" name="action">View full recipe</button>
+                    </a>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted ">"{{recipe.cuisine_name}}" style food..</small>
+            </div>
+        </div>
+    </div>
