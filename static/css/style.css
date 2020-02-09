@@ -6,6 +6,14 @@ body {
     background-repeat: no-repeat;
 }
 
+.cursive {
+    font-family: 'Romanesco', cursive;
+}
+
+.playfont {
+    font-family: 'Playfair Display', serif;
+}
+
 .container, .modal-content {
     background-color: rgba(233, 231, 220, 0.9);
 }

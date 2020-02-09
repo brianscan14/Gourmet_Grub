@@ -1,7 +1,7 @@
 
     <div class="row">
     <div class="col-10 col-sm-6 mx-auto">
-    <h1 class="centering-text recipe-title my-5 p-2">{{recipe.recipe_name}}</h1>
+    <h1 class="centering-text recipe-title my-5 p-2 playfont">{{recipe.recipe_name}}</h1>
     </div>
     </div>
 
@@ -50,7 +50,7 @@
 
     <div class="row mt-3">
         <div class="col-12 col-sm-9 mx-auto centering-text">
-            <h2 class="">Steps</h2>
+            <h2 class="cursive">Steps..</h2>
                 {% for step in recipe.recipe_prep %}
                 <div class="my-3 prep-steps">  {{ step }} </div>
                 {% endfor %}
