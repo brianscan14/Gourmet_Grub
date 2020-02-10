@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-9 col-sm-11 mx-auto">
                     <select class="bg-transparent custom-select custom-select-lg caps" id="meal_type" name="meal_type" required>
-                        <option class="caps" value="{{ recipe.meal_type }}" disabled selected>{{ recipe.meal_type }}</option>
+                        <option class="caps" value=" {{ recipe.meal_type }} " disabled selected>{{ recipe.meal_type }}</option>
                         <option value="breakfast">Breakfast</option>
                         <option value="lunch">Lunch</option>
                         <option value="dinner">Dinner</option>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-10 col-sm-11">
                     <input class="form-control form-control-recipe form-control-lg bg-transparent" id="cuisine_name" 
-                    name="cuisine_name" type="text" required spellcheck="true" pattern=".{3,}" maxlength="40" value="{{recipe.cuisine_name}}">
+                    name="cuisine_name" type="text" required spellcheck="true" pattern=".{3,}" maxlength="15" value="{{recipe.cuisine_name}}">
                 </div>
             </div>
             <div class="row my-4">
