@@ -260,7 +260,7 @@ input[type="text"].nav-search-form::-moz-placeholder {
 
 .btn-success {
     color: #fff;
-    background-color: #218939;
+    background-color: #218939de;
     border-color: #218939;
 }
 
@@ -329,12 +329,11 @@ input[type="text"].search-bar::-moz-placeholder {
     opacity: 0.45;
     transition: ease-in-out;
     transition-duration: 2s;
-    font-style: italic;
+    font-style: normal;
     background-color: #fff;
     border-color: #f3cacaa6;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0);
-    
 }
 
 /* all recipes page */
@@ -439,6 +438,10 @@ input[type="text"].search-bar::-moz-placeholder {
 .meal-jumbo {
     background-color: rgba(48, 37, 20, 0.722);
     border-radius: 3em;
+}
+
+.views-right {
+    float: right;
 }
 
 .meal-header {
