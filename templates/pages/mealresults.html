@@ -2,6 +2,13 @@
 {% block content %} 
 
     <div class="container my-5 mx-auto">
+
+        <div class="row">
+            <div class="col-4 mx-auto">
+                <h2 class="recipe-title centering-text p-4 caps">"{{ query }}"</h2>
+            </div>
+        </div>
+
         {% for recipe in recipies %}
         <div class="row">
             <div class="col-11 col-lg-8 mx-auto my-5">

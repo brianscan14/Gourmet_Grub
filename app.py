@@ -181,7 +181,8 @@ def find_meals():
         recipies = MONGO.db.recipies.find({"meal_type": requested_meal_type})
 
         if recipies.count() > 0:
-            return render_template("pages/mealresults.html", recipies=recipies)
+            return render_template("pages/mealresults.html",
+            recipies=recipies, query=requested_meal_type)
 
         else:
             return render_template('pages/searchnull.html',
