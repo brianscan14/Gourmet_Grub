@@ -201,6 +201,7 @@ input[type="text"].nav-search-form::-moz-placeholder {
     border-color: rgba(233, 231, 220, 0.7);
     width: 4em;
     font-size: 25px;
+    box-shadow: 2px 2px 15px 2px #2e2c32bd;
 }
 
 .btn-warning:hover {
