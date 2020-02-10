@@ -121,8 +121,8 @@ def update_recipe(recipe_id):
     to the pge that shows all the recipes.
     """
     recipies = MONGO.db.recipies
-    recipies.update( {'_id': ObjectId(recipe_id)},
-    {
+    recipies.update_one( {'_id': ObjectId(recipe_id)},
+    { '$set': {
         'recipe_name': request.form.get('recipe_name'),
         'recipe_prep': request.form.getlist('recipe_prep'),
         'recipe_desc': request.form.get('recipe_desc'),
@@ -132,7 +132,7 @@ def update_recipe(recipe_id):
         'ingredients': request.form.getlist('ingredients'),
         'meal_type': request.form.get('meal_type'),
         'calories': request.form.get('calories'),
-        'duration': request.form.get('duration')
+        'duration': request.form.get('duration') }
     })
     return redirect(url_for('get_recipies'))
 
