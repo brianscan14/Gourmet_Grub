@@ -63,8 +63,7 @@ def recipe_selected(recipe_id):
     """
     Uses the recipe's unique id form the mongoDB to id it and return it.
     """
-    MONGO.db.recipies.find_one_and_update({"_id": ObjectId(recipe_id)}, {"$inc":{"views":int(1)}})
-    recipies = MONGO.db.recipies.find_one({'_id': ObjectId(recipe_id)})
+    recipies = MONGO.db.recipies.find_one_and_update({"_id": ObjectId(recipe_id)}, {"$inc":{"views":int(1)}}, new=True)
 
     return render_template('pages/recipe.html', recipe=recipies)
 
