@@ -50,8 +50,9 @@ input[type=number] {
 }
 
 .card-border {
+    background-color: #dbd8c981;
     border: 2px solid #77695F;
-    box-shadow: 2px 2px 2px 2px #77695F;
+    box-shadow: 2px 2px 15px 2px #77695F;
 }
 
 .media-icons a {
@@ -65,6 +66,11 @@ input[type=number] {
     transition-duration: 0.5s;
 }
 
+.card:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.7s;
+}
 
 /* nav bar */
 
@@ -258,10 +264,10 @@ input[type="text"].nav-search-form::-moz-placeholder {
 
 .btn-success:hover {
     color: rgba(255, 255, 255, 0.945);
-    background-color: rgb(40, 158, 68);
-    border-color: rgb(42, 168, 71);
+    background-color: rgb(17, 77, 31);
+    border-color: rgb(27, 110, 47);
     transition: ease-in-out;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
 }
 
 .btn-secondary {
@@ -401,6 +407,15 @@ input[type="text"].search-bar::-moz-placeholder {
 
 .cuisine-container {
     background-color: #2e2c3294;
+    border: 3px solid #77695F;
+}
+
+.cuisine-container:hover {
+    background-color: #2e2c3285;
+    border: 3px solid #77695F;
+    box-shadow: 2px 2px 20px 2px #77695F;
+    transition: ease-in-out;
+    transition-duration: 1s;
 }
 
 .cuisine-title {
