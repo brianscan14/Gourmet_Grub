@@ -17,58 +17,57 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
     
+    <!-- page title -->
     <title>GourmetGrub</title>
 </head>
 
 <header>
 
-<nav class="navbar navbar-expand-sm navbar-dark py-3">
-  <a class="navbar-brand mr-2 strong" href="{{url_for('index')}}">GourmetGrub</a>
-  <span class="d-sm-none mr-auto" id="navSearchOpenSmall"><i class="fas fa-search"></i></span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="{{url_for('get_cuisines')}}">Cuisines</a>
-      <a class="nav-item nav-link" href="{{url_for('find_meals')}}">Meals</a>
-      <a class="nav-item nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
-      <a class="nav-item nav-link" href="{{url_for('get_recipies')}}">All Recipes</a>
-      <a class="nav-item nav-link" href="#" >Equipment</a>
-    </div>
-
-  </div>
-  
-<span class="nav-search-bar d-none d-sm-inline-block" id="navSearchOpen"><i class="fas fa-search fa-2x"></i></span>
-
-  <div id="overlaySearchBar" class="overlay">
-
-  <a href="javascript:void(0)" id="navSearchClose" class="close-nav-search">&times;</a>
-
-  <div class="overlay-content">
-     <form action="{{ url_for('search_recipe') }}" >
-        <div class="row mt-5">
-            <div class="col-10 col-sm-7 mx-auto form-caps">
-                <input class="form-control nav-search-form mx-auto" autocomplete="off" type="text" placeholder="Search for a recipe!" name="query" required>
+    <nav class="navbar navbar-expand-sm navbar-dark py-3">
+        <a class="navbar-brand mr-2 strong" href="{{url_for('index')}}">GourmetGrub</a>
+        <span class="d-sm-none mr-auto" id="navSearchOpenSmall"><i class="fas fa-search"></i></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{url_for('get_cuisines')}}">Cuisines</a>
+                <a class="nav-item nav-link" href="{{url_for('find_meals')}}">Meals</a>
+                <a class="nav-item nav-link" href="{{url_for('add_recipe')}}">Add Recipe</a>
+                <a class="nav-item nav-link" href="{{url_for('get_recipies')}}">All Recipes</a>
+                <a class="nav-item nav-link" href="#" >Equipment</a>
             </div>
         </div>
-            <button id="search_recipe" type="submit" class="btn btn-success mt-4"><i class="fas fa-search fa-2x"></i></button>
-    </form>
-    </div>
-  </div>
+    
+    <span class="nav-search-bar d-none d-sm-inline-block" id="navSearchOpen"><i class="fas fa-search fa-2x"></i></span>
 
-</nav>
+    <div id="overlaySearchBar" class="overlay">
+        <a href="javascript:void(0)" id="navSearchClose" class="close-nav-search">&times;</a>
+        <div class="overlay-content">
+        <form action="{{ url_for('search_recipe') }}" >
+            <div class="row mt-5">
+                <div class="col-10 col-sm-7 mx-auto form-caps">
+                    <input class="form-control nav-search-form mx-auto" autocomplete="off" type="text" placeholder="Search for a recipe!" name="query" required>
+                </div>
+            </div>
+            <button id="search_recipe" type="submit" class="btn btn-success mt-4"><i class="fas fa-search fa-2x"></i></button>
+        </form>
+        </div>
+    </div>
+
+    </nav>
 
 </header>
 
 <body>
-    
+
     {% block content %}
     {% endblock %}
 
-{% include 'layout/scrolltotop.html' %}
-{% include 'layout/footer.html' %}
+    {% include 'layout/scrolltotop.html' %}
+    {% include 'layout/footer.html' %}
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
