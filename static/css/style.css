@@ -16,6 +16,7 @@ body {
 
 .container, .modal-content {
     background-color: rgba(233, 231, 220, 0.9);
+
 }
 
 .light-bg {
@@ -42,6 +43,11 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield;
+}
+
+.card-border {
+    border: 2px solid #77695F;
+    box-shadow: 2px 2px 2px 2px #77695F;
 }
 
 /* nav bar */
