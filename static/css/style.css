@@ -56,6 +56,7 @@ input[type=number] {
 
 .media-icons a {
     color: #77695F;
+    font-size: 15px;
 }
 
 .media-icons a:hover {

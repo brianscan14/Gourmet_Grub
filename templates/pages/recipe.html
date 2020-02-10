@@ -1,8 +1,12 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 
-<div class="container my-5">
-{% include 'components/thisrecipe.html' %}
-</div>
+    <div class="container my-5">
+    {% include 'components/thisrecipe.html' %}
+    </div>
+
+    <div class="centering-text mb-5">
+        <a id="backButton" class="btn btn-warning">Back</a>			
+    </div>
 
 {% endblock %}
