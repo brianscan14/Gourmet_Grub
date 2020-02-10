@@ -70,7 +70,7 @@ def recipe_selected(recipe_id):
 def add_recipe():
     """
     Add recipe page to allow the user to add a new recipe they like
-    to the DB.
+    to the DB, this brings you to the form to do so.
     """
     return render_template('pages/addrecipe.html',
     recipies=MONGO.db.recipies.find())

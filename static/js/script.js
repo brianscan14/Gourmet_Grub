@@ -1,6 +1,7 @@
-// To make all entries in the add recipes form as caps form input corrections 
-// https://stackoverflow.com/questions/19606178/make-first-character-of-each-word-capital-in-input
-
+/**
+* To make all entries in the add recipes form as caps form input corrections 
+* https://stackoverflow.com/questions/19606178/make-first-character-of-each-word-capital-in-input
+*/
 
 jQuery.noConflict();
 jQuery(document).ready(function($) {
@@ -15,7 +16,7 @@ jQuery(document).ready(function($) {
 
 /**
  * @function
- * This anonymous function adds an extra form field for the recipe prep and ingredients steps
+ * This anonymous functions adds an extra form field for the recipe prep and ingredients steps
  * gotten from: https://stackoverflow.com/questions/14853779/adding-input-elements-dynamically-to-form
  */
 
@@ -35,7 +36,7 @@ $(document).ready(function() {
         {
             alert('You Reached the limit of fields!')
         }
-        });
+    });
         
             $(wrapper).on("click",".delete", function(e){
             e.preventDefault(); $(this).parent('div').remove(); x--;
@@ -54,15 +55,15 @@ $(document).ready(function() {
             x++;
             $(wrapper).append('<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" id="ingredients" name="ingredients"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
         }
-  else
-  {
-  alert('You Reached the limits')
-  }
+        else
+            {
+        alert('You Reached the limits')
+        }
     });
- 
-    $(wrapper).on("click",".delete", function(e){
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
+    
+        $(wrapper).on("click",".delete", function(e){
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        })
 });
 
 /**
@@ -74,27 +75,27 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 
-let mybutton = document.getElementById("topBtn");
+    let mybutton = document.getElementById("topBtn");
 
-window.onscroll = function() {scrollToTop()};
+    window.onscroll = function() {scrollToTop()};
 
-function scrollToTop() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    function scrollToTop() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     mybutton.style.display = "block";
-  } else {
+        } else {
     mybutton.style.display = "none";
-  }
-}
+        }
+    }
 
-function topPage() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+    function topPage() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+        }
 
-$('#topBtn').click(function(){
-       topPage();
+    $('#topBtn').click(function(){
+        topPage();
+        });
     });
-});
 
 /**
  * @openSearchBar
@@ -102,18 +103,19 @@ $('#topBtn').click(function(){
  * @closeSearchBar
  * This function closes the nav search bar by decreasing the width of the overlay
  */
+$(document).ready(function() {
 
 function openSearchBar() {
   document.getElementById("overlaySearchBar").style.width = "100%";
-}
+    }
 
 function openSearchBarSmall() {
   document.getElementById("overlaySearchBar").style.width = "100%";
-}
+    }
 
 function closeSearchBar() {
   document.getElementById("overlaySearchBar").style.width = "0%";
-}
+    }
 
 $('#navSearchOpen').click(function(){
        openSearchBar();
@@ -126,11 +128,21 @@ $('#navSearchOpenSmall').click(function(){
 $('#navSearchClose').click(function(){
        closeSearchBar();
     });
+});
+
+/**
+ * @goBackPage
+ * This function target the back button and just goes back one page
+ * in the browser's history when clicked
+ */
+
+$(document).ready(function() {
 
 function goBackPage() {
   window.history.back();
-}
+    }
 
 $('#backButton').click(function(){
        goBackPage();
     });
+});
