@@ -1,17 +1,21 @@
-    
+<!-- recipe column which will be used to on the page displaying all recipes -->    
     <div class="col-12 col-md-4 my-4 mx-auto">
         <div class="card card-border">
+            <!-- image pulled form the one inserted into the form when adding the recipe -->
             <img src="{{recipe.image}}" class="card-img-top" alt="recipe image">
             <div class="card-body">
-                <div class=""><h5 class="card-title centering-text">{{recipe.recipe_name}}</h5></div>
-                <div class=""><p class="card-text card-text-recipes mb-3">{{recipe.recipe_desc}}</p></div>
+                <!-- shows recipe name and a brief description in more vertical format -->
+                <div><h5 class="card-title centering-text">{{recipe.recipe_name}}</h5></div>
+                <div><p class="card-text card-text-recipes mb-3">{{recipe.recipe_desc}}</p></div>
                 <div class="centering-text">
+                    <!-- button link to view the recipe in full on another page -->
                     <a href="/recipe_selected/{{ recipe._id }}">
                         <button type="submit" class="btn btn-success mt-2" name="action">View full recipe</button>
                     </a>
                 </div>
             </div>
             <div class="card-footer">
+                <!-- footer of the card in muted text just showing what the cuisine is -->
                 <small class="text-muted ">"{{recipe.cuisine_name}}" style food..</small>
             </div>
         </div>

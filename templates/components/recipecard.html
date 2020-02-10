@@ -1,10 +1,12 @@
-
+<!-- recipe card which will appear on the cuisine and meal search pages -->
 <div class="card mb-3 card-border">
   <div class="row no-gutters">
     <div class="col-md-5">
+        <!-- image pulled form the one inserted into the form when adding the recipe -->
       <img src="{{recipe.image}}" class="card-img meals-image" alt="recipe image">
     </div>
     <div class="col-md-7">
+    <!-- have recipe name as title, short description, and some interesting field values displayed -->
       <div class="card-body card-body-meals">
         <h4 class="card-title">{{ recipe.recipe_name }}</h4>
         <p class="card-text desc-text">{{ recipe.recipe_desc }}</p>
@@ -13,6 +15,7 @@
       </div>
     </div>
   </div>
+    <!-- link to go see the full recipe by itself on another page -->
     <div class="card-footer centering-text">
         <a href="/recipe_selected/{{ recipe._id }}">
             <button type="submit" class="btn btn-success" name="action">View full recipe</button>

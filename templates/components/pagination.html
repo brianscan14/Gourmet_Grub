@@ -1,7 +1,10 @@
 
 <nav aria-label="Page navigation">
+    <!-- pagination taken from the py file and BS4 to cycle thru recipes in DB 6 at a time -->
     <ul class="pagination justify-content-center">
+        <!-- this_page/num_pages working off an equation used in py file to get the total amount of pages -->
         {% for this_page in num_pages %}
+            <!-- conditional statement which gives active class to current page, else the number is greyed -->
             {% if this_page == curent_page %}
                 <li class="page-item active" aria-current="page">
                     <a class="page-link">{{ this_page }}<span class="sr-only">(current)</span></a>

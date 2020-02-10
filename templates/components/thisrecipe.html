@@ -1,28 +1,37 @@
 
     <div class="row">
         <div class="col-10 col-sm-6 mx-auto">
+            <!-- recipe title in Playfair font -->
             <h1 class="centering-text recipe-title my-5 p-2 playfont">{{recipe.recipe_name}}</h1>
         </div>
     </div>
 
+    <!-- BS4 grid solely used for the layout of the page items -->
     <div class="row">
+        <!-- left half of screen on bigger screens, full width on smaller -->
         <div class="col-12 col-md-6 mx-auto ing-steps">
             <div class="row mb-3">
                 <div class="col-8 mx-auto">
+                    <!-- jinja to iterate through ingredient steps and output them like bullet points -->
                     {% for stepz in recipe.ingredients %}
+                    <!-- text to be aligned to the right for aesthetic purposes -->
                     <div class="ingred-steps my-3"> {{ stepz }} <i class="far fa-plus-square"></i> </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
         
+        <!-- right half of screen on bigger screens, full width on smaller -->
         <div class="col-12 col-md-6 mx-auto recipe-row">
             <div class="row">
+                <!-- image getting row on its own -->
                 <div class="col-12 col-md-11 mx-auto"><img src="{{recipe.image}}" class="recipe-img" alt="recipe image"></div>
-            </div>   
+            </div>
             <div class="row mt-3">
+                <!-- some short recipe stats go under the picture in their own row, divided in 3 with col-4 -->
                 <div class="col-12 mt-3">
                     <div class="row">
+                        <!-- quick easy stats gotten from the DB fields that are seperated with a border -->
                         <div class="col-4 mx-auto recipe-stats-left">
                             <div class="recipe-stats  centering-text">
                                 <h4>{{ recipe.duration }}</h4>
@@ -31,6 +40,7 @@
                         </div>
                         <div class="col-4 mx-auto recipe-stats-left">
                             <div class="recipe-stats centering-text">
+                                <!-- count the number of ingredients in the DB and output it an integer -->
                                 <h4>{{'0' if recipe.ingredients == None else recipe.ingredients|length}}</h4>
                                 <p>ingredients</p>
                             </div>
@@ -48,19 +58,24 @@
     </div>
 
     <div class="row mt-3">
+        <!-- iterate thru the recipe steps and taking the row to itself on all screens -->
         <div class="col-12 col-sm-9 mx-auto centering-text">
+            <!-- goog 'Romanesco' font class -->
             <h2 class="cursive">Steps..</h2>
             {% for step in recipe.recipe_prep %}
+            <!-- gives an underline to each step, steps centered in the middle of page -->
             <div class="my-3 prep-steps">  {{ step }} </div>
             {% endfor %}
         </div>
     </div>
 
-    <div class="row  my-3">
+    <div class="row my-3">
         <div class="col">
             <div class="centering-text media-icons">
+                <!-- media links which allow the user to share the recipe on the social platforms -->
                 <a href="https://www.facebook.com/sharer.php" title="facebook" target="_blank" rel="noopener" aria-label="facebook">
                 <i class="fab fa-facebook fa-2x"></i></a>
+                <!-- tweet the link with text already put in the tweet -->
                 <a href="https://twitter.com/intent/tweet?url=https://gourmetgrub639.herokuapp.com{{url_for('recipe_selected', recipe_id=recipe._id)}}&text=Check%2C+out%2C+this+recipe!"
                 title="twitter" target="_blank" rel="noopener" aria-label="twitter">
                 <i class="fab fa-twitter fa-2x"></i></a>
@@ -71,6 +86,7 @@
     <div class="row">
         <div class="col">
             <div class="centering-text">
+                <!-- user can select to edit the recipe in a seperate page then if they desire -->
                 <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary mt-2 mb-4">Edit</a>
             </div>
         </div>
