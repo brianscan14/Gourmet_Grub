@@ -1,18 +1,18 @@
 
     <div class="row">
-    <div class="col-10 col-sm-6 mx-auto">
-    <h1 class="centering-text recipe-title my-5 p-2 playfont">{{recipe.recipe_name}}</h1>
-    </div>
+        <div class="col-10 col-sm-6 mx-auto">
+            <h1 class="centering-text recipe-title my-5 p-2 playfont">{{recipe.recipe_name}}</h1>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-12 col-md-6 mx-auto ing-steps">
             <div class="row mb-3">
-            <div class="col-8 mx-auto">
+                <div class="col-8 mx-auto">
                     {% for stepz in recipe.ingredients %}
                     <div class="ingred-steps my-3"> {{ stepz }} <i class="far fa-plus-square"></i> </div>
                     {% endfor %}
-            </div>
+                </div>
             </div>
         </div>
         
@@ -21,39 +21,38 @@
                 <div class="col-12 col-md-11 mx-auto"><img src="{{recipe.image}}" class="recipe-img" alt="recipe image"></div>
             </div>   
             <div class="row mt-3">
-            <div class="col-12 mt-3">
-            <div class="row">
-                <div class="col-4 mx-auto recipe-stats-left">
-                <div class="recipe-stats  centering-text">
-                <h4>{{ recipe.duration }}</h4>
-                <p>mins</p>
-                </div>
-                </div>
-                <div class="col-4 mx-auto recipe-stats-left">
-                <div class="recipe-stats centering-text">
-                <h4>{{'0' if recipe.ingredients == None else recipe.ingredients|length}}</h4>
-                <p>ingredients</p>
-                </div>
-                </div>
-                <div class="col-4 mx-auto">
-                <div class="recipe-stats centering-text">
-                <h4>{{ recipe.calories }}</h4>
-                <p>calories</p>
-                </div>
-                </div>
-            </div> 
-            </div>    
+                <div class="col-12 mt-3">
+                    <div class="row">
+                        <div class="col-4 mx-auto recipe-stats-left">
+                            <div class="recipe-stats  centering-text">
+                                <h4>{{ recipe.duration }}</h4>
+                                <p>mins</p>
+                            </div>
+                        </div>
+                        <div class="col-4 mx-auto recipe-stats-left">
+                            <div class="recipe-stats centering-text">
+                                <h4>{{'0' if recipe.ingredients == None else recipe.ingredients|length}}</h4>
+                                <p>ingredients</p>
+                            </div>
+                        </div>
+                        <div class="col-4 mx-auto">
+                            <div class="recipe-stats centering-text">
+                                <h4>{{ recipe.calories }}</h4>
+                                <p>calories</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>    
             </div>
         </div>
-
     </div>
 
     <div class="row mt-3">
         <div class="col-12 col-sm-9 mx-auto centering-text">
             <h2 class="cursive">Steps..</h2>
-                {% for step in recipe.recipe_prep %}
-                <div class="my-3 prep-steps">  {{ step }} </div>
-                {% endfor %}
+            {% for step in recipe.recipe_prep %}
+            <div class="my-3 prep-steps">  {{ step }} </div>
+            {% endfor %}
         </div>
     </div>
 
