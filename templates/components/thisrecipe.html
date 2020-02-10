@@ -57,12 +57,28 @@
         </div>
     </div>
 
-    <div class="centering-text">
-    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary my-4">Edit</a>
+    <div class="row  my-3">
+        <div class="col">
+            <div class="centering-text media-icons">
+                <a href="https://www.facebook.com/sharer.php" title="facebook" target="_blank" rel="noopener" aria-label="facebook">
+                <i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://twitter.com/intent/tweet?url=https://gourmetgrub639.herokuapp.com{{url_for('recipe_selected', recipe_id=recipe._id)}}&text=Check%2C+out%2C+this+recipe!"
+                title="twitter" target="_blank" rel="noopener" aria-label="twitter">
+                <i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="centering-text">
+                <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary mt-2 mb-4">Edit</a>
+            </div>
+        </div>
     </div>
 
 </div>
 
     <div class="centering-text mb-5">
-    <a id="backButton" class="btn btn-warning">Back</a>			
+        <a id="backButton" class="btn btn-warning">Back</a>			
     </div>

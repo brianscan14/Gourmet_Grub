@@ -1,6 +1,7 @@
 /* General content on all pages */
 
 body {
+    background-color: #77695F;
     background-image:url("../img/burger.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -51,6 +52,16 @@ input[type=number] {
 .card-border {
     border: 2px solid #77695F;
     box-shadow: 2px 2px 2px 2px #77695F;
+}
+
+.media-icons a {
+    color: #77695F;
+}
+
+.media-icons a:hover {
+    color: #2e2c327e;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
 }
 
 /* nav bar */
