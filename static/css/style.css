@@ -80,6 +80,7 @@ input[type=number] {
     font-size: 18px;
     color: #fff;
     background-color: #2e2c32bd;
+    box-shadow: 2px 2px 20px 2px rgb(66, 59, 53);
 }
 
 .overlay {
