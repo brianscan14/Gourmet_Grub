@@ -20,8 +20,8 @@ def index():
     """
     return render_template('pages/index.html')
 
-@APP.route('/get_recipies')
-def get_recipies():
+@APP.route('/recipes')
+def recipes():
     """
     Returns all the recipes in the DB to the page. Returns 6 recipes per page
     and uses pagination to give better viewing experience. Done by the DB to
@@ -40,7 +40,7 @@ def get_recipies():
 
     return render_template('pages/searchnull.html', query='recipes')
 
-@APP.route('/search_recipe', methods=["GET", "POST"])
+@APP.route('/search/recipes', methods=["GET", "POST"])
 def search_recipe():
     """
     Uses regex to handle the search form input entered, or 'query', ignores
@@ -63,8 +63,8 @@ def search_recipe():
     return render_template('pages/searchnull.html',
     query=rec_search_query, results=results)
 
-@APP.route('/recipe_selected/<recipe_id>')
-def recipe_selected(recipe_id):
+@APP.route('/recipe/<recipe_id>')
+def recipe(recipe_id):
     """
     Uses the recipe's unique id form the mongoDB to id it and return it.
     """
@@ -74,8 +74,8 @@ def recipe_selected(recipe_id):
 
     return render_template('pages/recipe.html', recipe=recipies)
 
-@APP.route('/add_recipe')
-def add_recipe():
+@APP.route('/add')
+def add():
     """
     Add recipe page to allow the user to add a new recipe they like
     to the DB, this brings you to the form to do so.
@@ -83,8 +83,8 @@ def add_recipe():
     return render_template('pages/addrecipe.html',
     recipies=MONGO.db.recipies.find(), title='Add Recipe')
 
-@APP.route('/insert_recipe', methods=['POST'])
-def insert_recipe():
+@APP.route('/insert', methods=['POST'])
+def insert():
     """
     Inserts the recipe that the user has just created on the add recipe
     page into the DB with the below structure, prep and ingredient steps
@@ -111,8 +111,8 @@ def insert_recipe():
     return render_template('pages/thankyou.html', recipe=ret,
     title='Thank you for inserting below recipe')
 
-@APP.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
-def edit_recipe(recipe_id):
+@APP.route('/edit/<recipe_id>', methods=['GET', 'POST'])
+def edit(recipe_id):
     """
     Edit page that uses the recipe selected's unique id and returns
     it in the form format ready to be edited.
@@ -122,8 +122,8 @@ def edit_recipe(recipe_id):
     return render_template('pages/editrecipe.html',
     recipe=recipeDB, recipies=all_cuisine, title='Edit Recipe')
 
-@APP.route('/update_recipe/<recipe_id>', methods=['GET', 'POST'])
-def update_recipe(recipe_id):
+@APP.route('/update/<recipe_id>', methods=['GET', 'POST'])
+def update(recipe_id):
     """
     Posts the updated recipe to the mongoDB and then returns you
     to the page that shows all the recipes. $set operator used to
@@ -146,16 +146,16 @@ def update_recipe(recipe_id):
     })
     return redirect(url_for('get_recipies'))
 
-@APP.route('/delete_recipe/<recipe_id>')
-def delete_recipe(recipe_id):
+@APP.route('/delete/<recipe_id>')
+def delete(recipe_id):
     """
     Deletes the recipe from the DB once the 'delete' button is clicked.
     """
     MONGO.db.recipies.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipies'))
 
-@APP.route('/get_cuisines')
-def get_cuisines():
+@APP.route('/cuisines')
+def cuisines():
     """
     Returns all the cuisnes in the DB but avoids duplicates of the same ones
     by using 'distinct', returns null page if DB is empty.
@@ -168,7 +168,7 @@ def get_cuisines():
 
     return render_template('pages/searchnull.html', query='cuisines')
 
-@APP.route('/search_cuisines')
+@APP.route('/search/cuisines')
 def search_cuisines():
     """
     Below function uses regex to search the DB for all the recipes that contain
@@ -185,9 +185,8 @@ def search_cuisines():
     return render_template('pages/searchcuisines.html',
     query=rec_search_query, results=results)
 
-
-@APP.route("/find_meals", methods=['GET', 'POST'])
-def find_meals():
+@APP.route("/meals", methods=['GET', 'POST'])
+def meals():
     """
     Allows user to search for recipes that match 1 of 3 meal types from a
     dropdown. Requested meal type value is gotten from the form input value
@@ -209,21 +208,6 @@ def find_meals():
             query=request.form.get("meal_type"))
 
     return render_template("pages/findmeals.html")
-
-# @APP.route("/meal_results")
-# def meal_results():
-#     """
-#     Content to be added.
-#     """
-#     return render_template('pages/mealresults.html')
-
-# @APP.route("/thankyoupage")
-# def thankyoupage():
-#     """
-#     Page returned with the recipe that was added and a 'Thank You'
-#     heading, lets the user know they successfully added a recipe.
-#     """
-#     return render_template('pages/thankyou.html')
 
 @APP.errorhandler(404)
 def not_found(e):

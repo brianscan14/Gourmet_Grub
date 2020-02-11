@@ -11,7 +11,7 @@
                 </li>
             {% else %}
                 <li class="page-item">
-                    <a class="page-link"href="{{ url_for('get_recipies', curent_page=this_page) }}">{{ this_page }}</a>
+                    <a class="page-link"href="{{ url_for('recipes', curent_page=this_page) }}">{{ this_page }}</a>
                 </li>
             {% endif %}
         {% endfor %}

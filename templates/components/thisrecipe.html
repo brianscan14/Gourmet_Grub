@@ -76,7 +76,7 @@
                 <a href="https://www.facebook.com/sharer.php" title="facebook" target="_blank" rel="noopener" aria-label="facebook">
                 <i class="fab p-1 fa-facebook-square fa-3x"></i></a>
                 <!-- tweet the link with text already put in the tweet -->
-                <a href="https://twitter.com/intent/tweet?url=https://gourmetgrub639.herokuapp.com{{url_for('recipe_selected', recipe_id=recipe._id)}}&text=Check%2C+out%2C+this+recipe!"
+                <a href="https://twitter.com/intent/tweet?url=https://gourmetgrub639.herokuapp.com{{url_for('recipe', recipe_id=recipe._id)}}&text=Check%2C+out%2C+this+recipe!"
                 title="twitter" target="_blank" rel="noopener" aria-label="twitter">
                 <i class="fab p-1 fa-twitter-square fa-3x"></i></a>
             </div>
@@ -87,7 +87,7 @@
         <div class="col">
             <div class="centering-text">
                 <!-- user can select to edit the recipe in a seperate page then if they desire -->
-                <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary mt-2 mb-4">Edit</a>
+                <a href="{{url_for('edit', recipe_id=recipe._id)}}" class="btn btn-primary mt-2 mb-4">Edit</a>
             </div>
         </div>
     </div>
