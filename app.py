@@ -68,7 +68,8 @@ def recipe_selected(recipe_id):
     """
     Uses the recipe's unique id form the mongoDB to id it and return it.
     """
-    recipies = MONGO.db.recipies.find_one_and_update({"_id": ObjectId(recipe_id)}, {"$inc":{"views":int(1)}}, new=True)
+    recipies = MONGO.db.recipies.find_one_and_update(
+        {"_id": ObjectId(recipe_id)}, {"$inc":{"views":int(1)}}, new=True)
 
     return render_template('pages/recipe.html', recipe=recipies)
 
@@ -79,7 +80,7 @@ def add_recipe():
     to the DB, this brings you to the form to do so.
     """
     return render_template('pages/addrecipe.html',
-    recipies=MONGO.db.recipies.find())
+    recipies=MONGO.db.recipies.find(), title='Add Recipe')
 
 @APP.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -106,7 +107,8 @@ def insert_recipe():
         'views': int(1)
     })
     ret = recipies.find_one({"_id": this_recipe.inserted_id})
-    return render_template('pages/thankyou.html', recipe=ret)
+    return render_template('pages/thankyou.html', recipe=ret, 
+    title='Thank you for inserting below recipe')
 
 @APP.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
@@ -117,7 +119,7 @@ def edit_recipe(recipe_id):
     recipeDB = MONGO.db.recipies.find_one({"_id": ObjectId(recipe_id)})
     all_cuisine = MONGO.db.recipies.find()
     return render_template('pages/editrecipe.html',
-    recipe=recipeDB, recipies=all_cuisine)
+    recipe=recipeDB, recipies=all_cuisine, title='Edit Recipe')
 
 @APP.route('/update_recipe/<recipe_id>', methods=['GET', 'POST'])
 def update_recipe(recipe_id):
