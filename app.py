@@ -69,7 +69,8 @@ def recipe_selected(recipe_id):
     Uses the recipe's unique id form the mongoDB to id it and return it.
     """
     recipies = MONGO.db.recipies.find_one_and_update(
-        {"_id": ObjectId(recipe_id)}, {"$inc":{"views":int(1)}}, new=True)
+        {"_id": ObjectId(recipe_id)},
+        {"$inc": {"views": int(1)}}, new=True)
 
     return render_template('pages/recipe.html', recipe=recipies)
 
@@ -107,7 +108,7 @@ def insert_recipe():
         'views': int(1)
     })
     ret = recipies.find_one({"_id": this_recipe.inserted_id})
-    return render_template('pages/thankyou.html', recipe=ret, 
+    return render_template('pages/thankyou.html', recipe=ret,
     title='Thank you for inserting below recipe')
 
 @APP.route('/edit_recipe/<recipe_id>', methods=['GET', 'POST'])
@@ -130,8 +131,8 @@ def update_recipe(recipe_id):
     edited a recipe.
     """
     recipies = MONGO.db.recipies
-    recipies.update_one( {'_id': ObjectId(recipe_id)},
-    { '$set': {
+    recipies.update_one({'_id': ObjectId(recipe_id)},
+    {'$set': {
         'recipe_name': request.form.get('recipe_name'),
         'recipe_prep': request.form.getlist('recipe_prep'),
         'recipe_desc': request.form.get('recipe_desc'),
@@ -141,7 +142,7 @@ def update_recipe(recipe_id):
         'ingredients': request.form.getlist('ingredients'),
         'meal_type': request.form.get('meal_type'),
         'calories': request.form.get('calories'),
-        'duration': request.form.get('duration') }
+        'duration': request.form.get('duration')}
     })
     return redirect(url_for('get_recipies'))
 
@@ -173,11 +174,13 @@ def search_cuisines():
     Below function uses regex to search the DB for all the recipes that contain
     the cuisine name that is the title of the card when the button is clicked.
     The button has the value of the cuisine and this function uses that as the
-    'query' value to return the matching recipes. No needs for 0 results page here
-    as the previous page wouldn't populate in first place if there was no recipes.
+    'query' value to return the matching recipes. No needs for 0 results page
+    here as the previous page wouldn't populate in first place if there was
+    no recipes.
     """
     rec_search_query = request.args['query']
-    query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
+    query = {'$regex': re.compile('.*{}.*'.format(rec_search_query),
+    re.IGNORECASE)}
     results = MONGO.db.recipies.find({'cuisine_name': query})
     return render_template('pages/searchcuisines.html',
     query=rec_search_query, results=results)
