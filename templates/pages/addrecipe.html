@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-10 mx-auto">
-            <form action="{{ url_for('insert') }}" autocomplete="off" method="POST" class="form-caps">
+            <form action="{{ url_for('add') }}" autocomplete="off" method="POST" class="form-caps">
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
@@ -213,7 +213,7 @@
 </div>
 
 <div class="centering-text my-5">
-    <a href="{{ url_for('get_recipies') }}" class="btn btn-warning">Cancel</a>
+    <a href="{{ url_for('recipes') }}" class="btn btn-warning">Cancel</a>
 </div>
 
 {% endblock %}
