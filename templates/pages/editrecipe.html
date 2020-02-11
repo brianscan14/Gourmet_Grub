@@ -227,7 +227,8 @@
     <div class="col-12">
         <div class="centering-text my-5">
 		<button class="btn btn-primary" type="submit" name="action">Save</button>
-        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger my-4">Delete</a>
+        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger my-4"
+        title="Clicking this will permanently delete the recipe">Delete</a>
         </div>
         </div>
     </div>
