@@ -22,10 +22,24 @@
                 </div>
                 <div class="col-9 col-sm-11 mx-auto">
                     <select class="bg-transparent custom-select custom-select-lg caps" id="meal_type" name="meal_type" required>
-                        <option class="caps" value=" {{ recipe.meal_type }} " disabled selected>{{ recipe.meal_type }}</option>
+                    {% if recipe.meal_type == 'breakfast' %}
+                        <option value="breakfast" selected>Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                    {% elif recipe.meal_type == 'lunch' %}
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch" selected>Lunch</option>
+                        <option value="dinner">Dinner</option>
+                    {% elif recipe.meal_type == 'dinner' %}
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner" selected>Dinner</option>
+                    {% else %}
+                        <option value="" disabled selected hidden>Select Meal</option>
                         <option value="breakfast">Breakfast</option>
                         <option value="lunch">Lunch</option>
                         <option value="dinner">Dinner</option>
+                    {% endif %}
                     </select>
                 </div>
                 </div>
