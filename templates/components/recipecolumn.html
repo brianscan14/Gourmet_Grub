@@ -17,7 +17,7 @@
             <div class="card-footer">
                 <!-- footer of the card in muted text just showing what the cuisine is and how many views recipe has -->
                 <span><small class="text-muted">"{{recipe.cuisine_name}}" food..</small></span>
-                <span><small class="text-muted views-right">{{recipe.views}}  <i class="far fa-eye"></i></small></span>
+                <span><small class="text-muted views-right">{{'0' if recipe.views == None else recipe.views}}  <i class="far fa-eye"></i></small></span>
             </div>
         </div>
     </div>
