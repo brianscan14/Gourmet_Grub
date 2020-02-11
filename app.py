@@ -25,15 +25,20 @@ def get_recipies():
     """
     Returns all the recipes in the DB to the page. Returns 6 recipes per page
     and uses pagination to give better viewing experience. Done by the DB to
-    improve loading times as it only loads 6 recipes at a time, not all at once.
+    improve loading times as it only loads 6 recipes at a time, not all at
+    once. Returns null page if DB is empty.
     """
+    recipes = MONGO.db.recipies.find()
     curent_page = int(request.args.get('curent_page', 1))
     total_docs = MONGO.db.recipies.count_documents({})
     total_recipes = MONGO.db.recipies.find().skip((curent_page - 1)*6).limit(6)
     num_pages = range(1, int(total_docs / 6) + 2)
 
-    return render_template("pages/recipies.html", recipies=total_recipes,
-    curent_page=curent_page, num_pages=num_pages, total=total_docs)
+    if recipes.count() > 0:
+        return render_template("pages/recipies.html", recipies=total_recipes,
+        curent_page=curent_page, num_pages=num_pages, total=total_docs)
+
+    return render_template('pages/searchnull.html', query='recipes')
 
 @APP.route('/search_recipe', methods=["GET", "POST"])
 def search_recipe():
@@ -117,8 +122,10 @@ def edit_recipe(recipe_id):
 @APP.route('/update_recipe/<recipe_id>', methods=['GET', 'POST'])
 def update_recipe(recipe_id):
     """
-    Posts the updated recipe to the mongoDB and then reurns you
-    to the pge that shows all the recipes.
+    Posts the updated recipe to the mongoDB and then returns you
+    to the page that shows all the recipes. $set operator used to
+    fix a bug that reset the recipe views field to 0 when the user
+    edited a recipe.
     """
     recipies = MONGO.db.recipies
     recipies.update_one( {'_id': ObjectId(recipe_id)},
@@ -148,10 +155,15 @@ def delete_recipe(recipe_id):
 def get_cuisines():
     """
     Returns all the cuisnes in the DB but avoids duplicates of the same ones
-    by using 'distinct'.
+    by using 'distinct', returns null page if DB is empty.
     """
-    return render_template('pages/cuisines.html',
-    recipies=MONGO.db.recipies.find().distinct("cuisine_name"))
+    null_recipes = MONGO.db.recipies.find()
+
+    if null_recipes.count() > 0:
+        return render_template('pages/cuisines.html',
+        recipies=MONGO.db.recipies.find().distinct("cuisine_name"))
+
+    return render_template('pages/searchnull.html', query='cuisines')
 
 @APP.route('/search_cuisines')
 def search_cuisines():
@@ -159,7 +171,8 @@ def search_cuisines():
     Below function uses regex to search the DB for all the recipes that contain
     the cuisine name that is the title of the card when the button is clicked.
     The button has the value of the cuisine and this function uses that as the
-    'query' value to return the matching recipes.
+    'query' value to return the matching recipes. No needs for 0 results page here
+    as the previous page wouldn't populate in first place if there was no recipes.
     """
     rec_search_query = request.args['query']
     query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
@@ -174,7 +187,7 @@ def find_meals():
     Allows user to search for recipes that match 1 of 3 meal types from a
     dropdown. Requested meal type value is gotten from the form input value
     which is one of the 3 options, and returns all recipes in the DB that
-    match this meal type. If there are no mtaches then the 'null' results
+    match this meal type. If there are no matches then the 'null' results
     page is returned instead.
     """
     recipies = MONGO.db.recipies
