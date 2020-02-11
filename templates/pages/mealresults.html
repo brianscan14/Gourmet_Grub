@@ -3,11 +3,7 @@
 
     <div class="container my-5 mx-auto">
 
-        <div class="row">
-            <div class="col-8 col-sm-4 mx-auto">
-                <h2 class="recipe-title playfont centering-text p-4 caps">"{{ query }}"</h2>
-            </div>
-        </div>
+        {% include 'components/searchtitle.html' %}
 
         {% for recipe in recipies %}
         <div class="row">
