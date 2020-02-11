@@ -74,25 +74,24 @@ def recipe(recipe_id):
 
     return render_template('pages/recipe.html', recipe=recipies)
 
-@APP.route('/add')
+@APP.route('/add', methods=["GET", "POST"])
 def add():
     """
     Add recipe page to allow the user to add a new recipe they like
-    to the DB, this brings you to the form to do so.
-    """
-    return render_template('pages/addrecipe.html',
-    recipies=MONGO.db.recipies.find(), title='Add Recipe')
-
-@APP.route('/insert', methods=['POST'])
-def insert():
-    """
-    Inserts the recipe that the user has just created on the add recipe
-    page into the DB with the below structure, prep and ingredient steps
-    use getlist to iterate through the steps in each. Once inserted the
-    user is then returnd to a thank you page to inform them they were
-    successsfull, also showing them the recipe they just inserted.
+    to the DB, this brings you to the form to do so with the GET
+    request by using a conditional statment.
+    If it is a POST request then it inserts the recipe that the user
+    has just created on the add recipe page into the DB with the below
+    structure, prep and ingredient steps use getlist to iterate through
+    the steps in each. Once inserted the user is then returnd to a 
+    thank you page to inform them they were successsfull, also showing
+    them the recipe they just inserted.
     """
     recipies = MONGO.db.recipies
+    if request.method == 'GET':
+        return render_template('pages/addrecipe.html',
+        recipies=MONGO.db.recipies.find(), title='Add Recipe')
+
     this_recipe = recipies.insert_one(
         {
         'recipe_name': request.form.get('recipe_name'),
@@ -111,25 +110,25 @@ def insert():
     return render_template('pages/thankyou.html', recipe=ret,
     title='Thank you for inserting below recipe')
 
+
 @APP.route('/edit/<recipe_id>', methods=['GET', 'POST'])
 def edit(recipe_id):
     """
     Edit page that uses the recipe selected's unique id and returns
-    it in the form format ready to be edited.
-    """
-    recipeDB = MONGO.db.recipies.find_one({"_id": ObjectId(recipe_id)})
-    all_cuisine = MONGO.db.recipies.find()
-    return render_template('pages/editrecipe.html',
-    recipe=recipeDB, recipies=all_cuisine, title='Edit Recipe')
-
-@APP.route('/update/<recipe_id>', methods=['GET', 'POST'])
-def update(recipe_id):
-    """
-    Posts the updated recipe to the mongoDB and then returns you
+    it in the form format ready to be edited. Conditional 
+    statement used to return the edit page itself if it is a GET
+    request, and else if it's a POST it post it to the mongoDB.
+    Sends the updated recipe to the mongoDB and then returns you
     to the page that shows all the recipes. $set operator used to
     fix a bug that reset the recipe views field to 0 when the user
     edited a recipe.
     """
+
+    if request.method == 'GET':
+        recipeDB = MONGO.db.recipies.find_one({"_id": ObjectId(recipe_id)})
+        return render_template('pages/editrecipe.html',
+        recipe=recipeDB, title='Edit Recipe')
+
     recipies = MONGO.db.recipies
     recipies.update_one({'_id': ObjectId(recipe_id)},
     {'$set': {
@@ -144,7 +143,7 @@ def update(recipe_id):
         'calories': request.form.get('calories'),
         'duration': request.form.get('duration')}
     })
-    return redirect(url_for('get_recipies'))
+    return redirect(url_for('recipes'))
 
 @APP.route('/delete/<recipe_id>')
 def delete(recipe_id):
@@ -152,7 +151,7 @@ def delete(recipe_id):
     Deletes the recipe from the DB once the 'delete' button is clicked.
     """
     MONGO.db.recipies.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('get_recipies'))
+    return redirect(url_for('recipes'))
 
 @APP.route('/cuisines')
 def cuisines():
@@ -192,7 +191,11 @@ def meals():
     dropdown. Requested meal type value is gotten from the form input value
     which is one of the 3 options, and returns all recipes in the DB that
     match this meal type. If there are no matches then the 'null' results
-    page is returned instead.
+    page is returned instead. The first conditional statement determines if
+    it is a POST request, this will return the meal results. There is a
+    nested statement within this one to return results if there are any or
+    else return the null page. If the page is a GET request then the page
+    to search the values is returned.
     """
     recipies = MONGO.db.recipies
     if request.method == 'POST':
