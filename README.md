@@ -40,7 +40,6 @@ to be added....soon
   - Used to validate the CSS code for all browsers.
 - [Jinga](http://jinja.palletsprojects.com/en/2.10.x/)
   - To display data from the backend in html
-- More...
 
 ### Back End
 
@@ -48,7 +47,6 @@ to be added....soon
   - Python framework used to build the app.
 - [Pymongo](https://api.mongodb.com/python/current/)
   - Sends the queries to the DB.
-- more ....
 - [MongoDB Altas](https://www.mongodb.com/)
   - Database used for this project
 - [PIP](https://pip.pypa.io/en/stable/installing/)
@@ -128,60 +126,84 @@ Link to file
 
 ### Run project locally:
 
-Using a suitable IDE, stall (this project used Gitpod):
+Using a suitable IDE (this project used Gitpod), make sure these are installed:
 
-**PIP, Python 3, Git**, and a **MongoDB** account running locally on your laptop.
+**[PIP](https://pip.pypa.io/en/stable/installing/), [Python 3](https://www.python.org/downloads/), [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)**
 
-1. Clone a copy of the Github repo (Github url) by clicking the "clone" button, this will open the contents of the repo in a new workspace in the IDE. If Git is installed on your system, clone the repo with the following command: git clone "link to my repo"
-2. Use the python virtual environment for the interpreter by entering the below command: pyth**on3 "name of your app file".py - incorrect?**
-3. install all the required modules with the command: pip -r requirements.txt, this will also later be needed to setup the heroku app
-4. In your local IDE create a file called env.py
-5. in the env.py file create a MONGO_URI and MONGO_DB variable to link to your own database. Call the DB good_grubDB, with one collection called recipes.
-6. You can now run the app with the command python3 app.py
-7. You can visit the site at 
+**[MongoDB](https://docs.atlas.mongodb.com/getting-started/)** account running locally on your laptop.
+
+1. Clone a copy of the [Github repo](https://github.com/brianscan14/Gourmet_Grub) by clicking the "clone" button, this will open the contents of the repo in a new workspace in the IDE. If Git is installed on your system, clone the repo with the following command: 
+
+   - git clone https://github.com/brianscan14/Gourmet_Grub.git
+
+2. Use the python virtual environment (VI) for the interpreter by entering the below command:
+
+   - pip install virtualenv
+
+3. Specify a path, for example one being created in the local directory called 'montypython' is:
+
+   - virtualenv mypython
+
+4. Activate the VI by running the following command:
+
+   1. Mac OS / Linus:
+      - source montypython/bin/activate
+   2. Windows:
+      - montypython\Scripts\activate
+
+   *Note: your commands may differ, depends on IDE used, check [python](https://docs.python.org/3/library/venv.html) docs if you are running into issues*
+
+5. Upgrade pip if it is needed:
+
+   - pip install --upgrade pip
+
+6. Install all the required modules with the command: 
+
+   - pip -r requirements.txt
+
+   *This will also later be needed to setup the heroku app*
+
+7. In your local IDE create a file called env.py
+
+8. in the env.py file create a MONGO_URI and MONGO_DB variable to link to the database. Call the database 'good_grubDB', with one collection called 'recipies'.
+
+9. You can now run the app with the command:
+
+   -  python3 app.py
+
+10. You can visit the site at:
+
+    -  http://0.0.0.0:8080/
 
 ### Heroku Deployment:
 
-1. Install Heroku using bash:
-   nvm i v8
-   npm install -g heroku
-2. In bash, log into Heroku:
-   heroku login -i
-3. In bash, create a new app (replace <app_name> with a name of your own. It must be unique, so put your initials or nickname before it):
-   heroku create <app_name>
-4. New remote will be added. Check with the following in bash:
-   git remote -v
-5. Install gunicorn by typing the following in bash:
-   pip3 install gunicorn
-6. Create a name file named "Procfile" (without the quotes, and the first P must be uppercase).
-7. Open Procfile in the editor and add the following line to it, and save. Replace the <your python file name without the .py> with the name of the file that holds the Flask app:
-   web gunicorn <your python file name without .py>:app
-8. In bash, create requirements file with:
-   pip3 freeze --local > requirements.txt
-9. If you ever use pip3 to install more packages after an initial deploy, you must re-generate the requirements.txt and commit/psuh to heroku
-10. Using bash, commit everything:
-    git add .
-    git commit -m "<Commit Message>"
-11. In bash, push to heroku using git push heroku master
-12. Go to your Heroku account, find the app and open it. Click on setting and then "reveal config vars", set the following config vars:
-    1. IP = 0.0.0.0
-    2. PORT = 5000
-    3. MONGO_URI = mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
+Follow the below instructions to deploy GoodGrub to heroku:
 
-#### *Set up environment variables *
+1. Create a Procfile in the terminal with the command:
+   - `echo web: python app.py > Procfile`.
+2. In bash, create requirements file with:
+   - pip3 freeze --local > requirements.txt
+3. If you ever use pip3 to install more packages after an initial deploy, you must re-generate the requirements.txt and commit/push to heroku
+4. Using bash, commit everything:
+   - git add .
+   - git commit -m "<Commit Message>"
+5. In bash, push to GitHub using: 
+   - git push -u origin master
+6. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Make sure to set the region to Europe when naming it.
+7. From the heroku dashboard of your new app, click on "Deploy" > "Deployment method" and select GitHub.
+8. Confirm the linking of the heroku app to the correct GitHub repository.
+9. Go to your Heroku account, find the app and open it. Click on setting and then "reveal config vars", set the following config vars:
+   - Check [Mongo site](https://docs.atlas.mongodb.com/tutorial/connect-to-your-cluster/) for how to get the URI value
 
-Make sure you are in the Heroku CLI (step 2 above).
+| **Key**   | **Value**                                                    |
+| --------- | ------------------------------------------------------------ |
+| DEBUG     | FALSE                                                        |
+| IP        | 0.0.0.0                                                      |
+| PORT      | 5000                                                         |
+| MONGO_URI | mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority |
 
-1. To set a config variable, use:
-
-   heroku config:set WHATEVER=VALUE
-
-   So for example, to set the MONGO_URI:
-
-   heroku config:set MONGO_URI= mongodb+srv://root:random123
-
-2. To check all the config variables you have, use:
-   heroku config 
+13. Click 'deploy' in the heroku dashboard
+14. Ensure the master branch is selected in the 'manual deployment' section of the page and click 'deploy branch'
 
 ## Credits
 
