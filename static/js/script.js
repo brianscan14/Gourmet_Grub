@@ -53,7 +53,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){
             x++;
-            $(wrapper).append('<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" id="ingredients" name="ingredients"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
+            $(wrapper).append('<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" maxlength="25" type="text" id="ingredients" name="ingredients"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
         }
         else
             {

@@ -170,8 +170,9 @@
                                     <div class="container2">
                                         {% for stepz in recipe.ingredients %}
                                         <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" 
-                                        type="text" id="ingredients" name="ingredients" value= "{{ stepz }}">
-                                        <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
+                                        type="text" id="ingredients" name="ingredients" value= "{{ stepz }}" maxlength="25">
+                                        <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button>
+                                        </div>
                                         {% endfor %}
                                     </div>
                                 </div>
