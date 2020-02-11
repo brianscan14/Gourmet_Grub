@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
     let textBox = event.target;
     let start = textBox.selectionStart;
     let end = textBox.selectionEnd;
+    // converts first letter of string to uppercase and the rest there after are lowercase
     textBox.value = textBox.value.charAt(0).toUpperCase() + textBox.value.slice(1).toLowerCase();
     textBox.setSelectionRange(start, end);
   });
@@ -30,6 +31,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){
             x++;
+            // when the add button is cliked below html content will get added for each click, delete button included
             $(wrapper).append('<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" name="recipe_prep" id="recipe_prep"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
         }
         else
@@ -37,7 +39,7 @@ $(document).ready(function() {
             alert('You Reached the limit of fields!')
         }
     });
-        
+            // delete button to remove the form input when clicked
             $(wrapper).on("click",".delete", function(e){
             e.preventDefault(); $(this).parent('div').remove(); x--;
         })
