@@ -49,10 +49,13 @@
         <form action="{{ url_for('search_recipe') }}" >
             <div class="row mt-5">
                 <div class="col-10 col-sm-7 mx-auto form-caps">
-                    <input class="form-control nav-search-form mx-auto" autocomplete="off" type="text" placeholder="Search for a recipe!" name="query" required>
+                    <input class="form-control nav-search-form mx-auto" autocomplete="off" 
+                    type="text" placeholder="Search for a recipe!" name="query" required>
                 </div>
             </div>
-            <button id="search_recipe" type="submit" class="btn btn-success mt-4" aria-label="search"><i class="fas fa-search fa-2x"></i></button>
+            <button id="search_recipe" type="submit" class="btn btn-success mt-4" aria-label="search">
+                <i class="fas fa-search fa-2x"></i>
+            </button>
         </form>
         </div>
     </div>
