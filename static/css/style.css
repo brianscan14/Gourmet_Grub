@@ -445,6 +445,10 @@ input[type="text"].search-bar::-moz-placeholder {
     float: right;
 }
 
+.views-left {
+    float: left;
+}
+
 .meal-header {
     color: rgba(255, 255, 255, 0.795);
     border-bottom: 2px solid #837c7c9c;
