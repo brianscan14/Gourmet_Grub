@@ -116,7 +116,51 @@ to be added....soon
 
 ## Features to implement
 
+## Information Architecture
 
+### Database
+
+As this is the MS3 of the course a NoSQL database is used, this project employs the NoSQL database MongoDB. Inner arrays were utilised in the data structure in order to iterate through the items in a list with relative ease.
+
+### Data Types
+
+Below are the different data types in the MongoDB:
+
+- ObjectId
+- String
+- Integer
+- Array
+
+### Data Structure 
+
+Below is the data base collection:
+
+Recipes Collection
+
+| Title              | DB Key       | Form Validation                           | Data type |
+| ------------------ | ------------ | ----------------------------------------- | --------- |
+| Recipe ID          | _id          | None                                      | ObjectId  |
+| Recipe Name        | recipe_name  | text, `pattern=".{3,}", maxlength="16"`   | string    |
+| Description        | recipe_desc  | text, `pattern=".{70,}", maxlength="150"` | string    |
+| Image              | image        | url, `pattern="(.*?)\.(jpg|png|gif)$`     | string    |
+| Cuisine            | cuisine_name | text, `pattern=".{3,}", maxlength="14"`   | string    |
+| Meal Type          | meal_type    | option="breakfast, lunch, dinner"         | string    |
+| Calories           | calories     | number, max="9999"                        | integer   |
+| Duration           | duration     | number, max="999"                         | integer   |
+| Views              | views        | number, max="999"                         | integer   |
+|                    |              |                                           |           |
+| Preparation Steps  | recipe_prep  |                                           | array     |
+| *Step 1*           | 0            | text, `maxlength="100"`                   | integer   |
+| *Step 2.*..etc.    | 1            | text, `maxlength="100"`                   | integer   |
+| *Step 20*          | 2            | text, `maxlength="100"`                   | integer   |
+|                    |              |                                           |           |
+| Recipe Ingredients | ingredients  |                                           | array     |
+| *Step 1*           | 0            | text, `maxlength="18"`                    | integer   |
+| *Step 2*....etc.   | 1            | text, `maxlength="18"`                    | integer   |
+| *Step 20*          | 2            | text, `maxlength="18"`                    | integer   |
+|                    |              |                                           |           |
+
+JSON file showing recipes collection structure 
 
 ## Testing
 
