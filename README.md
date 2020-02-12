@@ -70,7 +70,7 @@ As a result of this the below wireframes consist largely of only 2 mockups drawi
 - Thank you page
   - xs-xl screen
 
-## Technologies (add links)
+## Technologies
 
 ### Front End
 
