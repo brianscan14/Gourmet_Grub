@@ -102,8 +102,8 @@ def add():
         'image': request.form.get('image'),
         'ingredients': request.form.getlist('ingredients'),
         'meal_type': request.form.get('meal_type'),
-        'calories': request.form.get('calories'),
-        'duration': request.form.get('duration'),
+        'calories': int(request.form.get('calories')),
+        'duration': int(request.form.get('duration')),
         'views': int(1)
     })
     ret = recipies.find_one({"_id": this_recipe.inserted_id})
@@ -140,8 +140,8 @@ def edit(recipe_id):
         'image': request.form.get('image'),
         'ingredients': request.form.getlist('ingredients'),
         'meal_type': request.form.get('meal_type'),
-        'calories': request.form.get('calories'),
-        'duration': request.form.get('duration')}
+        'calories': int(request.form.get('calories')),
+        'duration': int(request.form.get('duration'))}
     })
     return redirect(url_for('recipes'))
 
