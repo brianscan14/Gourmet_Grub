@@ -28,7 +28,7 @@ def recipes():
     improve loading times as it only loads 6 recipes at a time, not all at
     once. Returns null page if DB is empty.
     """
-    recipes = MONGO.db.recipies.find()
+    recipes = MONGO.db.recipies.find().sort([('views', -1)])
     curent_page = int(request.args.get('curent_page', 1))
     total_docs = MONGO.db.recipies.count_documents({})
     total_recipes = MONGO.db.recipies.find().skip((curent_page - 1)*6).limit(6)
@@ -54,7 +54,8 @@ def search_recipe():
     results = MONGO.db.recipies.find({
         '$or': [
             {'recipe_name': query},
-            {'ingredients': query}]})
+            {'ingredients': query}]
+        }).sort([('views', -1)])
 
     if results.count() > 0:
         return render_template('pages/searchrecipe.html',
@@ -122,7 +123,6 @@ def edit(recipe_id):
     fix a bug that reset the recipe views field to 0 when the user
     edited a recipe.
     """
-
     if request.method == 'GET':
         recipeDB = MONGO.db.recipies.find_one({"_id": ObjectId(recipe_id)})
         return render_template('pages/editrecipe.html',
@@ -198,7 +198,8 @@ def meals():
     recipies = MONGO.db.recipies
     if request.method == 'POST':
         requested_meal_type = request.form.get("meal_type")
-        recipies = MONGO.db.recipies.find({"meal_type": requested_meal_type})
+        recipies = MONGO.db.recipies.find({
+            "meal_type": requested_meal_type}).sort([('views', -1)])
 
         if recipies.count() > 0:
             return render_template("pages/mealresults.html",
