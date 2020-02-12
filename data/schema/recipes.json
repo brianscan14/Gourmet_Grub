@@ -1,0 +1,17 @@
+[{
+    "_id": "<objectId>",
+    "recipe_name": "<string>",
+    "recipe_desc": "<string>",
+    "image": "<string>",
+    "cuisine_name": "<string>",
+    "meal_type": "<string>",
+    "calories": "<integer>",
+    "duration": "<integer>",
+    "views": "<integer>",
+    "recipe_prep": [
+        {"0-20": "<string>"}
+    ],
+    "ingredients": [
+        {"0-20": "<string>"}
+    ]
+}]
