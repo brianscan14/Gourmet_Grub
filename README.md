@@ -21,7 +21,54 @@ The search bar on the index page is grand and bold, taking up the entire screen 
 
 ## Wireframes
 
-to be added....soon
+This website was designed with two screen size ranges in mind:
+
+1. Mobile
+2. Tablet-Desktop
+
+As a result of this the below wireframes consist largely of only 2 mockups drawings (contact & footer are the exceptions). 
+
+- Navbar
+  - xs screen
+  - sm-xl screen
+
+- Home
+  - xs screen
+  - sm-xl screen
+
+- Cuisines
+  - xs screen
+  - sm-xl screen
+
+- Meals
+  - xs screen
+  - sm-xl screen
+
+- Meal / Cuisine search results
+  - xs screen
+  - sm-xl screen 
+
+- Home/Navbar search results
+  - xs screen
+  - sm-xl screen
+
+- Add/Edit Recipe
+  - xs screen
+  - sm-xl screen
+
+- All Recipes
+  - xs screen
+  - sm-xl screen
+
+- Single recipe Page
+  - xs screen
+  - sm-xl screen
+
+- Null search results
+  - xs-xl screen
+
+- Thank you page
+  - xs-xl screen
 
 ## Technologies (add links)
 
