@@ -32,7 +32,7 @@ $(document).ready(function() {
         if(x < max_fields){
             x++;
             // when the add button is cliked below html content will get added for each click, delete button included
-            $(wrapper).append('<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text" name="recipe_prep" id="recipe_prep"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
+            $(wrapper).append('<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" maxlength="100" type="text" name="recipe_prep" id="recipe_prep"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
         }
         else
         {
