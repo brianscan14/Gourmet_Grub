@@ -16,8 +16,9 @@ The search bar on the index page is grand and bold, taking up the entire screen 
 4. To be able to search by a food type or even meal type when I am less sure of what recipe I desire.
 5. When browsing through the different recipes I want important pieces of info like cuisine type to be presented to me without having to click into it.
 6. The recipe I decide on to be easily readable and followable step by step.
-7. As a user contributing to the site, I expect aa certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
-8. If using this site on a mobile phone, as you more that likely would in a kitchen I expect this site to be mobile/tablet friendly and be just as responsive as a desktop site would be.
+7. As a user contributing to the site, I expect a certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
+8. As a user browsing the site, if there are no recipes matching my search I want a page returned confirming this, not just an empty page.
+9. If using this site on a mobile phone, as you more that likely would in a kitchen I expect this site to be mobile/tablet friendly and be just as responsive as a desktop site would be.
 
 ## Wireframes
 
