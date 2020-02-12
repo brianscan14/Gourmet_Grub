@@ -207,7 +207,7 @@ Recipes Collection
 | *Step 20*          | 2            | text, `maxlength="18"`                    | integer   |
 |                    |              |                                           |           |
 
-JSON file showing recipes collection structure](https://github.com/brianscan14/Gourmet_Grub/blob/master/data/schema/recipes.json) 
+[JSON file showing recipes collection structure](https://github.com/brianscan14/Gourmet_Grub/blob/master/data/schema/recipes.json) 
 
 ## Testing
 
