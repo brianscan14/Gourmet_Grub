@@ -134,32 +134,32 @@ Using a suitable IDE (this project used Gitpod), make sure these are installed:
 
 1. Clone a copy of the [Github repo](https://github.com/brianscan14/Gourmet_Grub) by clicking the "clone" button, this will open the contents of the repo in a new workspace in the IDE. If Git is installed on your system, clone the repo with the following command: 
 
-   - git clone https://github.com/brianscan14/Gourmet_Grub.git
+   - `git clone https://github.com/brianscan14/Gourmet_Grub.git`
 
 2. Use the python virtual environment (VI) for the interpreter by entering the below command:
 
-   - pip install virtualenv
+   - `pip install virtualenv`
 
 3. Specify a path, for example one being created in the local directory called 'montypython' is:
 
-   - virtualenv mypython
+   - `virtualenv mypython`
 
 4. Activate the VI by running the following command:
 
    1. Mac OS / Linus:
-      - source montypython/bin/activate
+      - `source montypython/bin/activate`
    2. Windows:
-      - montypython\Scripts\activate
+      - `montypython\Scripts\activate`
 
    *Note: your commands may differ, depends on IDE used, check [python](https://docs.python.org/3/library/venv.html) docs if you are running into issues*
 
 5. Upgrade pip if it is needed:
 
-   - pip install --upgrade pip
+   - `pip install --upgrade pip`
 
 6. Install all the required modules with the command: 
 
-   - pip -r requirements.txt
+   - `pip -r requirements.txt`
 
    *This will also later be needed to setup the heroku app*
 
@@ -169,11 +169,11 @@ Using a suitable IDE (this project used Gitpod), make sure these are installed:
 
 9. You can now run the app with the command:
 
-   -  python3 app.py
+    - `python3 app.py`
 
 10. You can visit the site at:
 
-    -  http://0.0.0.0:8080/
+    - `http://0.0.0.0:8080/`
 
 ### Heroku Deployment:
 
@@ -182,13 +182,13 @@ Follow the below instructions to deploy GoodGrub to heroku:
 1. Create a Procfile in the terminal with the command:
    - `echo web: python app.py > Procfile`.
 2. In bash, create requirements file with:
-   - pip3 freeze --local > requirements.txt
+   - `pip3 freeze --local > requirements.txt`
 3. If you ever use pip3 to install more packages after an initial deploy, you must re-generate the requirements.txt and commit/push to heroku
 4. Using bash, commit everything:
-   - git add .
-   - git commit -m "<Commit Message>"
+   - `git add`
+   - `git commit -m "<Commit Message>"`
 5. In bash, push to GitHub using: 
-   - git push -u origin master
+   - `git push -u origin master`
 6. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Make sure to set the region to Europe when naming it.
 7. From the heroku dashboard of your new app, click on "Deploy" > "Deployment method" and select GitHub.
 8. Confirm the linking of the heroku app to the correct GitHub repository.
