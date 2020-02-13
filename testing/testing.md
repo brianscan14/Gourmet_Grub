@@ -1,20 +1,20 @@
-### GourmetGrub Testing
+## GourmetGrub Testing
 
-#### Manual Testing
+### Manual Testing
 
-###### **Planning**
+#### **Planning**
 
 ------
 
 The main goal of this website is to offer users a quick and simple way to easily access, add, share or update cooking recipes in an interactive manner. This testing will be carried out using developer tools audit tests, different browsers and also different screen sizes to check responsiveness. Validation tools and automated tests will also be carried out to check the code's validity, as outlined in the "Automated testing" section below. The main means of testing the intended purpose of this website will also be to go through each client story and check if their outcome was achieved.
 
-###### **Implementation**
+#### **Implementation**
 
 ------
 
-###### Manual Tests
+#### Manual Tests
 
-###### *Methodology used*
+##### *Methodology used*
 
 *This site was tested across the below browsers:*
 
@@ -37,15 +37,15 @@ The audit tool from google inspect was also used in order to improve on three as
 - Best Practices
 - Accessibility
 
-###### *Testing performed on desktop*
+##### *Testing performed on desktop*
 
 
 
-###### *Testing performed on tablet/mobile devices*
+##### *Testing performed on tablet/mobile devices*
 
 
 
-###### *User Stories tests*
+##### *User Stories tests*
 
 **Being a new visitor to the website, I want:**
 
@@ -77,15 +77,15 @@ The audit tool from google inspect was also used in order to improve on three as
 
 
 
-###### **Results**
+#### **Results**
 
 ------
 
-###### *Results of Google Audits*
+##### *Results of Google Audits*
 
 This let me realise where aria-labels were missing and alt tags, along with labels for forms and if CDN library version was vulnerable. Where loading times can be reduced and colour's opacities needed to be changed to improve performance. The pictures were gotten from [Pexels](https://www.pexels.com/) and were already small in file size so didn't need to be condensed further. From these audits on the site each page scored over 90% or over in the three aspects aforementioned.
 
-###### *Bugs fixed*
+##### *Bugs fixed*
 
 Most of the issues that were on the page stemmed from the initial adding of the recipe to a page from the 'Add Recipe' form, these are as follows:
 
@@ -109,21 +109,19 @@ Issues with screen sizing and layout became apparent in the testing of this page
 
 When an error occurred with the running of the page it just retuned you to an 'error 404' page for example. A function was implemented into the back end to catch and create a route for these errors and return a page to bring you back to the home page.
 
-###### *Bugs still an issue*
+##### *Bugs still an issue*
 
 There was an bug in IE where the JQuery used doesn't work, I looked up [Can i use](https://caniuse.com/#search=jquery) and unfortunately it isn't available in any forms of IE.
 
-#### Automated Testing
+### Automated Testing
 
-##### Validation
+#### Validation
 
 - [W3C Markup Validation](https://validator.w3.org/) was used to validate HTML.
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
 
-No major errors were observed, the only one to note was with CSS and this relates to a knows BS problem.
-
-##### Jasmine
+#### Jasmine
 
 The main functions were tested in this project with Jasmine as a means of ensuring they were working as planned. The way I approached the testing method was to start small and make sure it is implemented correctly in the first place and work from there. As I am new to Jasmine testing this method best suited me for this project. The files for testing are below:
 
@@ -144,7 +142,7 @@ To create Jasmine tests of your own:
 2. Write the tests using Jasmine's framework.
 3. Save the spec and refresh the HTML file.
 
-##### **Python**
+#### **Python**
 
 The file test was my [app.py](https://github.com/brianscan14/Gourmet_Grub/blob/master/app.py) file and the code was run in the [test.py](https://github.com/brianscan14/Gourmet_Grub/blob/master/test.py) file.
 
