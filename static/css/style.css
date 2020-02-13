@@ -424,6 +424,13 @@ input[type="text"].search-bar::-moz-placeholder {
     color: rgba(255, 255, 255, 0.795);
 }
 
+@media only screen and (max-width: 350px) {
+.cuisine-title {
+    color: rgba(255, 255, 255, 0.795);
+    font-size: 40px;
+}
+}
+
 /* meal/cuisines pages */
 
 .meals-image {
