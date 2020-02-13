@@ -394,7 +394,7 @@ input[type="text"].search-bar::-moz-placeholder {
     border-right: 1px solid #837c7c9c;
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 770px) {
 .recipe-row {
     padding-left: 0px;
     padding-right: 80px;

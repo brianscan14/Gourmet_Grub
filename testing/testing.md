@@ -2,13 +2,13 @@
 
 ### Manual Testing
 
-#### **Planning**
+### **Planning**
 
 ------
 
 The main goal of this website is to offer users a quick and simple way to easily access, add, share or update cooking recipes in an interactive manner. This testing will be carried out using developer tools audit tests, different browsers and also different screen sizes to check responsiveness. Validation tools and automated tests will also be carried out to check the code's validity, as outlined in the "Automated testing" section below. The main means of testing the intended purpose of this website will also be to go through each client story and check if their outcome was achieved.
 
-#### **Implementation**
+### **Implementation**
 
 ------
 
@@ -47,7 +47,7 @@ The audit tool from google inspect was also used in order to improve on three as
 
 ##### *User Stories tests*
 
-**Being a new visitor to the website, I want:**
+*Being a new visitor to the website, I want:*
 
 1. To be easily navigate the site and find information I was looking for in one or two clicks.
    - The navbar is very simple to use and brings the user to any part of the page when clicked.
@@ -77,7 +77,7 @@ The audit tool from google inspect was also used in order to improve on three as
 
 
 
-#### **Results**
+### **Results**
 
 ------
 
