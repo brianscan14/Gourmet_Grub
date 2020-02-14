@@ -14,11 +14,13 @@ The search bar on the index page is grand and bold, taking up the entire screen 
 2. The different recipes to be presented to be in a tidy and easily readable manner.
 3. To be able to find a particular recipe quickly by searching the word or a character string when I know what I want.
 4. To be able to search by a food type or even meal type when I am less sure of what recipe I desire.
-5. When browsing through the different recipes I want important pieces of info like cuisine type to be presented to me without having to click into it.
-6. The recipe I decide on to be easily readable and followable step by step.
-7. As a user contributing to the site, I expect a certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
-8. As a user browsing the site, if there are no recipes matching my search I want a page returned confirming this, not just an empty page.
-9. If using this site on a mobile phone, as you more that likely would in a kitchen I expect this site to be mobile/tablet friendly and be just as responsive as a desktop site would be.
+5. As a user I want to be able to know exactly what page I am currently on when browsing the site.
+6. When browsing through the different recipes I want important pieces of info like cuisine type to be presented to me without having to click into it.
+7. The recipe I decide on to be easily readable and followable step by step.
+8. As a user I want to be able to share this recipe on my social media platform when I am happy with the results of cooking it.
+9. As a user contributing to the site, I expect a certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
+10. As a user browsing the site, if there are no recipes matching my search I want a page returned confirming this, not just an empty page.
+11. If using this site on a mobile phone, as you more that likely would in a kitchen I expect this site to be mobile/tablet friendly and be just as responsive as a desktop site would be.
 
 ## Wireframes
 
@@ -109,7 +111,7 @@ As a result of this the below wireframes consist largely of only 2 mockups drawi
 
 ##### Navbar:
 
-The navbar can be divided into two type, small screen sizes and screen sizes above small. The pages consist of; home/search, cuisine, meals, add recipe and all recipes. There is a search icon on both screens for easier interaction with the user, when hovered over it will change colour to signify it is a clickable option. The nav header is the name of the page and this is in bolder and larger font to notify the users of this fact, when clicked it will bring them back to the home page. It is positioned at the top of the page for better recipe viewing experience. The user can easily be returned to the navbar's location by clicking the up arrow which brings them to the top of the page.
+The navbar can be divided into two type, small screen sizes and screen sizes above small. The pages consist of; home/search, cuisine, meals, add recipe and all recipes. There is a search icon on both screens for easier interaction with the user, when hovered over it will change colour to signify it is a clickable option. The nav header is the name of the page and this is in bolder and larger font to notify the users of this fact, when clicked it will bring them back to the home page. It is positioned at the top of the page for better recipe viewing experience, the 'active' class is also added to the current page by using jinja. The user can easily be returned to the navbar's location by clicking the up arrow which brings them to the top of the page.
 
 *Small screen*:
 

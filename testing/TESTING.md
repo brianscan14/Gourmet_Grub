@@ -63,15 +63,21 @@ The audit tool from google inspect was also used in order to improve on three as
 4. To be able to search by a food type or even meal type when I am less sure of what recipe I desire.
    - For searching for food type or 'cuisine' there is an option on the navbar which will return all the different cuisines present in the DB in a list format. If recipes have matching cuisines then the results don't repeat, instead there is an option to explore all the recipes which have this cuisine in them and that page is then returned when that button is clicked. 
    - For searching for 'Meal Type' there is another page which has a dropdown so the user can select either 'breakfast', 'lunch' or 'dinner'. Once one of these options is selected the page returns the matching recipes in a list format similar to the one seen in the cuisine results page mentioned above. 
-5. When browsing through the different recipes I want important pieces of info like cuisine type to be presented to me without having to click into it.
+5. As a user I want to be able to know exactly what page I am currently on when browsing the site.
+   - The navbar uses jinja and pulls from the backend to know which nav-item to apply the 'active' class to, highlighting the page the user is currently on.
+   - The title of the page is also added to with a '/page id' added to the head title, showing the user again which page they are on.
+6. When browsing through the different recipes I want important pieces of info like cuisine type to be presented to me without having to click into it.
    - For the search results pages jinja is used so that all the pages return the same card template for displaying important recipe info. This info consists of the title, a picture, a short description, the cuisine type and how many views it has received as outlined here **insert link to wireframe**
    - For the 'all recipes' page the cards display the exact same information but in a different manner, these cards are more vertical whereas the prior mentioned cards are horizontal **as seen here.**
-6. The recipe I decide on to be easily readable and followable step by step.
+7. The recipe I decide on to be easily readable and followable step by step.
    - The single recipe pages is very clear and concise and well laid out for a user to view/follow. It only displays the important information such as; picture, ingredient steps, preparation steps and quicks summary stats for the recipe, duration, calories and number of ingredients.
-7. When contributing to the site, I expect a certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
+8. As a user I want to be able to share this recipe on my social media platform when I am happy with the results of cooking it.
+   - There are two social media links which allow the user to 'post' this recipe to the social media site of which they desire.
+9. When contributing to the site, I expect a certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
    - When a user submits a recipe to the page a 'thank you' page is returned showing the full page of the recipe that they have just added.
+10. As a user browsing the site, if there are no recipes matching my search I want a page returned confirming this, not just an empty page.
    - When no recipes are returned either from an empty DB or from a no results search the user is redirected to a template stating this, instead of just an empty page.
-8. If using this site on a mobile phone, as you more that likely would in a kitchen I expect this site to be mobile/tablet friendly and be just as responsive as a desktop site would be.
+11. If using this site on a mobile phone, as you more that likely would in a kitchen I expect this site to be mobile/tablet friendly and be just as responsive as a desktop site would be.
    - The BS4 classes and layout were utilised in this project to have the layout responsive to different configurations etc. 
    - Media queries were used for heading font sizes on smaller screens and positions of items. CSS such as 'text-overflow' was also used to hide any text that goes over its div.
 
