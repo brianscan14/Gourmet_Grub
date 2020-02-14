@@ -1,0 +1,49 @@
+<header>
+    <!-- navbar which tuns into 3 bar icon on small pages, with a dark background also -->
+    <nav class="navbar navbar-expand-sm navbar-dark py-3">
+        <!-- the brand will return user to index page -->
+        <a class="navbar-brand mr-2 strong" href="{{url_for('index')}}">GourmetGrub</a>
+        <!-- icon for smaller screens, clicking on it will call the overlay search bar feature -->
+        <span class="d-sm-none mr-auto" id="navSearchOpenSmall"><i class="fas fa-search"></i></span>
+        <!-- nav items are collapsible on smaller screens -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- navbar links linking to the functions in the app.py file -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{url_for('cuisines')}}">Cuisines</a>
+                <a class="nav-item nav-link" href="{{url_for('meals')}}">Meals</a>
+                <a class="nav-item nav-link" href="{{url_for('add')}}">Add Recipe</a>
+                <a class="nav-item nav-link" href="{{url_for('recipes')}}">All Recipes</a>
+            </div>
+        </div>
+    
+    <!-- search icon which appears on right side of nav on bigger screens -->
+    <span class="nav-search-bar d-none d-sm-inline-block" id="navSearchOpen"><i class="fas fa-search fa-2x"></i></span>
+
+    <!-- overlay content which is accessible form all pages to use the search bar -->
+    <div id="overlaySearchBar" class="overlay">
+        <a href="javascript:void(0)" id="navSearchClose" class="close-nav-search">&times;</a>
+        <div class="overlay-content">
+        <form action="{{ url_for('search_recipe') }}" >
+            <div class="row mt-5">
+                <div class="col-10 col-sm-7 mx-auto form-caps">
+                    <!-- same function as index search bar to search inredients or name for the value -->
+                    <input class="form-control nav-search-form mx-auto" autocomplete="off" 
+                    type="text" placeholder="Search for a recipe!" name="query" required>
+                </div>
+            </div>
+            <!-- search icon that appears on top right of screen which calls overlay -->
+            <button id="search_recipe" type="submit" class="btn btn-success mt-4" aria-label="search">
+                <i class="fas fa-search fa-2x"></i>
+            </button>
+        </form>
+        </div>
+    </div>
+
+    </nav>
+
+</header>
