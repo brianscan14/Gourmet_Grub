@@ -47,37 +47,35 @@ The audit tool from google inspect was also used in order to improve on three as
 
 ##### *User Stories tests*
 
-*Being a new visitor to the website, I want:*
-
-1. To be easily navigate the site and find information I was looking for in one or two clicks.
+1. As a new visitor to the website, I want to be easily navigate the site to find information I was looking for in one or two clicks when searching.
    - The navbar is very simple to use and brings the user to any part of the page when clicked.
    - There are also buttons all over the page linking intuitively to different parts of it.
    - The search icon can be clicked from any page and lets the user search for any recipe in two clicks.
-2. The different recipes to be presented to be in a tidy and easily readable manner.
+2. As a user, I want the different recipes to be presented to be in a tidy and easily readable manner when browsing them.
    - Recipe results from the search functions are laid out in a list form one by one as rows going down the page, the user can just scroll through the results and click on a recipe they want to see more of.
    - Recipes in the 'all recipes' page are laid out in 2 rows x 3 columns, 6 recipes per page format which doesn't take up too much screen space on either mobile or bigger screens.
    - Pagination is utilised on the 'all recipes' page to display 6 recipes at a time, making the loading process quicker and the browsing experience more pleasant. 
-3. To be able to find a particular recipe quickly by searching the word or a character string when I know what I want.
+3. As a user, I want be able to find a particular recipe quickly by searching the word or a character string when I know what I want.
    - The index page has a search bar which will search the entire DB for any matches of the string inputted, it doesn't have to be an exact match and the results are returned on a new page.
    - The navbar also has a search icon on all screen sizes that can be accessed form any page which when clicked will call an overlay with a search bar that has the same functionality as the index search bar.
-4. To be able to search by a food type or even meal type when I am less sure of what recipe I desire.
+4. As a user, I want to be able to search by a food type or even meal type when I am less sure of what recipe I desire.
    - For searching for food type or 'cuisine' there is an option on the navbar which will return all the different cuisines present in the DB in a list format. If recipes have matching cuisines then the results don't repeat, instead there is an option to explore all the recipes which have this cuisine in them and that page is then returned when that button is clicked. 
    - For searching for 'Meal Type' there is another page which has a dropdown so the user can select either 'breakfast', 'lunch' or 'dinner'. Once one of these options is selected the page returns the matching recipes in a list format similar to the one seen in the cuisine results page mentioned above. 
 5. As a user I want to be able to know exactly what page I am currently on when browsing the site.
    - The navbar uses jinja and pulls from the backend to know which nav-item to apply the 'active' class to, highlighting the page the user is currently on.
    - The title of the page is also added to with a '/page id' added to the head title, showing the user again which page they are on.
-6. When browsing through the different recipes I want important pieces of info like cuisine type to be presented to me without having to click into it.
+6. As a user, I want important pieces of info like cuisine type to be presented to me without having to click into it, when browsing through the different recipes.
    - For the search results pages jinja is used so that all the pages return the same card template for displaying important recipe info. This info consists of the title, a picture, a short description, the cuisine type and how many views it has received as outlined here **insert link to wireframe**
    - For the 'all recipes' page the cards display the exact same information but in a different manner, these cards are more vertical whereas the prior mentioned cards are horizontal **as seen here.**
-7. The recipe I decide on to be easily readable and followable step by step.
+7. As a user, I want the recipe I decide on to be easily readable and followable step by step when reading it.
    - The single recipe pages is very clear and concise and well laid out for a user to view/follow. It only displays the important information such as; picture, ingredient steps, preparation steps and quicks summary stats for the recipe, duration, calories and number of ingredients.
 8. As a user I want to be able to share this recipe on my social media platform when I am happy with the results of cooking it.
    - There are two social media links which allow the user to 'post' this recipe to the social media site of which they desire.
-9. When contributing to the site, I expect a certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
+9. As a user contributing to the site, I expect a certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
    - When a user submits a recipe to the page a 'thank you' page is returned showing the full page of the recipe that they have just added.
 10. As a user browsing the site, if there are no recipes matching my search I want a page returned confirming this, not just an empty page.
    - When no recipes are returned either from an empty DB or from a no results search the user is redirected to a template stating this, instead of just an empty page.
-11. If using this site on a mobile phone, as you more that likely would in a kitchen I expect this site to be mobile/tablet friendly and be just as responsive as a desktop site would be.
+11. As a user, I want this site to be mobile/tablet friendly and be just as responsive as a desktop site would be when using this site on a mobile phone, as you more that likely would in a kitchen.
    - The BS4 classes and layout were utilised in this project to have the layout responsive to different configurations etc. 
    - Media queries were used for heading font sizes on smaller screens and positions of items. CSS such as 'text-overflow' was also used to hide any text that goes over its div.
 

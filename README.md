@@ -10,17 +10,17 @@ The search bar on the index page is grand and bold, taking up the entire screen 
 
 ### User Stories
 
-1. Being a new visitor to the website, I want to be easily navigate the site and find information I was looking for in one or two clicks.
-2. The different recipes to be presented to be in a tidy and easily readable manner.
-3. To be able to find a particular recipe quickly by searching the word or a character string when I know what I want.
-4. To be able to search by a food type or even meal type when I am less sure of what recipe I desire.
+1. As a new visitor to the website, I want to be easily navigate the site to find information I was looking for in one or two clicks when searching.
+2. As a user, I want the different recipes to be presented to be in a tidy and easily readable manner when browsing them.
+3. As a user, I want be able to find a particular recipe quickly by searching the word or a character string when I know what I want.
+4. As a user, I want to be able to search by a food type or even meal type when I am less sure of what recipe I desire.
 5. As a user I want to be able to know exactly what page I am currently on when browsing the site.
-6. When browsing through the different recipes I want important pieces of info like cuisine type to be presented to me without having to click into it.
-7. The recipe I decide on to be easily readable and followable step by step.
+6. As a user, I want important pieces of info like cuisine type to be presented to me without having to click into it, when browsing through the different recipes.
+7. As a user, I want the recipe I decide on to be easily readable and followable step by step when reading it.
 8. As a user I want to be able to share this recipe on my social media platform when I am happy with the results of cooking it.
 9. As a user contributing to the site, I expect a certain level of feedback to confirm that my work was submitted successfully, such as a thank you page.
-10. As a user browsing the site, if there are no recipes matching my search I want a page returned confirming this, not just an empty page.
-11. If using this site on a mobile phone, as you more that likely would in a kitchen I expect this site to be mobile/tablet friendly and be just as responsive as a desktop site would be.
+10. As a user browsing the site, when there are no recipes matching my search I want a page returned confirming this, not just an empty page.
+11. As a user, I want this site to be mobile/tablet friendly and be just as responsive as a desktop site would be when using this site on a mobile phone, as you more that likely would in a kitchen.
 
 ## Wireframes
 
