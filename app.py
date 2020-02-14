@@ -37,9 +37,10 @@ def recipes():
     if recipes.count() > 0:
         return render_template("pages/recipies.html", recipies=total_recipes,
         curent_page=curent_page, num_pages=num_pages, total=total_docs,
-        active_recipes='active')
+        active_recipes='active', page_title='/All Recipes')
 
-    return render_template('pages/searchnull.html', query='recipes')
+    return render_template('pages/searchnull.html', query='recipes',
+    page_title='/No Results')
 
 @APP.route('/search/recipes', methods=["GET", "POST"])
 def search_recipe():
@@ -60,10 +61,10 @@ def search_recipe():
 
     if results.count() > 0:
         return render_template('pages/searchrecipe.html',
-        query=rec_search_query, results=results)
+        query=rec_search_query, results=results, page_title='/Recipe Search')
 
     return render_template('pages/searchnull.html',
-    query=rec_search_query, results=results)
+    query=rec_search_query, results=results, page_title='/No Results')
 
 @APP.route('/recipe/<recipe_id>')
 def recipe(recipe_id):
@@ -74,7 +75,8 @@ def recipe(recipe_id):
         {"_id": ObjectId(recipe_id)},
         {"$inc": {"views": int(1)}}, new=True)
 
-    return render_template('pages/recipe.html', recipe=recipies)
+    return render_template('pages/recipe.html', recipe=recipies,
+    page_title='/Recipe')
 
 @APP.route('/add', methods=["GET", "POST"])
 def add():
@@ -93,7 +95,7 @@ def add():
     if request.method == 'GET':
         return render_template('pages/addrecipe.html',
         recipies=MONGO.db.recipies.find(), title='Add Recipe',
-        active_add='active')
+        active_add='active', page_title='/Add')
 
     this_recipe = recipies.insert_one(
         {
@@ -110,14 +112,14 @@ def add():
     })
     ret = recipies.find_one({"_id": this_recipe.inserted_id})
     return render_template('pages/thankyou.html', recipe=ret,
-    title='Thank you for inserting below recipe')
+    title='Thank you for inserting below recipe', page_title='/Congrats')
 
 
 @APP.route('/edit/<recipe_id>', methods=['GET', 'POST'])
 def edit(recipe_id):
     """
     Edit page that uses the recipe selected's unique id and returns
-    it in the form format ready to be edited. Conditional 
+    it in the form format ready to be edited. Conditional
     statement used to return the edit page itself if it is a GET
     request, and else if it's a POST it post it to the mongoDB.
     Sends the updated recipe to the mongoDB and then returns you
@@ -128,7 +130,7 @@ def edit(recipe_id):
     if request.method == 'GET':
         recipeDB = MONGO.db.recipies.find_one({"_id": ObjectId(recipe_id)})
         return render_template('pages/editrecipe.html',
-        recipe=recipeDB, title='Edit Recipe')
+        recipe=recipeDB, title='Edit Recipe', page_title='/Edit')
 
     recipies = MONGO.db.recipies
     recipies.update_one({'_id': ObjectId(recipe_id)},
@@ -143,7 +145,7 @@ def edit(recipe_id):
         'calories': int(request.form.get('calories')),
         'duration': int(request.form.get('duration'))}
     })
-    return redirect(url_for('recipes'))
+    return redirect(url_for('recipes'), page_title='/Recipes')
 
 @APP.route('/delete/<recipe_id>')
 def delete(recipe_id):
@@ -163,10 +165,11 @@ def cuisines():
 
     if null_recipes.count() > 0:
         return render_template('pages/cuisines.html', active_cuisines='active',
-        recipies=MONGO.db.recipies.find().distinct("cuisine_name"))
+        recipies=MONGO.db.recipies.find().distinct("cuisine_name"),
+        page_title='/Cuisines')
 
     return render_template('pages/searchnull.html',
-    active='active', query='cuisines')
+    active='active', query='cuisines', page_title='/No Results')
 
 @APP.route('/search/cuisines')
 def search_cuisines():
@@ -183,7 +186,7 @@ def search_cuisines():
     re.IGNORECASE)}
     results = MONGO.db.recipies.find({'cuisine_name': query})
     return render_template('pages/searchcuisines.html',
-    query=rec_search_query, results=results)
+    query=rec_search_query, results=results, page_title='/Results')
 
 @APP.route("/meals", methods=['GET', 'POST'])
 def meals():
@@ -206,13 +209,15 @@ def meals():
 
         if recipies.count() > 0:
             return render_template("pages/mealresults.html",
-            recipies=recipies, query=requested_meal_type)
+            recipies=recipies, query=requested_meal_type,
+            page_title='/Meals')
 
         else:
             return render_template('pages/searchnull.html',
-            query=request.form.get("meal_type"))
+            query=request.form.get("meal_type"), page_title='/No Results')
 
-    return render_template("pages/findmeals.html", active_meals='active')
+    return render_template("pages/findmeals.html", active_meals='active',
+    page_title='/Search Meals')
 
 @APP.errorhandler(404)
 def not_found(e):
@@ -220,7 +225,7 @@ def not_found(e):
     Error handler for any 404 errors with the page, returns the
     template to redirect them back to the home page with a button click.
     """
-    return render_template("pages/error404.html")
+    return render_template("pages/error404.html", page_title='/404 Error')
 
 if __name__ == '__main__':
     APP.run(host=os.environ.get('IP'),
