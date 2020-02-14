@@ -52,7 +52,8 @@ def search_recipe():
     If there are no results then user it redirected to a 'null' results page.
     """
     rec_search_query = request.args['query']
-    query = {'$regex': re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
+    query = {'$regex': 
+    re.compile('.*{}.*'.format(rec_search_query), re.IGNORECASE)}
     results = MONGO.db.recipies.find({
         '$or': [
             {'recipe_name': query},
@@ -128,9 +129,9 @@ def edit(recipe_id):
     edited a recipe.
     """
     if request.method == 'GET':
-        recipeDB = MONGO.db.recipies.find_one({"_id": ObjectId(recipe_id)})
+        this_recipe = MONGO.db.recipies.find_one({"_id": ObjectId(recipe_id)})
         return render_template('pages/editrecipe.html',
-        recipe=recipeDB, title='Edit Recipe', page_title='/Edit')
+        recipe=this_recipe, title='Edit Recipe', page_title='/Edit')
 
     recipies = MONGO.db.recipies
     recipies.update_one({'_id': ObjectId(recipe_id)},
