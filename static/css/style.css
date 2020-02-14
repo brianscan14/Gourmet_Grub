@@ -1,5 +1,7 @@
 /* General content on all pages */
 
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Romanesco&display=swap');
+
 body {
     background-color: #77695F;
     background-image:url("../img/burger.jpg");
