@@ -73,9 +73,12 @@ As a result of this the below wireframes consist largely of only 2 mockups drawi
 
 ## Technologies
 
+### Languages Used
+
+- This project uses Python, Html, JavaScript & CSS programming languages.
+
 ### Front End
 
-- This project uses Html, JavaScript & CSS programming languages.
 - [Bootstrap](https://getbootstrap.com/)
   - Used to make the website more responsive and streamline the grid layout.
 - [jQuery](https://jquery.com/)
@@ -86,7 +89,7 @@ As a result of this the below wireframes consist largely of only 2 mockups drawi
   - The site used BootstrapCDN to provide icons from FontAwesome.
 - [Autoprefixer](https://autoprefixer.github.io/)
   - Used to validate the CSS code for all browsers.
-- [Jinga](http://jinja.palletsprojects.com/en/2.10.x/)
+- [Jinja](http://jinja.palletsprojects.com/en/2.10.x/)
   - To display data from the backend in html
 
 ### Back End
