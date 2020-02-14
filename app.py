@@ -18,7 +18,7 @@ def index():
     """
     Returns home page of the app which contains the search bar
     """
-    return render_template('pages/index.html')
+    return render_template('pages/index.html', active_home='active')
 
 @APP.route('/recipes')
 def recipes():
@@ -36,7 +36,8 @@ def recipes():
 
     if recipes.count() > 0:
         return render_template("pages/recipies.html", recipies=total_recipes,
-        curent_page=curent_page, num_pages=num_pages, total=total_docs)
+        curent_page=curent_page, num_pages=num_pages, total=total_docs,
+        active_recipes='active')
 
     return render_template('pages/searchnull.html', query='recipes')
 
@@ -91,7 +92,8 @@ def add():
     recipies = MONGO.db.recipies
     if request.method == 'GET':
         return render_template('pages/addrecipe.html',
-        recipies=MONGO.db.recipies.find(), title='Add Recipe')
+        recipies=MONGO.db.recipies.find(), title='Add Recipe',
+        active_add='active')
 
     this_recipe = recipies.insert_one(
         {
@@ -160,10 +162,11 @@ def cuisines():
     null_recipes = MONGO.db.recipies.find()
 
     if null_recipes.count() > 0:
-        return render_template('pages/cuisines.html',
+        return render_template('pages/cuisines.html', active_cuisines='active',
         recipies=MONGO.db.recipies.find().distinct("cuisine_name"))
 
-    return render_template('pages/searchnull.html', query='cuisines')
+    return render_template('pages/searchnull.html',
+    active='active', query='cuisines')
 
 @APP.route('/search/cuisines')
 def search_cuisines():
@@ -209,7 +212,7 @@ def meals():
             return render_template('pages/searchnull.html',
             query=request.form.get("meal_type"))
 
-    return render_template("pages/findmeals.html")
+    return render_template("pages/findmeals.html", active_meals='active')
 
 @APP.errorhandler(404)
 def not_found(e):

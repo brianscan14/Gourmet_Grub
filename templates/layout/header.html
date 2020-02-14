@@ -13,11 +13,11 @@
         <!-- navbar links linking to the functions in the app.py file -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="{{url_for('cuisines')}}">Cuisines</a>
-                <a class="nav-item nav-link" href="{{url_for('meals')}}">Meals</a>
-                <a class="nav-item nav-link" href="{{url_for('add')}}">Add Recipe</a>
-                <a class="nav-item nav-link" href="{{url_for('recipes')}}">All Recipes</a>
+                <a class="nav-item nav-link {{ active_home }}" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link {{ active_cuisines }}" href="{{url_for('cuisines')}}">Cuisines</a>
+                <a class="nav-item nav-link {{ active_meals }}" href="{{url_for('meals')}}">Meals</a>
+                <a class="nav-item nav-link {{ active_add }}" href="{{url_for('add')}}">Add Recipe</a>
+                <a class="nav-item nav-link {{ active_recipes }}" href="{{url_for('recipes')}}">All Recipes</a>
             </div>
         </div>
     
