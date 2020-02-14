@@ -1,5 +1,8 @@
+
+import urllib.request
+
 from flask import Flask, request
-from flask_testing import TestCase
+from flask_testing import TestCase, LiveServerTestCase
 
 import unittest
 import flask_testing
@@ -18,8 +21,8 @@ class MyTest(TestCase):
 
     def test_index(self):
         with app.test_client() as c:
-            rv = c.get('/')
-            self.assertEqual(rv.status, '200 ok')
+            fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+            self.assertEquals(fhand.status_code, 200)
 
 
 if __name__ == '__main__':
