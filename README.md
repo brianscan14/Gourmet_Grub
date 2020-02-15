@@ -221,7 +221,7 @@ Recipes Collection
 | Recipe ID          | _id          | None                                      | ObjectId  |
 | Recipe Name        | recipe_name  | text, `pattern=".{3,}", maxlength="16"`   | string    |
 | Description        | recipe_desc  | text, `pattern=".{70,}", maxlength="150"` | string    |
-| Image              | image        | url, `pattern= "(.*?)\.(jpg|png|gif)`     | string    |
+| Image              | image        | url, `pattern= "(.*?)\. (jpg|png|gif)$`   | string    |
 | Cuisine            | cuisine_name | text, `pattern=".{3,}", maxlength="14"`   | string    |
 | Meal Type          | meal_type    | option="breakfast, lunch, dinner"         | string    |
 | Calories           | calories     | number, max="9999"                        | integer   |
