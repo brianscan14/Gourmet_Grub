@@ -243,7 +243,7 @@ Recipes Collection
 
 ## Testing
 
-[Link to testing.md file](https://github.com/brianscan14/Gourmet_Grub/blob/master/testing/testing.md)
+[Link to testing.md file](https://github.com/brianscan14/Gourmet_Grub/blob/master/testing/TESTING.md)
 
 ## Deployment
 
@@ -313,7 +313,6 @@ Follow the below instructions to deploy GoodGrub to heroku:
 
 | **Key**   | **Value**                                                    |
 | --------- | ------------------------------------------------------------ |
-| DEBUG     | FALSE                                                        |
 | IP        | 0.0.0.0                                                      |
 | PORT      | 5000                                                         |
 | MONGO_URI | mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority |
