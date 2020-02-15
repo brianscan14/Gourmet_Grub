@@ -28,13 +28,13 @@ def recipes():
     improve loading times as it only loads 6 recipes at a time, not all at
     once. Returns null page if DB is empty.
     """
-    recipes = MONGO.db.recipies.find().sort([('views', -1)])
+    recipies = MONGO.db.recipies.find().sort([('views', -1)])
     curent_page = int(request.args.get('curent_page', 1))
     total_docs = MONGO.db.recipies.count_documents({})
     total_recipes = MONGO.db.recipies.find().skip((curent_page - 1)*6).limit(6)
     num_pages = range(1, int(total_docs / 6) + 2)
 
-    if recipes.count() > 0:
+    if recipies.count() > 0:
         return render_template("pages/recipies.html", recipies=total_recipes,
         curent_page=curent_page, num_pages=num_pages, total=total_docs,
         active_recipes='active', page_title='/All Recipes')
