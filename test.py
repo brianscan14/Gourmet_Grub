@@ -1,28 +1,27 @@
-
-import urllib.request
-
 from flask import Flask, request
-from flask_testing import TestCase, LiveServerTestCase
+from flask_testing import TestCase
+from app import APP
 
 import unittest
 import flask_testing
-
-
-app = Flask(__name__)
 
 
 class MyTest(TestCase):
 
     def create_app(self):
 
-        app = Flask(__name__)
-        app.config['TESTING'] = True
-        return app
+        APP.config['TESTING'] = True
+        return APP
 
     def test_index(self):
-        with app.test_client() as c:
-            fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
-            self.assertEquals(fhand.status_code, 200)
+        with APP.test_client() as c:
+            rv = c.get('/')
+            self.assertEquals(rv.status, '200 OK')
+
+    def test_assert_index_template_used(self):
+        with APP.test_client() as c:
+            rv = c.get('/')
+            self.assert_template_used('pages/index.html')
 
 
 if __name__ == '__main__':
