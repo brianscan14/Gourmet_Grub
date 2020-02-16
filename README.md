@@ -191,9 +191,11 @@ This page is for a more defensive methodology and is what the user is redirected
 
 ## Features to implement
 
-login
+A login systems for users on the page would've provided another level of security to recipes on this page. This could be performed in the back end using conditional statements to check if the current user is logged in or not with the current user being gotten from the session. Only if these criteria were satisfied then the user would be allowed to edit, delete or add recipes etc.
 
-rating/likes sytem
+A ratings/likes system would be installed once the user login system is made. The reason for it not being on this page is because without the user value a person could just like as many recipes as they wanted, creating a skew in the data. With the use of a user system the reviews and likes could show who performed them, thus abstaining from incorrect use or bias.
+
+A system for uploading picture files to the page would've worked excellently for the purpose of this website. The current system works but is still susceptible to some user input errors. A system such as [Amazon S3's](https://aws.amazon.com/free/storage/?sc_channel=PS&sc_campaign=acquisition_US&sc_publisher=google&sc_medium=ACQ-P%7CPS-GO%7CBrand%7CDesktop%7CSU%7CStorage%7CS3%7CUS%7CEN%7CText&sc_content=s3_e&sc_detail=amazon%20s3&sc_category=Storage&sc_segment=293617570035&sc_matchtype=e&sc_country=US&s_kwcid=AL!4422!3!293617570035!e!!g!!amazon%20s3&ef_id=EAIaIQobChMI2teBs5nV5wIVwrHtCh2bnwpzEAAYASAAEgLrg_D_BwE:G:s) cloud storage system being linked to the page would suffice.
 
 ## Information Architecture
 
