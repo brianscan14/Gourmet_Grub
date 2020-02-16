@@ -7,16 +7,20 @@
     {% include 'components/title.html' %}
 
     <div class="row">
+        <!-- entire form content within col-10 width container -->
         <div class="col-10 mx-auto">
             <form action="{{ url_for('add') }}" autocomplete="off" method="POST">
+                <!-- sleect meal type section -->
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
                         <div class="col-1">
+                            <!-- form label, select dropdown with the 3 meal options for user -->
                             <label for="meal_types" class="dropdown-select"><strong>Meal Type:</strong></label>
                         </div>
                         <div class="col-9 col-sm-11 mx-auto">
                             <select class="bg-transparent custom-select custom-select-lg" id="meal_types" name="meal_type" required>
+                                <!-- disabled and selected option telling the user to select a meal -->
                                     <option value="" disabled selected hidden>Select Meal</option>
                                     <option value="breakfast" >Breakfast</option>
                                     <option value="lunch" >Lunch</option>
@@ -28,16 +32,20 @@
                 </div>
 
                 <div class="row my-4">
+                    <!-- icons positioned at left of form inputs to resemble what is being inputted -->
                     <div class="col-1 my-auto">
                         <span><i class="fas fa-cogs d-sm-none"></i></span>
+                        <!-- bigger icon for non phone size screens -->
                         <span><i class="fas fa-cogs d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
+                        <!-- recipe name form input -->
                         <input class="form-control form-control-recipe form-control-lg bg-transparent form-caps" required id="recipe_name" name="recipe_name" 
                         type="text" spellcheck="true" pattern=".{3,}" maxlength="16" placeholder="Enter recipe name...">
                     </div>
                 </div>
 
+                <!-- recipe description form input section-->
                 <div class="row my-4">
                     <div class="col-1 my-auto">
                         <span><i class="fas fa-edit d-sm-none"></i></span>
@@ -49,55 +57,22 @@
                     </div>
                 </div>
 
+                <!-- recipe prep steps form input section-->
                 <div class="row">
-
                 <div class="col-1 my-auto">
 					<span><i class="fas fa-clipboard-list d-sm-none"></i></span>
                     <span><i class="fas fa-clipboard d-none d-sm-inline fa-2x"></i></span>
 				</div>
 				<div class="col-10 col-sm-11">
+                    <!-- form input when clicked will call the modal -->
                     <input class="form-control form-control-recipe form-control-lg bg-transparent form-caps" type="text"
                     data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add prep steps">
 			    </div>
-
-
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Add steps below as needed..</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-12 mx-auto centering-text">
-                                <button class="add_form_field btn btn-success">Add another! <i class="fas fa-plus"></i></button>
-                            </div>
-                        </div>
-						<div class="row">
-							<div class="col-12 mx-auto">
-								<div class="container1">
-                                    <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" 
-                                    required type="text" name="recipe_prep" id="recipe_prep">
-                                    <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
-                    </div>
-                    </div>
-                </div>
+                    <!-- modal content -->
+                    {% include 'components/addprepmodal.html' %}
                 </div>
 
-                </div>
-
+                <!-- recipe cusine name form input section-->
                 <div class="row my-4">
                     <div class="col-1 my-auto">
                         <span><i class="fas fa-flag d-sm-none"></i></span>
@@ -109,84 +84,62 @@
                     </div>
                 </div>
 
+                <!-- recipe ingredient steps form input section-->
                 <div class="row my-4">
                     <div class="col-1 my-auto">
                         <span><i class="fas fa-utensils d-sm-none"></i></span>
                         <span><i class="fas fa-utensils d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
+                    <!-- form input when clicked will call the modal -->
                         <input class="form-control form-control-recipe form-control-lg bg-transparent form-caps" type="text"
                         data-toggle="modal" data-target="#exampleModal" spellcheck="true" placeholder="Add ingredients">
                     </div>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Add ingredients one by one please</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12 mx-auto centering-text">
-                                    <button class="add_form_feed btn btn-success">Add another! <i class="fas fa-plus"></i></button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 mx-auto">
-                                    <div class="container2">
-                                        <div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" 
-                                        required type="text" id="ingredients" name="ingredients" maxlength="18">
-                                        <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- modal content section-->
+                        {% include 'components/ing-addmodal.html' %}
                 </div>
-
+                
+                <!-- image url form input section -->
                 <div class="row my-4">
                     <div class="col-1 my-auto">
                         <span><i class="fas fa-images d-sm-none"></i></span>
                         <span><i class="fas fa-images d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
+                        <!-- pattern validator used to ensure link is a picture file type -->
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="image" name="image"
                         spellcheck="true"  placeholder="URL of recipe image..." title="Make sure it is the corect image url link" type="url" 
                         pattern="(.*?)\.(jpg|png|gif)$">
                     </div>
                 </div>
+
+                <!-- recipe duration input section -->
                 <div class="row my-4">
                     <div class="col-1 my-auto">
                         <span><i class="fas fa-hourglass-half d-sm-none"></i></span>
                         <span><i class="fas fa-hourglass-half d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
+                    <!-- form maxlength validator to ensure an extreme number is not inputted -->
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="duration" name="duration" max="999"
                         type="number" min="5" spellcheck="true" title="Please enter duration time in digits, i.e. more than '5'" placeholder="Recipe duration...">
                     </div>
                 </div>
+
+                <!-- recipe calories input section -->
                 <div class="row my-4">
                     <div class="col-1 my-auto">
                         <span><i class="fas fa-weight d-sm-none"></i></span>
                         <span><i class="fas fa-weight d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
+                        <!-- form maxlength validator to ensure an extreme number is not inputted -->
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="calories" name="calories" 
                         type="number" min="5" max="9999" spellcheck="true" title="Please enter calories in digits" placeholder="Recipe calories...">
                     </div>
                 </div>
 
+                <!-- add recipe to the website and save to DB -->
                 <div class="row centering-text">
                     <div class="col my-3">
                         <button class="btn btn-success my-4" type="submit" name="action">Add recipe</button>
@@ -196,12 +149,11 @@
         </div>
     </div>
 
+</div>
     
-
-</div>
-
-<div class="centering-text my-5">
-    <a href="{{ url_for('recipes') }}" class="btn btn-warning">Cancel</a>
-</div>
+    <div class="centering-text my-5">
+        <!-- cancel, go back to all recipes page -->
+        <a href="{{ url_for('recipes') }}" class="btn btn-warning">Cancel</a>
+    </div>
 
 {% endblock %}
