@@ -1,0 +1,41 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<!-- modal title telling user what to do -->
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalCenterTitle">Add steps below as needed..</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 mx-auto centering-text">
+							<!-- calls the js function and adds steps here -->
+							<button class="add_form_field btn btn-success">Add another! <i class="fas fa-plus"></i></button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 mx-auto">
+							<div class="container1">
+								<!-- steps will be addded by js function here -->
+								<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form"
+                                        required type="text" name="recipe_prep" id="recipe_prep">
+									<!-- form input when clicked will call the modal -->
+									<button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<!-- dismiss modal and save steps added -->
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+			</div>
+		</div>
+	</div>
+</div>

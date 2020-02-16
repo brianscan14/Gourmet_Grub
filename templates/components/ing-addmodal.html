@@ -1,0 +1,40 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<!-- modal title telling user what to do -->
+				<h5 class="modal-title" id="exampleModalLabel">Add ingredients one by one please</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 mx-auto centering-text">
+							<!-- calls js function to add steps-->
+							<button class="add_form_feed btn btn-success">Add another! <i class="fas fa-plus"></i></button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 mx-auto">
+							<div class="container2">
+								<!-- additional steps being added by the js function -->
+								<div class="centering-text py-3">
+									<input class="bg-transparent form-control-recipe step-form"
+                                                required type="text" id="ingredients" name="ingredients" maxlength="18">
+									<button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<!-- dismiss modal and save steps added -->
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+			</div>
+		</div>
+	</div>
+</div>
