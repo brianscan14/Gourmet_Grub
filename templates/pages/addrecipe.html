@@ -9,6 +9,7 @@
     <div class="row">
         <!-- entire form content within col-10 width container -->
         <div class="col-10 mx-auto">
+            <!-- calls add functon from py file -->
             <form action="{{ url_for('add') }}" autocomplete="off" method="POST">
                 <!-- sleect meal type section -->
                 <div class="row">
@@ -31,6 +32,7 @@
                     </div>
                 </div>
 
+                <!-- recipe name section -->
                 <div class="row my-4">
                     <!-- icons positioned at left of form inputs to resemble what is being inputted -->
                     <div class="col-1 my-auto">
@@ -52,6 +54,7 @@
                         <span><i class="fas fa-edit d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
+                        <!-- recipe description form input -->
                         <input class="form-control form-control-recipe form-control-lg bg-transparent form-caps" required id="recipe_desc" name="recipe_desc" type="text" 
                         spellcheck="true" pattern=".{70,}" maxlength="150" title="Please enter min of 100 characters" placeholder="Recipe description...">
                     </div>
@@ -59,17 +62,17 @@
 
                 <!-- recipe prep steps form input section-->
                 <div class="row">
-                <div class="col-1 my-auto">
-					<span><i class="fas fa-clipboard-list d-sm-none"></i></span>
-                    <span><i class="fas fa-clipboard d-none d-sm-inline fa-2x"></i></span>
-				</div>
-				<div class="col-10 col-sm-11">
-                    <!-- form input when clicked will call the modal -->
-                    <input class="form-control form-control-recipe form-control-lg bg-transparent form-caps" type="text"
-                    data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add prep steps">
-			    </div>
-                    <!-- modal content -->
-                    {% include 'components/addprepmodal.html' %}
+                    <div class="col-1 my-auto">
+                        <span><i class="fas fa-clipboard-list d-sm-none"></i></span>
+                        <span><i class="fas fa-clipboard d-none d-sm-inline fa-2x"></i></span>
+                    </div>
+                    <div class="col-10 col-sm-11">
+                        <!-- form input when clicked will call the modal -->
+                        <input class="form-control form-control-recipe form-control-lg bg-transparent form-caps" type="text"
+                        data-toggle="modal" data-target="#exampleModalCenter" spellcheck="true" placeholder="Add prep steps">
+                    </div>
+                        <!-- modal content called from jinja component template -->
+                        {% include 'components/addprepmodal.html' %}
                 </div>
 
                 <!-- recipe cusine name form input section-->
@@ -79,6 +82,7 @@
                         <span><i class="fas fa-flag d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
+                        <!-- recipe cusine name form input -->
                         <input class="form-control form-control-recipe form-control-lg bg-transparent form-caps" required id="cuisine_name" name="cuisine_name" 
                         type="text" spellcheck="true" pattern=".{3,}" maxlength="14" placeholder="Cuisine name...">
                     </div>
@@ -95,7 +99,7 @@
                         <input class="form-control form-control-recipe form-control-lg bg-transparent form-caps" type="text"
                         data-toggle="modal" data-target="#exampleModal" spellcheck="true" placeholder="Add ingredients">
                     </div>
-                        <!-- modal content section-->
+                        <!-- modal content section called from jinja component template-->
                         {% include 'components/ing-addmodal.html' %}
                 </div>
                 
@@ -120,7 +124,7 @@
                         <span><i class="fas fa-hourglass-half d-none d-sm-inline fa-2x"></i></span>
                     </div>
                     <div class="col-10 col-sm-11">
-                    <!-- form maxlength validator to ensure an extreme number is not inputted -->
+                        <!-- form maxlength validator to ensure an extreme number is not inputted -->
                         <input class="form-control form-control-recipe form-control-lg bg-transparent" required id="duration" name="duration" max="999"
                         type="number" min="5" spellcheck="true" title="Please enter duration time in digits, i.e. more than '5'" placeholder="Recipe duration...">
                     </div>
@@ -151,9 +155,11 @@
 
 </div>
     
-    <div class="centering-text my-5">
-        <!-- cancel, go back to all recipes page -->
-        <a href="{{ url_for('recipes') }}" class="btn btn-warning">Cancel</a>
+    <div class="row centering-text">
+        <div class="col my-5">
+            <!-- cancel, go back to all recipes page -->
+            <a href="{{ url_for('recipes') }}" class="btn btn-warning">Cancel</a>
+        </div>
     </div>
 
 {% endblock %}
