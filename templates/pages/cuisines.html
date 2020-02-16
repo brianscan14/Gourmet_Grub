@@ -2,22 +2,28 @@
 {% block content %}
 
     <div class="container my-5">
+    <!-- for loop to iterate thru each cuisine -->
 	{% for cuisine in recipies %}
 
         <div class="row">
             <div class="col-9 mx-auto">
+                <!-- jumbotron used for cards showing each cuisine -->
                 <div class="jumbotron jumbotron-fluid my-5 cuisine-container">
                     <div class="row">
                         <div class="col-11 col-sm-8 mx-auto">
+                            <!-- titile which dispalys the cuisine name -->
                             <h1 class="display-4 centering-text recipe-title p-3 playfont cuisine-title mb-3 strong">{{ cuisine }}</h1>
                         </div>
                     </div>
 					<div class="row mt-3">
                         <div class="col">
+                            <!-- actions search cuisines function to search for recipes with same cuisine when clicked -->
 				            <form action="{{ url_for('search_cuisines') }}">
                                 <div id="search_cuisines" class="centering-text">
+                                    <!-- when clicked matching results will appear in a new html page -->
                                     <button type="submit" name="query" value="{{cuisine}}" class="btn btn-outline-light">
-                                    View all recipes</button>
+                                        View all recipes
+                                    </button>
                                 </div>
 				            </form>
                         </div>

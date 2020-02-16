@@ -3,16 +3,17 @@
 
 
 <div class="container recipes-cont my-5">
-
     <div class="row">
 
+    <!-- loops thru all the recipes in the DB, displaying them al cols -->
     {% for recipe in recipies %}
+        <!-- jinja used to pull recipe column component -->
         {% include 'components/recipecolumn.html' %}
     {% endfor %}
 
     </div>
 </div>
-
+<!-- pagination used to show user what page they are currently on -->
 {% include 'components/pagination.html' %}
 
 {% endblock %}

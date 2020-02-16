@@ -6,18 +6,21 @@
 	<div class="row my-5">
 		<div class="col-12 col-md-8 mx-auto my-5">
 
+            <!-- jumbotron used to dispaly the tiitle and select options to search meals -->
 			<div class="jumbotron jumbotron-fluid mx-auto my-5 meal-jumbo">
 				<div class="row my-5">
 					<div class="col-6 mx-auto mt-5">
+                        <!-- main title above select options -->
 						<h1 class="display-4 centering-text meal-header playfont strong p-2">Meal Type:</h1>
 					</div>
                 </div>
-
                 <div class="row">
 					<div class="col-12">
+                        <!-- form actions the meals function in the backend to search matches of input -->
 						<form action="{{ url_for('meals')}}" method="POST">
 							<div class="row mt-3">
 								<div class="input-field mx-auto col-8 centering-text">
+                                    <!-- 3 options given to the user to select what meal type to search for -->
 									<select class=" mb-3 custom-select meal-form custom-select-lg" id="meal_type" name="meal_type" required>
                                         <option value="" disabled selected hidden>Pick Meal Time</option>
                                         <option value="breakfast">Breakfast</option>
@@ -26,7 +29,7 @@
                                     </select>
 								</div>
 							</div>
-
+                            <!-- results of matching meals displayed in a new html file -->
 							<div class="row mt-5">
 								<div class="col-12 centering-text">
 									<button class="btn btn-success" type="submit" name="action">Find Meals</button>

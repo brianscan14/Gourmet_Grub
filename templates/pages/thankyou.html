@@ -2,10 +2,13 @@
 {% block content %}
 
     <div class="container my-5">
+        <!-- user is greated by a thank you heading when recipe is added -->
         <h2 class="centering-text playfont mt-3">{{title}}</h2>
+        <!-- shows recipe that was just added -->
         {% include 'components/thisrecipe.html' %}
     </div>
 
+    <!-- back to previous page -->
     <div class="centering-text mb-5">
         <a id="backButton" class="btn btn-warning">Back</a>			
     </div>

@@ -13,6 +13,7 @@
         <!-- navbar links linking to the functions in the app.py file -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
+                <!-- jinja used to pull cuurent page from backend and add active class to that page -->
                 <a class="nav-item nav-link {{ active_home }}" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link {{ active_cuisines }}" href="{{url_for('cuisines')}}">Cuisines</a>
                 <a class="nav-item nav-link {{ active_meals }}" href="{{url_for('meals')}}">Meals</a>

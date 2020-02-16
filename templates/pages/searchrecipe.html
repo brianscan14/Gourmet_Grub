@@ -2,23 +2,25 @@
 {% block content %}
 
 
-<div class="container my-5">
+    <div class="container my-5">
 
+    <!-- pulls search title form backend with jinja -->
 	{% include 'components/searchtitle.html' %}
 
+    <!-- loops thru matching results of search query from DB -->
 	{% for recipe in results %}
 	<div class="row">
 		<div class="col-8 mx-auto mb-5">
-			
+            <!-- shows resulting matching cards as rows -->
             {% include 'components/recipecard.html' %}
-
 		</div>
 	</div>
-
 	{% endfor %}
+
 	</div>
 
 	<div class="centering-text mb-5">
+        <!-- return to home page --> 
 		<a href="{{ url_for('index') }}">
 			<button type="submit" class="btn btn-warning" name="action">Return</button>
 		</a>

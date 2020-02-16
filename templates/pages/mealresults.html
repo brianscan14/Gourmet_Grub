@@ -2,20 +2,20 @@
 {% block content %} 
 
     <div class="container my-5 mx-auto">
-
+        <!-- titile showing searched meal type-->
         {% include 'components/searchtitle.html' %}
-
+        <!-- loops thru results and dispalys them vertically in rows -->
         {% for recipe in recipies %}
         <div class="row">
             <div class="col-11 col-lg-8 mx-auto mb-5">
-
+            <!-- jinja used to pull recipe card component -->
             {% include 'components/recipecard.html' %}
-
             </div>
         </div>
         {% endfor %}
     </div>
 
+    <!-- go back to search page -->
     <div class="centering-text mb-5">
         <a href="{{ url_for('meals') }}" class="btn btn-warning">Back</a>
     </div>

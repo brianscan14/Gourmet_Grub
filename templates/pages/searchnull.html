@@ -6,17 +6,21 @@
 <div class="row my-5">
 	<div class="col-11 col-md-5 my-5 mx-auto">
 		<div class="card text-center my-5">
-
 			<div class="card-body">
+                <!-- BS4 card used to tell user they got no results for their search -->
 				<h2 class="card-title mb-5 playfont">No results</h2>
-				<p class="card-text mt-4">Unfortunately your seach for <em>"{{ query }}"</em> 
-                returned no results in our recipe book at this moment in time.</p>
+				<p class="card-text mt-4">
+                    <!-- jinja pulls searched query from the backend -->
+                    Unfortunately your seach for <em>"{{ query }}"</em> 
+                    returned no results in our recipe book at this moment in time.
+                </p>
+                <!-- seperate line encouraging user to add a recipe -->
                 <p class="card-text mt-4">....but feel free to add one!</p>
+                <!-- back to home page -->
 				<a href="{{ url_for('index') }}">
 					<button type="submit" class="btn btn-success mt-5" name="action">Return to home page</button>
 				</a>
 			</div>
-
 		</div>
 	</div>
 </div>
