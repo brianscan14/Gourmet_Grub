@@ -3,36 +3,41 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
+                <!-- modal title telling user what to do -->
 				<h5 class="modal-title" id="exampleModalCenterTitle">Add/subtract steps below as needed</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
 			</div>
 			<div class="modal-body">
-
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-12 mx-auto centering-text">
+                            <!-- calls the js function and adds steps -->
 							<button class="add_form_field btn btn-success">Add another! <i class="fas fa-plus"></i></button>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 mx-auto">
 							<div class="container1">
+                                <!-- jinja uses for loop to get list of current ing steps in DB -->
 								{% for step in recipe.recipe_prep %}
-								<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" type="text"
+                                <!-- steps will be addded by js function here -->
+								<div class="centering-text py-3">
+                                    <input class="bg-transparent form-control-recipe step-form" type="text"
                                     name="recipe_prep" id="recipe_prep" value= "{{ step }}" text, maxlength="100">
-									<button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button>
+									<!-- form input when clicked will call the modal -->
+                                    <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button>
 								</div>
 								{% endfor %}
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Back to recipe</button>
+            <!-- dismiss modal and save steps added -->
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
 			</div>
 		</div>
 	</div>
