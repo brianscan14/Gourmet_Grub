@@ -149,7 +149,15 @@ The search bar used here is similar in functionality to the one used in the navb
 
 #### Add/Edit recipe page
 
-speellcheck, recipe meal tye is slected onthe edit page, delete button too
+This add/edit page are largely similar with the only difference being that the edit page pulls the values form the DB and sets them as the text on the form for the user to edit, instead of the placeholders in the edit page. There is also a 'delete' button present on the edit page. 
+
+The forms present on this page consist of three data types; text, number and Url. The number being the calories and duration input, the Url is the picture link, and the text is all other forms. The text forms all consists of validators for spellcheck, minimum and max character input. The required attribute is also associated to all of these in order to obtain an input from the user and avoid empty fields in the DB. These min and max values have all been calculated form testing with the divs they go in to and avoid a skew of data and messy input from the user.
+
+The user is first present with an option menu to select their meal type, on the edit page this select menu uses jinja to decipher which option was already picked and shows that one. This value is used elsewhere on the page to search recipes with matching meal types. The description and name form inputs then are test forms with max/min lengths using the 'maxlength' and 'pattern' attributes. The text forms content is scrollable in the x direction if it overflows the form width for easier viewing.
+
+The ingredients and steps form fields then use a JS function in order to add new steps as the user pleases with the 'add' button. So as to not take up too much space on the page these steps ae put into a modal for the user to add content to. The modal is called when the user clicks on the form input to be more intuitive, with a heading in the modal telling them what to do. The steps are also each accompanied by a delete button for the user to delete if they make a mistake.
+
+The Url input for the image field to accompany the recipe is then treated as a string, again using the 'pattern' attribute to ensure that the string is correct and it ends in a picture file type. The calories and duration fields are number type and have min and max values so as to avoid an abnormal number being inputted into the form.
 
 #### Cuisines Page
 
