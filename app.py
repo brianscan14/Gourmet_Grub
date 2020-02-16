@@ -146,7 +146,7 @@ def edit(recipe_id):
         'calories': int(request.form.get('calories')),
         'duration': int(request.form.get('duration'))}
     })
-    return redirect(url_for('recipes'), page_title='/Recipes')
+    return redirect(url_for('recipes'))
 
 @APP.route('/delete/<recipe_id>')
 def delete(recipe_id):
