@@ -7,4 +7,5 @@ describe('Testing - ', () => {
         openSearchBar();
         expect(searchBar.style.width).toEqual('100%')
     });
+    
 });
