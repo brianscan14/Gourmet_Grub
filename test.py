@@ -28,6 +28,20 @@ class MyTest(TestCase):
             rv = c.get('/recipes')
             self.assert_template_used('pages/recipies.html')
 
+    def test_assert_add_template_used(self):
+        with APP.test_client() as c:
+            rv = c.get('/add')
+            self.assert_template_used('pages/addrecipe.html')
+
+    def test_assert_cuisines_template_used(self):
+        with APP.test_client() as c:
+            rv = c.get('/cuisines')
+            self.assert_template_used('pages/cuisines.html')
+
+    def test_assert_meals_template_used(self):
+        with APP.test_client() as c:
+            rv = c.get('/meals')
+            self.assert_template_used('pages/findmeals.html')        
 
 if __name__ == '__main__':
     unittest.main()
