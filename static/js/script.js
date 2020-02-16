@@ -105,19 +105,24 @@ $(document).ready(function() {
  * @closeSearchBar
  * This function closes the nav search bar by decreasing the width of the overlay
  */
-$(document).ready(function() {
 
 function openSearchBar() {
-  document.getElementById("overlaySearchBar").style.width = "100%";
+    console.log('called');
+    let searchBar = document.getElementById("overlaySearchBar");
+    if (searchBar) {
+        searchBar.style.width = "100%";
+    }
     }
 
 function openSearchBarSmall() {
-  document.getElementById("overlaySearchBar").style.width = "100%";
+    document.getElementById("overlaySearchBar").style.width = "100%";
     }
 
 function closeSearchBar() {
   document.getElementById("overlaySearchBar").style.width = "0%";
     }
+
+$(document).ready(function() {
 
 $('#navSearchOpen').click(function(){
        openSearchBar();
