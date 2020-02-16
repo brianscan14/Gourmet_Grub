@@ -217,7 +217,9 @@ input[type="text"].nav-search-form::-moz-placeholder {
     border-color: rgba(233, 231, 220, 0.5);
 }
 
-.btn-warning:focus {
+.btn-warning:not(:disabled):not(.disabled).active, 
+.btn-warning:not(:disabled):not(.disabled):active, 
+.show>.btn-warning.dropdown-toggle {
     color: #fff;
     background-color: #838383;
     border-color: #838383d8;
