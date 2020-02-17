@@ -132,7 +132,7 @@ The audit tool from google inspect was also used in order to improve on three as
 12. Confirm pagination updates correctly if more recipes are added to the DB
 13. Confirm user is brought to the correct page number they click on
 
-**Meal/Cuisine/Search results page:**
+**Meal/Cuisine/Search results page**
 
 1. Check that searched term is the title of the page
 2. Check that cards are displayed horizontally in rows 
@@ -154,8 +154,6 @@ The audit tool from google inspect was also used in order to improve on three as
 6. Confirm that clicking on either of the social media share buttons redirects the user to their social media page with a chance to share the recipe
 7. Confirm clicking the edit button brings the user to the correct recipe's edit page
 8. Confirm clicking the 'back' button returns user to the previous page.
-
-
 
 ##### *User Stories tests*
 
@@ -191,15 +189,13 @@ The audit tool from google inspect was also used in order to improve on three as
    - The BS4 classes and layout were utilised in this project to have the layout responsive to different configurations etc. 
    - Media queries were used for heading font sizes on smaller screens and positions of items. CSS such as 'text-overflow' was also used to hide any text that goes over its div.
 
-
-
 ### **Results**
 
 ------
 
 ##### *Results of Google Audits*
 
-This let me realise where aria-labels were missing and alt tags, along with labels for forms and if CDN library version was vulnerable. Where loading times can be reduced and colour's opacities needed to be changed to improve performance. The pictures were gotten from [Pexels](https://www.pexels.com/) and were already small in file size so didn't need to be condensed further. From these audits on the site each page scored over 90% or over in the three aspects aforementioned.
+This let me realise where aria-labels were missing and alt tags, along with labels for forms and if CDN library version was vulnerable. Where loading times can be reduced and colour's opacities needed to be changed to improve performance. The pictures were gotten from [Pexels](https://www.pexels.com/) and were already small in file size so didn't need to be condensed further.
 
 ##### *Bugs fixed*
 
