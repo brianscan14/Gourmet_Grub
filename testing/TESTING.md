@@ -175,8 +175,8 @@ The audit tool from google inspect was also used in order to improve on three as
    - The navbar uses jinja and pulls from the backend to know which nav-item to apply the 'active' class to, highlighting the page the user is currently on.
    - The title of the page is also added to with a '/page id' added to the head title, showing the user again which page they are on.
 6. As a user, I want important pieces of info like cuisine type to be presented to me without having to click into it, when browsing through the different recipes.
-   - For the search results pages jinja is used so that all the pages return the same card template for displaying important recipe info. This info consists of the title, a picture, a short description, the cuisine type and how many views it has received as outlined here **insert link to wireframe**
-   - For the 'all recipes' page the cards display the exact same information but in a different manner, these cards are more vertical whereas the prior mentioned cards are horizontal **as seen here.**
+   - For the search results pages jinja is used so that all the pages return the same card template for displaying important recipe info. This info consists of the title, a picture, a short description, the cuisine type and how many views it has received as outlined here.
+   - For the 'all recipes' page the cards display the exact same information but in a different manner, these cards are more vertical whereas the prior mentioned cards are horizontal
 7. As a user, I want the recipe I decide on to be easily readable and followable step by step when reading it.
    - The single recipe pages is very clear and concise and well laid out for a user to view/follow. It only displays the important information such as; picture, ingredient steps, preparation steps and quicks summary stats for the recipe, duration, calories and number of ingredients.
 8. As a user I want to be able to share this recipe on my social media platform when I am happy with the results of cooking it.
