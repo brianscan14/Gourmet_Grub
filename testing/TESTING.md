@@ -37,11 +37,123 @@ The audit tool from google inspect was also used in order to improve on three as
 - Best Practices
 - Accessibility
 
-##### *Testing performed on desktop*
+###### *Manual tests carried out*
 
+**Common elements:**
 
+<u>Navbar</u>:
 
-##### *Testing performed on tablet/mobile devices*
+1. Confirm nav is a list of the different pages on md-xl screens
+2. Confirm nav is a burger icon with collapsible menu on xs-sm screens
+3. Confirm current page is highlighted in the nav menu
+4. Confirm nav items and nav search icon changes colour when hovered over
+5. Confirm user is brought to correct page for each nav item
+6. Confirm that when clicked the nav search icon calls an overlay covering the screen
+7. Confirm that the form searches for the entered string when button is clicked or 'entered' typed
+8. Confirm that incorrect spelling is highlighted 
+9. Confirm user is redirected to page of the results with the matching recipes
+10. Confirm user is redirected to null results page if no matches
+
+<u>Float Top Button:</u>
+
+1. Confirm button only appears on bottom right of screen when user has scrolled down the page
+2. Confirm that the icon changes colour when hovered over
+3. Confirm that the user is brought to the top of the page when button is clicked
+4. Confirm that the action of scrolling to the top is  slowed down and not a sudden jolt
+5. Confirm icon is above any content that is on the page and doesn't have a lower z-index
+
+<u>Error 404:</u>
+
+1. Confirm if an error occurs that the use is returned correctly to the error page, from all pages
+
+**Index/Home Page:**
+
+1. Confirm that the page content is centered on all screen sizes
+2. Confirm that the opacity of the form changes when the user clicks on the form area
+3. Confirm the placeholder text is replaced by user's input when types
+4. Confirm incorrect spelling is highlighted on the form if input is left as is
+5. Confirm user is redirected to matching results page for inputted string
+6. Confirm user is redirected to null results page if no recipes match search
+7. Confirm background picture is clear, sharp and loads well
+8. Confirm placeholder content is fully visible on small phone screens
+
+**Cuisine Page**
+
+1. Confirm user is shown all results from the DB of cuisines in it
+2. Confirm there are no duplicate results on the page
+3. Confirm that on smaller screens the text font size isn't too big and out of place
+4. Confirm that each row containing the cuisine obtains a gradual box shadow on hover
+5. Confirm if there are no cuisines the user is redirected to null results page
+6. Confirm 'view all' button highlights gradually on hover
+7. Confirm the 'view all' button redirects the user to another page with recipes with the same cuisine
+
+**Meals Page**
+
+1. Confirm that content is centered on all screen sizes
+2. Confirm that the title and form content doesn't skew on smaller screens
+3. Confirm that the user is presented with the 3 options when they click the dropdown
+4. Confirm that the option the user just chose is now the selected option
+5. Confirm that when the 'fine meals' button is clicked  the user is redirected to a page which contains the recipes with the matching meal type searched
+6. Confirm the user is redirected to null results page if there are no matching recipes
+
+**Add/Edit Recipe**
+
+1. Confirm all forms are centered on the pages and placeholder content is visible
+2. Confirm placeholder content is hidden but scrollable if it goes over the form input's length
+3. Confirm that when an input is clicked the form bottom border highlights
+4. Confirm placeholder content is positioned to the left of the form input field
+5. Confirm that the icons place correctly and proportionally to the left on all screen sizes
+6. Confirm that the meal type dropdown highlights on hover
+7. Confirm all form min and max fields are working correctly
+8. Confirm user can't input characters into calories and duration form fields
+9. Confirm user can't input incorrect non url/picture file string type into image input
+10. Confirm user can not add/save recipe without entering inputs into all form fields
+11. Confirm modal is called when ingredients or prep steps inputs are clicked on
+12. Confirm user can add extra form fields in this modal as they need them
+13. Confirm user can delete the form fields in the modal but there will always at least be one
+14. Confirm max number of inputs is 20 and user is alerted when this is reached
+15. Confirm that when in edit page, all the existing data is displayed correctly
+16. Confirm that when a recipe is added the user is redirected to a thank you page showing the recipe just added
+17. Confirm 'cancel' button brings user back to the all recipes page
+
+**All Recipes Page**
+
+1. Confirm that results are displayed 6 at a time in a vertical card format on all screens
+2. Confirm that BS4 is adhered to and 3 are displayed on each row
+3. Confirm that on smaller screens the columns take the full width of the screen each
+4. Confirm that the card text and button is centrally aligned on medium to smaller screen, but left aligned on bigger screens
+5. Confirm the text does not overflow its div anywhere on the cards on any screen
+6. Confirm cuisine type shown in bottom left of the footer is correct
+7. Confirm views are floated to the right side of the footer correctly
+8. Confirm that when a card is hovered over the card's background changes cover slightly and slowly
+9. Confirm the button changes colour slightly and gradually when hovered over
+10. Confirm that on click the 'view full recipe' button will redirect the user to the correct chosen recipe
+11. Confirm that once the user goes back to all recipes the 'views' field has updated correctly on the recipe
+12. Confirm pagination updates correctly if more recipes are added to the DB
+13. Confirm user is brought to the correct page number they click on
+
+**Meal/Cuisine/Search results page:**
+
+1. Check that searched term is the title of the page
+2. Check that cards are displayed horizontally in rows 
+3. Check that cards contain their name, description, views and cuisine fields, and its picture
+4. Check that none of the text goes over their div and is hidden if they do
+5. Check that the entire card is highlighted when hovered over
+6. Check that picture goes on the top of the card when screen size is smaller
+7. Check that results are sorted correctly by their number of views
+8. Check that clicking the 'view full recipe' brings the user to the correct recipe page
+9. Check that by clicking the 'back' button the user is brought to the previous page
+
+**Single Recipe Page**
+
+1. Confirm that on smaller screens the columns are displayed in full width, taking a row to themselves
+2. Confirm that the correct recipe heading is displayed at the top of the page
+3. Confirm that recipe ingredients are shown on the left hand side but the text is right aligned
+4. Confirm the summary stats under the recipe picture are indeed correct
+5. Confirm the steps are fully shown and displayed on all screen sizes
+6. Confirm that clicking on either of the social media share buttons redirects the user to their social media page with a chance to share the recipe
+7. Confirm clicking the edit button brings the user to the correct recipe's edit page
+8. Confirm clicking the 'back' button returns user to the previous page.
 
 
 
