@@ -42,7 +42,7 @@ def recipes():
     return render_template('pages/searchnull.html', query='recipes',
     page_title='/No Results')
 
-@APP.route('/search/recipes', methods=["GET", "POST"])
+@APP.route('/search/recipes')
 def search_recipe():
     """
     Uses regex to handle the search form input entered, or 'query', ignores
