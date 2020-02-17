@@ -32,7 +32,11 @@ $(document).ready(function() {
         if(x < max_fields){
             x++;
             // when the add button is cliked below html content will get added for each click, delete button included
-            $(wrapper).append('<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" maxlength="100" type="text" name="recipe_prep" id="recipe_prep"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
+            $(wrapper).append('<div class="centering-text py-3">'+
+            '<input class="bg-transparent form-control-recipe step-form"'+
+            'maxlength="100" type="text" name="recipe_prep" id="recipe_prep">'+
+            '<button class="delete btn btn-danger step-btn">'+
+            '<i class="far fa-trash-alt"></i></button></div>');
         }
         else
         {
@@ -55,7 +59,11 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){
             x++;
-            $(wrapper).append('<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form" maxlength="18" type="text" id="ingredients" name="ingredients"> <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button></div>');
+            $(wrapper).append('<div class="centering-text py-3">'+
+            '<input class="bg-transparent form-control-recipe step-form"'+
+            'maxlength="18" type="text" id="ingredients" name="ingredients">'+
+            '<button class="delete btn btn-danger step-btn">'+
+            '<i class="far fa-trash-alt"></i></button></div>');
         }
         else
             {
@@ -75,29 +83,28 @@ $(document).ready(function() {
  * This function scrolls to the top of the page when the button is clicked
  */
 
-$(document).ready(function() {
+let mybutton = document.getElementById("topBtn");
 
-    let mybutton = document.getElementById("topBtn");
+window.onscroll = function() {scrollToTop()};
 
-    window.onscroll = function() {scrollToTop()};
+function scrollToTop() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    mybutton.style.display = "block";
+        } else {
+    mybutton.style.display = "none";
+        }
+}
 
-    function scrollToTop() {
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        mybutton.style.display = "block";
-            } else {
-        mybutton.style.display = "none";
-            }
+function topPage() {
+    document.body.scrollTo({top: 0, behavior: 'smooth'});
+    document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
     }
 
-    function topPage() {
-        document.body.scrollTo({top: 0, behavior: 'smooth'});
-        document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
+$(document).ready(function() {
     $('#topBtn').click(function(){
         topPage();
-        });
     });
+});
 
 /**
  * @openSearchBar
