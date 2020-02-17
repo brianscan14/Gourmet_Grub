@@ -3,16 +3,19 @@
 * https://stackoverflow.com/questions/19606178/make-first-character-of-each-word-capital-in-input
 */
 
-jQuery.noConflict();
-jQuery(document).ready(function($) {
-  $('.form-caps').keyup(function(event) {
+function capitalizeString() {
     let textBox = event.target;
     let start = textBox.selectionStart;
     let end = textBox.selectionEnd;
     // converts first letter of string to uppercase and the rest there after are lowercase
     textBox.value = textBox.value.charAt(0).toUpperCase() + textBox.value.slice(1).toLowerCase();
     textBox.setSelectionRange(start, end);
-  });
+}
+
+$(document).ready(function($) {
+    $('.form-caps').keyup(function(event) {
+        capitalizeString();
+    });
 });
 
 /**
