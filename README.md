@@ -24,54 +24,17 @@ The search bar on the index page is grand and bold, taking up the entire screen 
 
 ## Wireframes
 
-This website was designed with two screen size ranges in mind:
-
-1. Mobile
-2. Tablet-Desktop
-
-As a result of this the below wireframes consist largely of only 2 mockups drawings (contact & footer are the exceptions). 
-
-- Navbar
-  - xs screen
-  - sm-xl screen
-
-- Home
-  - xs screen
-  - sm-xl screen
-
-- Cuisines
-  - xs screen
-  - sm-xl screen
-
-- Meals
-  - xs screen
-  - sm-xl screen
-
-- Meal / Cuisine search results
-  - xs screen
-  - sm-xl screen 
-
-- Home/Navbar search results
-  - xs screen
-  - sm-xl screen
-
-- Add/Edit Recipe
-  - xs screen
-  - sm-xl screen
-
-- All Recipes
-  - xs screen
-  - sm-xl screen
-
-- Single recipe Page
-  - xs screen
-  - sm-xl screen
-
-- Null search results
-  - xs-xl screen
-
-- Thank you page
-  - xs-xl screen
+- Add/Edit page](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/addedit.jpg?raw=true)
+  - [Modal](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/modal.jpg?raw=true)
+- [Cuisines](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/cuisines.jpg?raw=true)
+- [Meals](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/meals.jpg?raw=true)
+- [Results](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/results.jpg?raw=true)
+- [Recipe](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/thisrecipe.jpg?raw=true)
+- [Home](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/home.jpg?raw=true)
+- [Nav md-xl](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/navxl.jpg?raw=true)
+- [Nav xs-sm](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/navxs.jpg?raw=true)
+- [Null Results](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/null.jpg?raw=true)
+- [Error404](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/error404.jpg?raw=true)
 
 ## Technologies
 
