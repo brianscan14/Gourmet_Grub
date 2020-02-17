@@ -129,9 +129,9 @@ There was an bug in IE where the JQuery used doesn't work, I looked up [Can i us
 
 The main functions were tested in this project with Jasmine as a means of ensuring they were working as planned. The way I approached the testing method was to start small and make sure it is implemented correctly in the first place and work from there. As I am new to Jasmine testing this method best suited me for this project. The files for testing are below:
 
-- Jasmine HTML
-- Jasmine JS specs
-- JS 
+- [Jasmine HTML](https://github.com/brianscan14/Gourmet_Grub/blob/master/testing/jasmine/jasmine.html)
+- [Jasmine JS specs](https://github.com/brianscan14/Gourmet_Grub/blob/master/testing/jasmine/jasmine.spec.js)
+- [JS](https://github.com/brianscan14/Gourmet_Grub/blob/master/static/js/script.js) 
 
 ###### Running the tests
 
