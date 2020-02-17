@@ -88,7 +88,7 @@ def add():
     If it is a POST request then it inserts the recipe that the user
     has just created on the add recipe page into the DB with the below
     structure, prep and ingredient steps use getlist to iterate through
-    the steps in each. Once inserted the user is then returnd to a 
+    the steps in each. Once inserted the user is then returnd to a
     thank you page to inform them they were successsfull, also showing
     them the recipe they just inserted.
     """
