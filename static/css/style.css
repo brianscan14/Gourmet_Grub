@@ -11,10 +11,12 @@ body {
 
 .cursive {
     font-family: 'Romanesco', cursive;
+    font-display: swap;
 }
 
 .playfont {
     font-family: 'Playfair Display', serif;
+    font-display: swap;
 }
 
 .container, .modal-content {
