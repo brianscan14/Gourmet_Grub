@@ -345,6 +345,21 @@ input[type="text"].search-bar::-moz-placeholder {
     box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0);
 }
 
+@media only screen and (max-width: 450px) {
+input[type="text"].search-bar::-webkit-input-placeholder {
+    color: rgb(34, 33, 33);
+    opacity: 1;
+    font-style: italic;
+    font-size: 18px;
+}
+
+input[type="text"].search-bar::-moz-placeholder {
+    color: rgb(34, 33, 33);
+    opacity: 1;
+    font-style: italic;
+    font-size: 18px;
+}
+}
 /* all recipes page */
 
 .card-img-top {
