@@ -24,7 +24,7 @@ The search bar on the index page is grand and bold, taking up the entire screen 
 
 ## Wireframes
 
-- Add/Edit page](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/addedit.jpg?raw=true)
+- [Add/Edit page](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/addedit.jpg?raw=true)
   - [Modal](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/modal.jpg?raw=true)
 - [Cuisines](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/cuisines.jpg?raw=true)
 - [Meals](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/meals.jpg?raw=true)
