@@ -65,13 +65,13 @@ class MyTestForPageRedirect(TestCase):
 
     def test_get_this_recipe_ok(self):
         with APP.test_client() as c:
-            rv = c.get('/recipe/5e2cd140f2914773f9c3eb5b',
+            rv = c.get('/recipe/5e2cd140f2914773f9c3eb5c',
             follow_redirects=True)
             self.assert_template_used('pages/recipe.html')
 
     def test_edit_recipe_pulled_ok(self):
         with APP.test_client() as c:
-            rv = c.get('/edit/5e2cd140f2914773f9c3eb5b',
+            rv = c.get('/edit/5e2cd140f2914773f9c3eb5c',
             follow_redirects=True, data={
                 'recipe_name': 'much better recipe',
                 'recipe_prep': 'more steps',
@@ -87,9 +87,9 @@ class MyTestForPageRedirect(TestCase):
 
     def test_edit_recipe_posts_ok(self):
         with APP.test_client() as c:
-            rv = c.post('/edit/5e2cd140f2914773f9c3eb5b',
+            rv = c.post('/edit/5e2cd140f2914773f9c3eb5c',
             follow_redirects=True, data={
-                'recipe_name': 'much better recipe',
+                'recipe_name': 'much better recipe2',
                 'recipe_prep': 'more steps',
                 'recipe_desc': 'better description of recipe',
                 'cuisine_name': 'cuisine two',
