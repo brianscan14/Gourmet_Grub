@@ -39,9 +39,9 @@ $(document).ready(function() {
             alert('You Reached the limit of fields!')
         }
     });
-            // delete button to remove the form input when clicked
-            $(wrapper).on("click",".delete", function(e){
-            e.preventDefault(); $(this).parent('div').remove(); x--;
+        // delete button to remove the form input when clicked
+        $(wrapper).on("click",".delete", function(e){
+        e.preventDefault(); $(this).parent('div').remove(); x--;
         })
 });
 
@@ -63,9 +63,9 @@ $(document).ready(function() {
         }
     });
     
-        $(wrapper).on("click",".delete", function(e){
-            e.preventDefault(); $(this).parent('div').remove(); x--;
-        })
+    $(wrapper).on("click",".delete", function(e){
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
 });
 
 /**
@@ -82,16 +82,16 @@ $(document).ready(function() {
     window.onscroll = function() {scrollToTop()};
 
     function scrollToTop() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    mybutton.style.display = "block";
-        } else {
-    mybutton.style.display = "none";
-        }
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        mybutton.style.display = "block";
+            } else {
+        mybutton.style.display = "none";
+            }
     }
 
     function topPage() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+        document.body.scrollTo({top: 0, behavior: 'smooth'});
+        document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
         }
 
     $('#topBtn').click(function(){
@@ -119,7 +119,7 @@ function openSearchBarSmall() {
     }
 
 function closeSearchBar() {
-  document.getElementById("overlaySearchBar").style.width = "0%";
+    document.getElementById("overlaySearchBar").style.width = "0%";
     }
 
 $(document).ready(function() {
@@ -146,7 +146,7 @@ $('#navSearchClose').click(function(){
 $(document).ready(function() {
 
 function goBackPage() {
-  window.history.back();
+    window.history.back();
     }
 
 $('#backButton').click(function(){
