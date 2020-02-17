@@ -89,7 +89,7 @@ class MyTestForPageRedirect(TestCase):
         with APP.test_client() as c:
             rv = c.post('/edit/5e2cd140f2914773f9c3eb5c',
             follow_redirects=True, data={
-                'recipe_name': 'much better recipe2',
+                'recipe_name': 'much better recipe3',
                 'recipe_prep': 'more steps',
                 'recipe_desc': 'better description of recipe',
                 'cuisine_name': 'cuisine two',
