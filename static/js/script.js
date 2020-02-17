@@ -3,18 +3,17 @@
 * https://stackoverflow.com/questions/19606178/make-first-character-of-each-word-capital-in-input
 */
 
-function capitalizeString() {
-    let textBox = event.target;
-    let start = textBox.selectionStart;
-    let end = textBox.selectionEnd;
+function capitalizeString(input) {
+    let start = input.selectionStart;
+    let end = input.selectionEnd;
     // converts first letter of string to uppercase and the rest there after are lowercase
-    textBox.value = textBox.value.charAt(0).toUpperCase() + textBox.value.slice(1).toLowerCase();
-    textBox.setSelectionRange(start, end);
+    input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1).toLowerCase();
+    input.setSelectionRange(start, end);
 }
 
-$(document).ready(function($) {
+$(document).ready(function() {
     $('.form-caps').keyup(function(event) {
-        capitalizeString();
+        capitalizeString(event.target);
     });
 });
 
@@ -88,7 +87,9 @@ $(document).ready(function() {
 
 let mybutton = document.getElementById("topBtn");
 
-window.onscroll = function() {scrollToTop()};
+window.addEventListener('scroll', function(e) {
+    scrollToTop()
+});
 
 function scrollToTop() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -101,7 +102,7 @@ function scrollToTop() {
 function topPage() {
     document.body.scrollTo({top: 0, behavior: 'smooth'});
     document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
-    }
+}
 
 $(document).ready(function() {
     $('#topBtn').click(function(){
@@ -117,20 +118,19 @@ $(document).ready(function() {
  */
 
 function openSearchBar() {
-    console.log('called');
     let searchBar = document.getElementById("overlaySearchBar");
     if (searchBar) {
         searchBar.style.width = "100%";
-    }
-    }
+        }
+}
 
 function openSearchBarSmall() {
     document.getElementById("overlaySearchBar").style.width = "100%";
-    }
+}
 
 function closeSearchBar() {
     document.getElementById("overlaySearchBar").style.width = "0%";
-    }
+}
 
 $(document).ready(function() {
 
@@ -153,12 +153,11 @@ $('#navSearchClose').click(function(){
  * in the browser's history when clicked
  */
 
-$(document).ready(function() {
-
 function goBackPage() {
     window.history.back();
     }
 
+$(document).ready(function() {
 $('#backButton').click(function(){
        goBackPage();
     });
