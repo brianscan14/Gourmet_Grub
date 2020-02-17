@@ -19,13 +19,13 @@
 					</div>
 					<div class="row">
 						<div class="col-12 mx-auto">
-							<div class="container1">
+							<div class="container1" required>
                                 <!-- jinja uses for loop to get list of current ing steps in DB -->
 								{% for step in recipe.recipe_prep %}
                                 <!-- steps will be addded by js function here -->
 								<div class="centering-text py-3">
                                     <input class="bg-transparent form-control-recipe step-form" type="text"
-                                    name="recipe_prep" id="recipe_prep" value= "{{ step }}" text, maxlength="100">
+                                    name="recipe_prep" id="recipe_prep" value= "{{ step }}" maxlength="100">
 									<!-- form input when clicked will call the modal -->
                                     <button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button>
 								</div>

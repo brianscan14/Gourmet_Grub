@@ -20,12 +20,13 @@
 					</div>
 					<div class="row">
 						<div class="col-12 mx-auto">
-							<div class="container2">
+							<div class="container2" required>
                                 <!-- jinja uses for loop to get list of current steps in DB -->
 								{% for stepz in recipe.ingredients %}
                                 <!-- additional steps being added by the js function -->
-								<div class="centering-text py-3"><input class="bg-transparent form-control-recipe step-form"
-                                        type="text" id="ingredients" name="ingredients" value= "{{ stepz }}" maxlength="18">
+								<div class="centering-text py-3">
+                                    <input class="bg-transparent form-control-recipe step-form"
+                                    type="text" id="ingredients" name="ingredients" value= "{{ stepz }}" maxlength="18">
 									<button class="delete btn btn-danger step-btn"><i class="far fa-trash-alt"></i></button>
 								</div>
 								{% endfor %}
