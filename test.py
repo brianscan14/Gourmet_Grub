@@ -1,5 +1,6 @@
 from flask_testing import TestCase
 from app import APP
+from flask_pymongo import PyMongo
 
 import unittest
 
@@ -8,6 +9,7 @@ class MyTest(TestCase):
 
     def create_app(self):
         APP.config['TESTING'] = True
+        APP.config['MONGO_URI'] = 'mongodb://localhost:27017/gourmetTesting'
         return APP
 
     def test_index(self):
@@ -45,6 +47,7 @@ class MyTestForPageRedirect(TestCase):
 
     def create_app(self):
         APP.config['TESTING'] = True
+        APP.config['MONGO_URI'] = 'mongodb://localhost:27017/gourmetTesting'
         return APP
 
     def test_add_ok(self):
