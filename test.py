@@ -1,9 +1,7 @@
-from flask import Flask, request, url_for
 from flask_testing import TestCase
 from app import APP
 
 import unittest
-import flask_testing
 
 
 class MyTest(TestCase):
@@ -42,9 +40,16 @@ class MyTest(TestCase):
             rv = c.get('/meals')
             self.assert_template_used('pages/findmeals.html')
 
+
+class MyTestForPageRedirect(TestCase):
+
+    def create_app(self):
+        APP.config['TESTING'] = True
+        return APP
+
     def test_add_ok(self):
         with APP.test_client() as c:
-            rv = c.post('/add', follow_redirects=True, data=(
+            rv = c.post('/add', follow_redirects=True, data={
                 'recipe_name': 'new recipe',
                 'recipe_prep': 'step',
                 'recipe_desc': 'description of recipe',
@@ -55,8 +60,47 @@ class MyTest(TestCase):
                 'calories': '55',
                 'duration': '66',
                 'views': '1'
-            ))
+            })
             self.assert_template_used('pages/thankyou.html')
+
+    def test_get_this_recipe_ok(self):
+        with APP.test_client() as c:
+            rv = c.get('/recipe/5e2cd140f2914773f9c3eb5b',
+            follow_redirects=True)
+            self.assert_template_used('pages/recipe.html')
+
+    def test_edit_recipe_pulled_ok(self):
+        with APP.test_client() as c:
+            rv = c.get('/edit/5e2cd140f2914773f9c3eb5b',
+            follow_redirects=True, data={
+                'recipe_name': 'much better recipe',
+                'recipe_prep': 'more steps',
+                'recipe_desc': 'better description of recipe',
+                'cuisine_name': 'cuisine two',
+                'image': 'url string two',
+                'ingredients': 'better ingredients list',
+                'meal_type': 'dinner',
+                'calories': '50',
+                'duration': '60',
+            })
+            self.assert_template_used('pages/editrecipe.html')
+
+    def test_edit_recipe_posts_ok(self):
+        with APP.test_client() as c:
+            rv = c.post('/edit/5e2cd140f2914773f9c3eb5b',
+            follow_redirects=True, data={
+                'recipe_name': 'much better recipe',
+                'recipe_prep': 'more steps',
+                'recipe_desc': 'better description of recipe',
+                'cuisine_name': 'cuisine two',
+                'image': 'url string two',
+                'ingredients': 'better ingredients list',
+                'meal_type': 'dinner',
+                'calories': '50',
+                'duration': '60',
+            })
+            self.assert_template_used('pages/recipies.html')
+
 
 if __name__ == '__main__':
     unittest.main()
