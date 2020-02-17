@@ -389,6 +389,12 @@ input[type="text"].search-bar::-moz-placeholder {
     color: rgba(104, 101, 101, 0.945);
 }
 
+@media only screen and (max-width: 770px) {
+    .card-text-recipes {
+    text-align: center;
+}
+}
+    
 /* single recipe page */
 
 .recipe-title {
