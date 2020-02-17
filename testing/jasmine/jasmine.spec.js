@@ -26,9 +26,9 @@ describe('capitalizeString function', () => {
         
     it ('capitalizeString should capitalize the first letter of the elements content', function() {
         $(".content").append('<input id="capitalizeText" value="this should capitalize">');
-        let text = document.getElementById("capitalizeText");
-        capitalizeString('capitalizeText');
-        expect(text.value).toEqual('This should capitalize')
+        let input = document.getElementById("capitalizeText");
+        capitalizeString(input);
+        expect(input.value).toEqual('This should capitalize')
     });
 
 });
