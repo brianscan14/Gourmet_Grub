@@ -293,13 +293,31 @@ Follow the below instructions to deploy GoodGrub to heroku:
 13. Click 'deploy' in the heroku dashboard
 14. Ensure the master branch is selected in the 'manual deployment' section of the page and click 'deploy branch'
 
-## Credits
+### Content
+
+All text on GourmetGrub was written by me.
 
 ### Media
 
+The image of the burger was sourced from [Pexels](https://www.pexels.com/photo/burger-and-vegetables-placed-on-brown-wood-surface-1565982/)
+
 ### Code
 
-### Acknowledgements 
+Regex for the search function was seen in this [example](https://docs.python.org/3/howto/regex.html) and here [also](https://stackoverflow.com/questions/10610131/checking-if-a-field-contains-a-string).
+
+To get the recipes counted and pagination working correctly, [this](https://stackoverflow.com/questions/52236594/why-is-pymongo-count-documents-is-slower-than-count) and another [example](https://stackoverflow.com/questions/25163658/mongodb-return-true-if-document-exists) from slack were used, and also the docs on [mongodb](https://docs.mongodb.com/manual/reference/method/cursor.skip/).
+
+Capitalize 1st letter was taken form this [example](https://paulund.co.uk/how-to-capitalize-the-first-letter-of-a-string-in-javascript) and modified.
+
+The overlay for the search icon click was originally found [here](https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp) and heavily modified for my page.
+
+The idea for incrementing views was gotten form the following [example](https://stackoverflow.com/questions/23368575/pymongo-find-and-modify/23369162).
+
+The option values search used this [example](https://stackoverflow.com/questions/43032709/how-to-query-mongoose-using-drop-down-menu-values-that-sort-through-data-model).
+
+### Acknowledgments
+
+I would like to thank the CI tutors for all of their help throughout the course of this project, and my mentor, Simen.
 
 ### Disclaimer
 
