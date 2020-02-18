@@ -317,6 +317,8 @@ The idea for incrementing views was gotten form the following [example](https://
 
 The option values search used this [example](https://stackoverflow.com/questions/43032709/how-to-query-mongoose-using-drop-down-menu-values-that-sort-through-data-model).
 
+The layout for the deployment section was gotten from slack from CI user A.Greeves.
+
 ### Acknowledgments
 
 I would like to thank the CI tutors for all of their help throughout the course of this project, and my mentor, Simen.
