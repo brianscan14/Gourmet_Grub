@@ -29,6 +29,8 @@ The search bar on the index page is grand and bold, taking up the entire screen 
 - [Cuisines](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/cuisines.jpg?raw=true)
 - [Meals](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/meals.jpg?raw=true)
 - [Results](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/results.jpg?raw=true)
+- [All Recipes md-xl](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/allrecipesxl.jpg?raw=true)
+- [All Recipes xs-sm](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/allrecipesxs.jpg?raw=true)
 - [Recipe](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/thisrecipe.jpg?raw=true)
 - [Home](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/home.jpg?raw=true)
 - [Nav md-xl](https://github.com/brianscan14/Gourmet_Grub/blob/master/wireframes/navxl.jpg?raw=true)
